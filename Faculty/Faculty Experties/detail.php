@@ -35,7 +35,7 @@
     <div class="box">
         <div class="content">
             <h3>Qualification till-date</h3>
-            <a href="#">Read More</a>
+            <a href="option3.php">Read More</a>
         </div>
     </div>
 </div>
@@ -45,7 +45,7 @@
     <div class="box">
         <div class="content">
             <h3>Awards</h3>
-            <a href="#">Read More</a>
+            <a href="option4.php">Read More</a>
         </div>
     </div>
 </div>
@@ -53,7 +53,7 @@
     <div class="box">
         <div class="content">
             <h3>Faculty Promotion</h3>
-            <a href="#">Read More</a>
+            <a href="option5.php">Read More</a>
         </div>
     </div>
 </div>
@@ -61,7 +61,7 @@
     <div class="box">
         <div class="content">
             <h3>Faculty Long Live</h3>
-            <a href="#">Read More</a>
+            <a href="option6.php">Read More</a>
         </div>
     </div>
 </div>
