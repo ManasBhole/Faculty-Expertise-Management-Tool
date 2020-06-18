@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Jun 17, 2020 at 05:14 PM
+-- Generation Time: Jun 18, 2020 at 01:37 PM
 -- Server version: 5.7.28
 -- PHP Version: 7.3.11
 
@@ -35,7 +35,8 @@ CREATE TABLE `Awards` (
   `Event_name` varchar(40) NOT NULL,
   `University` varchar(40) NOT NULL,
   `College_name` varchar(40) NOT NULL,
-  `Level` varchar(40) NOT NULL
+  `Level` varchar(40) NOT NULL,
+  `PDF` varchar(80) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -51,7 +52,8 @@ CREATE TABLE `Competitive_exam` (
   `PET_score` int(10) DEFAULT NULL,
   `GATE_appeared` varchar(10) DEFAULT NULL,
   `GATE_date` date DEFAULT NULL,
-  `GATE_score` int(10) DEFAULT NULL
+  `GATE_score` int(10) DEFAULT NULL,
+  `PDF` varchar(80) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -67,7 +69,8 @@ CREATE TABLE `Faculty_as_resource` (
   `Event_name` varchar(100) NOT NULL,
   `Level` varchar(30) NOT NULL,
   `Venue` varchar(50) NOT NULL,
-  `Date` date NOT NULL
+  `Date` date NOT NULL,
+  `PDF` varchar(80) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -102,7 +105,8 @@ CREATE TABLE `Faculty_promotion` (
   `Promotion_1` varchar(40) DEFAULT NULL,
   `Date_promotion_1` date DEFAULT NULL,
   `Promotion_2` varchar(40) DEFAULT NULL,
-  `Date_promotion_2` date DEFAULT NULL
+  `Date_promotion_2` date DEFAULT NULL,
+  `PDF` varchar(80) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -134,7 +138,8 @@ CREATE TABLE `Qualification` (
   `College_name` varchar(40) NOT NULL,
   `Status` varchar(40) NOT NULL,
   `Research_topic` varchar(40) NOT NULL,
-  `Guide_name` varchar(40) NOT NULL
+  `Guide_name` varchar(40) NOT NULL,
+  `PDF` varchar(80) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
