@@ -2,10 +2,10 @@
 -- version 4.9.2
 -- https://www.phpmyadmin.net/
 --
--- Host: localhost
--- Generation Time: Jun 20, 2020 at 10:10 AM
--- Server version: 5.7.28
--- PHP Version: 7.3.11
+-- Host: 127.0.0.1
+-- Generation Time: Jun 20, 2020 at 02:56 PM
+-- Server version: 10.4.11-MariaDB
+-- PHP Version: 7.4.1
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -19,16 +19,16 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `Faculty_exp`
+-- Database: `faculty`
 --
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `Awards`
+-- Table structure for table `awards`
 --
 
-CREATE TABLE `Awards` (
+CREATE TABLE `awards` (
   `Faculty_name` varchar(40) NOT NULL,
   `Award_name` varchar(40) NOT NULL,
   `Position` varchar(40) NOT NULL,
@@ -42,10 +42,10 @@ CREATE TABLE `Awards` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `Competitive_exam`
+-- Table structure for table `competitive_exam`
 --
 
-CREATE TABLE `Competitive_exam` (
+CREATE TABLE `competitive_exam` (
   `Faculty_name` varchar(40) NOT NULL,
   `PET_appeared` varchar(10) DEFAULT NULL,
   `PET_date` date DEFAULT NULL,
@@ -59,10 +59,10 @@ CREATE TABLE `Competitive_exam` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `Faculty_as_resource`
+-- Table structure for table `faculty_as_resource`
 --
 
-CREATE TABLE `Faculty_as_resource` (
+CREATE TABLE `faculty_as_resource` (
   `Faculty_name` varchar(40) NOT NULL,
   `Resource_person` varchar(20) NOT NULL,
   `Topic_name` varchar(100) NOT NULL,
@@ -76,10 +76,10 @@ CREATE TABLE `Faculty_as_resource` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `Faculty_long_live`
+-- Table structure for table `faculty_long_live`
 --
 
-CREATE TABLE `Faculty_long_live` (
+CREATE TABLE `faculty_long_live` (
   `Faculty_name` varchar(40) NOT NULL,
   `Reason_long_live` varchar(100) NOT NULL,
   `From_date` date NOT NULL,
@@ -90,10 +90,10 @@ CREATE TABLE `Faculty_long_live` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `Faculty_promotion`
+-- Table structure for table `faculty_promotion`
 --
 
-CREATE TABLE `Faculty_promotion` (
+CREATE TABLE `faculty_promotion` (
   `Faculty_name` varchar(40) NOT NULL,
   `Date_of_joining` date NOT NULL,
   `SDNR_number` int(10) NOT NULL,
@@ -112,23 +112,30 @@ CREATE TABLE `Faculty_promotion` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `Login_info`
+-- Table structure for table `login_info`
 --
 
-CREATE TABLE `Login_info` (
-  `Fname` varchar(40) NOT NULL,
-  `ID` varchar(40) NOT NULL,
-  `Email` varchar(40) NOT NULL,
-  `Password` varchar(40) NOT NULL
+CREATE TABLE `login_info` (
+  `id` int(40) NOT NULL,
+  `fname` varchar(50) NOT NULL,
+  `email` varchar(50) NOT NULL,
+  `password` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `login_info`
+--
+
+INSERT INTO `login_info` (`id`, `fname`, `email`, `password`) VALUES
+(0, 'Shubham', 'shubham.mohapess@gmail.com', 'Shubhamisgreat');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `Qualification`
+-- Table structure for table `qualification`
 --
 
-CREATE TABLE `Qualification` (
+CREATE TABLE `qualification` (
   `Faculty_name` varchar(40) NOT NULL,
   `Admitted_for_program` varchar(10) NOT NULL,
   `Specialization` varchar(40) NOT NULL,
@@ -147,10 +154,10 @@ CREATE TABLE `Qualification` (
 --
 
 --
--- Indexes for table `Login_info`
+-- Indexes for table `login_info`
 --
-ALTER TABLE `Login_info`
-  ADD PRIMARY KEY (`Email`);
+ALTER TABLE `login_info`
+  ADD PRIMARY KEY (`id`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
