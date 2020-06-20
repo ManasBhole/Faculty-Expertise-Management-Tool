@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Jun 18, 2020 at 01:37 PM
+-- Generation Time: Jun 20, 2020 at 10:10 AM
 -- Server version: 5.7.28
 -- PHP Version: 7.3.11
 
@@ -116,10 +116,10 @@ CREATE TABLE `Faculty_promotion` (
 --
 
 CREATE TABLE `Login_info` (
-  `Faculty_name` varchar(40) NOT NULL,
-  `User_name` varchar(40) NOT NULL,
-  `Password` varchar(40) NOT NULL,
-  `Faculty_hod` varchar(40) NOT NULL
+  `Fname` varchar(40) NOT NULL,
+  `ID` varchar(40) NOT NULL,
+  `Email` varchar(40) NOT NULL,
+  `Password` varchar(40) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -150,7 +150,7 @@ CREATE TABLE `Qualification` (
 -- Indexes for table `Login_info`
 --
 ALTER TABLE `Login_info`
-  ADD PRIMARY KEY (`User_name`);
+  ADD PRIMARY KEY (`Email`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
