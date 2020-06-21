@@ -1,5 +1,5 @@
 body{
-    background-image: url(../img/university_image.jpg);
+    background-image: url(images/university_image.jpg);
     background-attachment: fixed;
     background-size:100% 100%;
     background-repeat: no-repeat;  
@@ -8,12 +8,15 @@ body{
     display: flex;
     justify-content: center;
     align-items:center ;
-    min-height:135vh;
+    min-height:110vh;
     max-width: 50vw;
     font-family: sans-serif;
    
     
 } 
+header{
+    margin-top: 150px;
+}
 .container
 {
     display: flex;
@@ -23,6 +26,7 @@ body{
 .container .box{
     position: relative;
     width: 320px;
+    height: 120px;
     padding: 20px;
     background:whitesmoke;
     box-shadow: 0 15px 25px rgba(0,0,0,.6);

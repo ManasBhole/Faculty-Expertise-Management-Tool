@@ -13,8 +13,9 @@
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
     <title>Detail</title>
 </head>
-<header>
+
 <body>
+<header>
 <div class="container">
     <div class="box">
         <div class="content">
@@ -36,6 +37,14 @@
         <div class="content">
             <h3>Qualification till-date</h3>
             <a href="option3.php">Read More</a>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <div class="box">
+        <div class="content">
+            <h3>Report</h3>
+            <a href="option6.php">Read More</a>
         </div>
     </div>
 </div>
@@ -66,5 +75,6 @@
     </div>
 </div>
 </section>
+
 </body>
 </html>
