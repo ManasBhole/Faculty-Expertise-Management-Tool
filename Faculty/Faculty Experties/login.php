@@ -28,7 +28,7 @@ include "config1.php";
 
       if($count > 0){
           $_SESSION['uname'] = $uname;
-          header('Location:../detail.php');
+          header('Location:../detail1.php');
       }else{
           echo "Invalid username and password";
       }
