@@ -1,10 +1,10 @@
 <?php
     @session_start();
     include('connect.php');
-
+    
     //if user is already logged in 
     if (isset($_SESSION['username'])){
-        echo '<script language="javascript">alert(User is already logged in please logout first )</script>'; 
+        // echo '<script language="javascript">alert(User is already logged in please logout first )</script>'; 
         header('refresh:5','location:detail.php');
     }
     
@@ -13,8 +13,21 @@
     $userid=$_POST['userid'];
     $password = $_POST['password'];
     
-    
-    //
+    $user_check_query="SELECT * FROM login_info where userid='$userid' ";
+    $user_check_res=mysqli_query($conn,$user_check_query);
+    if(mysqli_num_rows($user_check_res)>0)
+    {
+        
+    ?>
+    <script type="text/javascript">
+        alert('User already exists with the given EmailId \n Please Try Again');
+        location.replace('newlogin.php');
+    </script>
+    <?php  
+    }
+
+
+    else{
     $query1="INSERT INTO `login_info`(`username`, `userid`, `password`) VALUES ('$user','$userid','$password');";
 
     $res1 = mysqli_query($conn, $query1);
@@ -41,6 +54,5 @@
     // $_SESSION['phone_no'] =$phone;
     //redirect to explore page
     //header('Location: explore.php');
-}
-    
+}}
 ?>
