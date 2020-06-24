@@ -1,6 +1,4 @@
-<!--verify login 
- decide if the credentials entered are correct -->
- <?php
+<?php
     @session_start();
     include('connect.php');
 
@@ -35,7 +33,7 @@
         $_SESSION['userid'] = $row['userid'];
        
         
-        header('Location: newlogin.php');
+        header('Location:newlogin.php');
     }
     // $_SESSION['username']=$user;
     // $_SESSION['password']=$password;
