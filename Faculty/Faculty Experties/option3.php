@@ -1,5 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
+<?php
+@session_start();
+include('connect.php');
+
+?>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -17,46 +22,46 @@
     <img src="../img/rait logo.jpeg" class="navbar-brand ml-auto " alt="#" width=160px>
     </nav>
 
-<form action="/action_page.php">
+<form action="option11.php" method="POST">
     <div class="form-group">
     <label for="Name">Name:</label>
-    <div class="col-5"><input type="name" class="form-control border border-secondary" placeholder="Enter name" id="name"></div>
+    <div class="col-5"><input type="name" class="form-control border border-secondary" name="name1" placeholder="Enter name" id="name" required></div>
     </div>
     <div class="form-group">
     <label for="Admitted for Programme">Admitted for Programme:</label>
-    <div class="col-5"><input type="name" class="form-control border border-secondary" placeholder="Enter programme name" id="program_name"></div>
+    <div class="col-5"><input type="name" class="form-control border border-secondary" placeholder="Enter programme name" name="program_name" id="program_name"></div>
     </div>
     <div class="form-group">
     <label for="Specialization/Department:">Specialization/Department:</label>
-    <div class="col-5"><input type="name" class="form-control border border-secondary" placeholder="Enter Specialization/Department" id="spec"></div>
+    <div class="col-5"><input type="name" class="form-control border border-secondary" placeholder="Enter Specialization/Department" name="spec" id="spec"></div>
     </div>
     <div class="form-group">
     <label for="Year of Admission:">Year of Admission:</label>
-    <div class="col-5"><input type="name" class="form-control border border-secondary" placeholder="Enter Year" id="addYear"></div>
+    <div class="col-5"><input type="name" class="form-control border border-secondary" placeholder="Enter Year" name="addYear" id="addYear"></div>
     </div>
     <div class="form-group">
     <label for="University:">University:</label>
-    <div class="col-5"><input type="name" class="form-control border border-secondary" placeholder="Enter University Name" id="University"></div>
+    <div class="col-5"><input type="name" class="form-control border border-secondary" placeholder="Enter University Name" name="University" id="University"></div>
     </div>
     <div class="form-group">
     <label for="Registration Number:">Registration Number:</label>
-    <div class="col-5"><input type="name" class="form-control border border-secondary" placeholder="Enter Number" id="Registration Number"></div>
+    <div class="col-5"><input type="name" class="form-control border border-secondary" placeholder="Enter Number" name="Registration_no" id="Registration Number"></div>
     </div>
     <div class="form-group">
     <label for="Name of College:">Name of College:</label>
-    <div class="col-5"><input type="name" class="form-control border border-secondary" placeholder="Enter College Name" id="Name of College"></div>
+    <div class="col-5"><input type="name" class="form-control border border-secondary" placeholder="Enter College Name" name="college_name" id="Name of College"></div>
     </div>
     <div class="form-group">
     <label for="Status:">Status:</label>
-    <div class="col-5"><input type="name" class="form-control border border-secondary" placeholder="Enter the Status" id="Status"></div>
+    <div class="col-5"><input type="name" class="form-control border border-secondary" placeholder="Enter the Status" name="status" id="Status"></div>
     </div>
     <div class="form-group">
     <label for="Topic Name:">Research Topic Name /Course Topic Name:</label>
-    <div class="col-5"><input type="name" class="form-control border border-secondary" placeholder="Enter the Topic" id="Topic Name"></div>
+    <div class="col-5"><input type="name" class="form-control border border-secondary" placeholder="Enter the Topic" name="topic_name" id="Topic Name"></div>
     </div>
     <div class="form-group">
     <label for="Guide Name:">Guide Name:</label>
-    <div class="col-5"><input type="name" class="form-control border border-secondary" placeholder="Enter the Name" id="Guide Name"></div>
+    <div class="col-5"><input type="name" class="form-control border border-secondary" placeholder="Enter the Name" name="guide_name" id="Guide Name"></div>
     </div>
 
     <label style="margin-left:10px" for="pdf Upload" >pdf Upload:</label>
@@ -68,7 +73,7 @@
     </div>
     
     <div class="btn">
-    <button type="submit" class="btn btn-primary ">Submit</button>
+    <button type="submit" name="submit3" class="btn btn-primary ">Submit</button>
     </div>
     
   

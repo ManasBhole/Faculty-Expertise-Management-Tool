@@ -1,5 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
+<?php
+@session_start();
+include('connect.php');
+
+?>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -15,19 +20,19 @@
     </nav>
 
 
-<form action="/action_page.php">
+<form action="option11.php" method="POST">
     <div class="form-group">
     <label for="Name">Name:</label>
-    <div class="col-5"><input type="name" class="form-control border border-secondary" placeholder="Enter name" id="name"></div>
+    <div class="col-5"><input type="name" class="form-control border border-secondary" placeholder="Enter name" name= "name2" id="name" required></div>
     </div>
     <div class="form-group">
     <label for="Award">Name of Award:</label>
-    <div class="col-5"><input type="name" class="form-control border border-secondary" placeholder="Enter Award name" id="Award"></div>
+    <div class="col-5"><input type="name" class="form-control border border-secondary" placeholder="Enter Award name" name="Award" id="Award"></div>
     </div>
     <div class="form-group">
       <label for="position">Select Position:</label>
       <div class="col-5">
-     <select class="form-control  border border-secondary" id="position">
+     <select class="form-control  border border-secondary" name="position" id="position">
         <option>1st</option>
         <option>2nd</option>
         <option>3rd</option>
@@ -37,20 +42,20 @@
     </div>
     <div class="form-group">
     <label for="Award">Name of the event:</label>
-    <div class="col-5"><input type="name" class="form-control border border-secondary" placeholder="Enter Event name" id="Eventname"></div>
+    <div class="col-5"><input type="name" name="Eventname" class="form-control border border-secondary" placeholder="Enter Event name" id="Eventname"></div>
     </div>
     <div class="form-group">
     <label for="Award">University:</label>
-    <div class="col-5"><input type="name" class="form-control border border-secondary" placeholder="Enter University name" id="Universityname"></div>
+    <div class="col-5"><input type="name" class="form-control border border-secondary" placeholder="Enter University name" name="Universityname" id="Universityname"></div>
     </div>
     <div class="form-group">
     <label for="Award">Name of the college</label>
-    <div class="col-5"><input type="name" class="form-control border border-secondary" placeholder="Enter College name" id="collegename"></div>
+    <div class="col-5"><input type="name" class="form-control border border-secondary" placeholder="Enter College name" name="collegename" id="collegename"></div>
     </div>
     <div class="form-group">
   <label for="sel1">Select level:</label>
   <div class="col-4">
-  <select class="form-control border border-secondary" id="lvl">
+  <select class="form-control border border-secondary" name="lvl1" id="lvl">
     <option>Local level</option>
     <option>State level</option>
     <option>National level</option>
@@ -67,7 +72,7 @@
     </div>
 
     <div class="btn">
-    <button type="submit" class="btn btn-primary ">Submit</button>
+    <button type="submit" name="submit4" class="btn btn-primary ">Submit</button>
     </div>
 
 </form>

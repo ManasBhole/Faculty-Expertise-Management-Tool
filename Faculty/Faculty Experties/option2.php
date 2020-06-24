@@ -1,5 +1,11 @@
+
 <!DOCTYPE html>
 <html lang="en">
+<?php
+@session_start();
+include('connect.php');
+
+?>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,38 +20,38 @@
     <div class="navbar_title">Competitive Exams</div>
 <img src="../img/rait logo.jpeg" class="navbar-brand ml-auto " alt="#" width=160px>
 </nav>
-<form action="/action_page.php">
+<form action="option11.php" method='POST'>
   <div class="form-group">
     <label for="Name">Name:</label>
-    <div class="col-5"><input type="name" class="form-control border border-secondary" placeholder="Enter name" id="name"></div>
+    <div class="col-5"><input type="name" class="form-control border border-secondary" name="nam" placeholder="Enter name" id="name" required></div>
    </div>
    <div class="form-group">
     <label for="PET">PET Appeared</label>
-    <div class="col-5"><input type="name" class="form-control border border-secondary"  id="PET"></div>
+    <div class="col-5"><input type="name" class="form-control border border-secondary" name="pet" id="PET"></div>
    </div>
     <div class="col-5">
     <label for="Date of PET Exam" >Date of PET Exam</label>
      <div class="col-6">
-    <input class="form-control border border-secondary" type="date" value="2011-08-19" id="PET-date-input">
+    <input class="form-control border border-secondary" type="date" name="pet_date" id="PET-date-input">
     </div>
     </div>
     <div class="form-group">
     <label for="PET Score">PET score:</label>
-    <div class="col-5"><input type="name" class="form-control border border-secondary" placeholder="Enter score" id="PET_score"></div>
+    <div class="col-5"><input type="name" class="form-control border border-secondary" placeholder="Enter score" name="pet_score" id="PET_score"></div>
     </div>
     <div class="form-group">
     <label for="Gate Appeared">Gate Appeared:</label>
-    <div class="col-5"><input type="name" class="form-control border border-secondary"  id="Gate Appeared"></div>
+    <div class="col-5"><input type="name" class="form-control border border-secondary" name="gate_appeared" id="Gate Appeared"></div>
     </div>
     <div class="col-5">
     <label for="GATE-date-input" >Date of GATE</label>
      <div class="col-6">
-    <input class="form-control border border-secondary" type="date" value="2011-08-19" id="GATE-date-input">
+    <input class="form-control border border-secondary" type="date" name="gate_date" id="GATE-date-input">
     </div>
     </div>
     <div class="form-group">
     <label for="GET_score">GATE score</label>
-    <div class="col-5"><input type="name" class="form-control border border-secondary"  id="GATE_score"></div>
+    <div class="col-5"><input type="name" class="form-control border border-secondary" name="gate_score" id="GATE_score"></div>
     </div>
     </div>
 
@@ -58,7 +64,7 @@
     </div>
     
     <div class="btn">
-    <button type="submit" class="btn btn-primary ">Submit</button>
+    <button type="submit" name="submit2" class="btn btn-primary ">Submit</button>
     </div>
     
     

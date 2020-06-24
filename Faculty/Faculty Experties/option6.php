@@ -1,5 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
+<?php
+@session_start();
+include('connect.php');
+
+?>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,39 +19,39 @@
 <img src="../img/rait logo.jpeg" class="navbar-brand ml-auto " alt="#" width=160px>
 </nav>
 
-<form action="/action_page.php">
+<form action="option11.php" method="POST">
     <div class="form-group">
         <label for="Name">Name:</label>
-        <div class="col-5"><input type="name" class="form-control border border-secondary" placeholder="Enter name" id="name"></div>
+        <div class="col-5"><input type="name" class="form-control border border-secondary" placeholder="Enter name" name="name4" id="name"></div>
     </div>
     <div class="form-group">
         <label for="Reason">Reason For Long Live:</label>
-        <div class="col-5"><input type="name" class="form-control border border-secondary" placeholder="Enter Reason" id="Reason"></div>
+        <div class="col-5"><input type="name" class="form-control border border-secondary" placeholder="Enter Reason" name="reason" id="Reason"></div>
     </div>
     <div class="col-5">
       <label for="From_Date" >From Date </label>
       <div class="col-6">
-        <input class="form-control border border-secondary" type="date" value="2011-08-19" id="From_Date">
+        <input class="form-control border border-secondary" type="date" name="from_date" id="From_Date">
       </div>
     </div>
     <div class="col-5">
       <label for="To_Date" >To Date </label>
       <div class="col-6">
-        <input class="form-control border border-secondary" type="date" value="2011-08-19" id="To_Date">
+        <input class="form-control border border-secondary" type="date" name="to_date" id="To_Date">
       </div>
     </div>
     <div class="col-5">
       <label for="Longlive" >Date of joining after Long Live </label>
       <div class="col-6">
-        <input class="form-control border border-secondary" type="date" value="2011-08-19" id="Longlive">
+        <input class="form-control border border-secondary" type="date" name="longlive" id="Longlive">
       </div>
     </div>
     <div class="btn">
-        <button type="submit" class="btn btn-primary ">Submit</button>
-    </div
+        <button type="submit" name="submit6" class="btn btn-primary ">Submit</button>
+    </div>
 
 
-</from>
+</form>
     
 </body>
 

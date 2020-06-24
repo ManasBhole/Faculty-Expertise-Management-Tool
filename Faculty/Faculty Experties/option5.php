@@ -1,5 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
+<?php
+@session_start();
+include('connect.php');
+?>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,64 +15,62 @@
 <body>
 <nav class="navbar navbar-expand-sm bg-dark ">
     <div class="navbar_title">Faculty Promotion</div>
-<img src="../img/rait logo.jpeg" class="navbar-brand ml-auto " alt="#" width=160px>
+<img src="images/rait_logo.jpeg" class="navbar-brand ml-auto " alt="#" width=160px>
 </nav>
 
-<form action="/action_page.php">
+<form action="option11.php" method="POST">
     <div class="form-group">
         <label for="Name">Name:</label>
-        <div class="col-5"><input type="name" class="form-control border border-secondary" placeholder="Enter name" id="name"></div>
+        <div class="col-5"><input type="name" class="form-control border border-secondary" placeholder="Enter name" name="name3" id="name"></div>
     </div>
     <div class="col-5">
       <label for="join-date-input" >Date of joining </label>
       <div class="col-6">
-        <input class="form-control border border-secondary" type="date" value="2011-08-19" id="join-date-input">
+        <input class="form-control border border-secondary" type="date" name="joindate" id="join-date-input">
       </div>
     </div>
-    <div class="form-group">
-        <label for="SDRN">SDRN Number:</label>
-        <div class="col-5"><input type="name" class="form-control border border-secondary" placeholder="Enter number" id="SDRN"></div>
+    <div class="form-group row">
+        <label class="col-sm-2 col-form-label" for="SDRN">SDRN Number:</label>
+        <div class="col-2"><input type="name" class="form-control border border-secondary" placeholder="Enter number" name="sdrn" id="SDRN"></div>
     </div>
     <div class="form-group">
-    <label for="RAIT Experinece">RAIT Experinece</label>
-    <div class="col-5">
-        <textarea class="form-control border border-secondary" id="RAIT Experinece" rows="3"></textarea>
-    </div>
+    <label for="RAIT Experience">RAIT Experience</label>
+    <div class="col-5"><input type="name" class="form-control border border-secondary" name="RAIT_experience" id="RAIT Experience"></div>
     </div>
     <div class="form-group">
-    <label for="Other Teaching Experinece">Other Teaching Experinece</label>
-    <div class="col-5">
-        <textarea class="form-control border border-secondary" id="Other Teaching Experinece" rows="3"></textarea>
-    </div>
+    <label for="Other Teaching Experience">Other Teaching Experience</label>
+    <div class="col-5"><input type="name" class="form-control border border-secondary" name="Other_teaching_experience" id="Other Teaching Experience"></div>
     </div>
     <div class="form-group">
-    <label for="exampleFormControlTextarea1"> Total Experinece</label>
-    <div class="col-5">
-        <textarea class="form-control border border-secondary" id="Total Experinece" rows="3"></textarea>
-    </div>
+    <label for ="Industry Experience">Industry Experience</label>
+    <div class="col-5"><input type="name" class="form-control border border-secondary" name="Industry_experience" id="Industry Experience"></div>
+    </div>  
+    <div class="form-group">
+    <label for="exampleFormControlTextarea1"> Total Experience</label>
+    <div class="col-5"><input class="form-control border border-secondary" name="Total_experience" id="Total Experience"></div>
     </div>
     <div class="form-group">
         <label for="Designation">Designation of Faculty as on date of joining:</label>
-        <div class="col-5"><input type="name" class="form-control border border-secondary"  id="Designation"></div>
+        <div class="col-5"><input type="name" class="form-control border border-secondary" name="Designation" id="Designation"></div>
     </div>
     <div class="form-group">
         <label for="Promoted Designation first">1st Promoted Designation:</label>
-        <div class="col-5"><input type="name" class="form-control border border-secondary"  id=" Promoted Designation first"></div>
+        <div class="col-5"><input type="name" class="form-control border border-secondary" name="Promoted_designation_1" id=" Promoted Designation first"></div>
     </div>
     <div class="col-5">
       <label for="Promotionfirst" >Date of 1st Promotion </label>
       <div class="col-6">
-        <input class="form-control border border-secondary" type="date" value="2011-08-19" id="Promotionfirst">
+        <input class="form-control border border-secondary" type="date" name="Promotion_first_date" id="Promotionfirst">
       </div>
     </div>
     <div class="form-group">
         <label for="Promoted Designation second">2nd Promoted Designation:</label>
-        <div class="col-5"><input type="name" class="form-control border border-secondary"  id=" Promoted Designation second"></div>
+        <div class="col-5"><input type="name" class="form-control border border-secondary" name="Promoted_designation_2" id=" Promoted Designation second"></div>
     </div>
     <div class="col-5">
       <label for="Promotionsecond" >Date of2nd Promotion </label>
       <div class="col-6">
-        <input class="form-control border border-secondary" type="date" value="2011-08-19" id="Promotionsecond">
+        <input class="form-control border border-secondary" type="date" name="Promotion_second_date" id="Promotionsecond">
       </div>
     </div>
     <label style="margin-left:10px" for="pdf Upload" >pdf Upload:</label>
@@ -80,7 +82,7 @@
     </div>
 
   <div class="btn">
-  <button type="submit" class="btn btn-primary ">Submit</button>
+  <button type="submit" name="submit5" class="btn btn-primary ">Submit</button>
     </div>
 
 
