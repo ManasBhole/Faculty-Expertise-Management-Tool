@@ -34,7 +34,7 @@ $Registration_no=$_POST['Registration_no'];
 $college_name=$_POST['college_name'];
 $status=$_POST['status'];
 $topic_name=$_POST['topic_name'];
-$guide_name=$_POST['guide_no'];
+$guide_name=$_POST['guide_name'];
 }
 
 if(isset($_POST['submit4'])){
