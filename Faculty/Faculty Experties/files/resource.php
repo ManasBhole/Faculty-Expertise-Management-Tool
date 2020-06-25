@@ -25,31 +25,31 @@
     <tbody>
       <tr>
         <td>FACULTY NAME</td>
-        <td></<?php echo($rows['Faculty_name'])?></td>
+        <td><?php echo(($rows==NULL)?$rows['Faculty_name']:"N/A");?></td>
       </tr>
       <tr>
         <td>RESOURCE PERSON</td>
-        <td><?php echo($rows['Resource_person'])?></td>
+        <td><?php echo(($rows==NULL)?$rows['Resource_person']:"N/A");?></td>
       </tr>
       <tr>
         <td>TOPIC NAME</td>
-        <td><?php echo($rows['Topic_name'])?></td>
+        <td><?php echo(($rows==NULL)?$rows['Topic_name']:"N/A");?></td>
       </tr>
       <tr>
         <td>EVENT NAME</td>
-        <td><?php echo($rows['Event_name'])?></td>
+        <td><?php echo(($rows==NULL)?$rows['Event_name']:"N/A");?></td>
       </tr>
       <tr>
         <td>LEVEL</td>
-        <td><?php echo($rows['Level'])?></td>
+        <td><?php echo(($rows==NULL)?$rows['Level']:"N/A");?></td>
       </tr>
       <tr>
         <td>VENUE</td>
-        <td><?php echo($rows['Venue'])?></td>
+        <td><?php echo(($rows==NULL)?$rows['Venue']:"N/A");?></td>
       </tr>
       <tr>
         <td>DATE</td>
-        <td><?php echo($rows['Date'])?></td>
+        <td><?php echo(($rows==NULL)?$rows['Date']:"N/A");?></td>
       </tr>
     
     </tbody>
