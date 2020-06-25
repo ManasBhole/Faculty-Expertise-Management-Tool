@@ -41,7 +41,7 @@
 
  <?php
 
- include 'connect.php'; 
+ include 'conn.php'; 
  $q = "select * from login_info ";
 
  $query = mysqli_query($con,$q);
