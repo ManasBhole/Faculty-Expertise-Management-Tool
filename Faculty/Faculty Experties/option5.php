@@ -21,7 +21,7 @@ include('connect.php');
 <form action="option11.php" method="POST">
     <div class="form-group">
         <label for="Name">Name:</label>
-        <div class="col-5"><input type="name" class="form-control border border-secondary" placeholder="Enter name" name="name3" id="name"></div>
+        <div class="col-5"><input type="name" value="<?php echo $_SESSION['username'];?>" class="form-control border border-secondary" name="name3" id="name" disabled></div>
     </div>
     <div class="col-5">
       <label for="join-date-input" >Date of joining </label>
@@ -29,7 +29,7 @@ include('connect.php');
         <input class="form-control border border-secondary" type="date" name="joindate" id="join-date-input">
       </div>
     </div>
-    <div class="form-group row">
+    <div class="form-group">
         <label class="col-sm-2 col-form-label" for="SDRN">SDRN Number:</label>
         <div class="col-2"><input type="name" class="form-control border border-secondary" placeholder="Enter number" name="sdrn" id="SDRN"></div>
     </div>

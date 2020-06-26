@@ -4,7 +4,7 @@ include('connect.php');
  
 
 if(isset($_POST['submit1'])){
-$name=$_POST['name'];
+$name=$_SESSION['username'];
 $sel1=$_POST['sel1'];
 $tpc=$_POST['tpc'];
 $event=$_POST['event'];
@@ -15,7 +15,7 @@ $date=$_POST['date'];
 }
 
 if(isset($_POST['submit2'])){
-$name1=$_POST['nam'];
+$name1=$_SESSION['username'];
 $pet=$_POST['pet'];
 $pet_date=$_POST['pet_date'];
 $pet_score=$_POST['pet_score'];
@@ -25,7 +25,7 @@ $gate_score=$_POST['gate_score'];
 }
 
 if(isset($_POST['submit3'])){
-$name2=$_POST['name1'];
+$name2=$_SESSION['username'];
 $program_name=$_POST['program_name'];
 $spec=$_POST['spec'];
 $addYear=$_POST['addYear'];
@@ -38,7 +38,7 @@ $guide_name=$_POST['guide_name'];
 }
 
 if(isset($_POST['submit4'])){
-$name3=$_POST['name2'];
+$name3=$_SESSION['username'];
 $award=$_POST['Award'];
 $position=$_POST['position'];
 $eventname=$_POST['Eventname'];
@@ -49,7 +49,7 @@ $lvl1=$_POST['lvl1'];
 
 
 if(isset($_POST['submit5'])){
-$name4=$_POST['name3'];
+$name4=$_SESSION['username'];
 $join_date=$_POST['joindate'];
 $sdrn=$_POST['sdrn'];
 $rait_experience=$_POST['RAIT_experience'];
@@ -64,7 +64,7 @@ $promotion_second_date=$_POST['Promotion_second_date'];
 }
 
 if(isset($_POST['submit6'])){
-    $name5=$_POST['name4'];
+    $name5=$_SESSION['username'];
     $reason=$_POST['reason'];
     $from_date=$_POST['from_date'];
     $to_date=$_POST['to_date'];

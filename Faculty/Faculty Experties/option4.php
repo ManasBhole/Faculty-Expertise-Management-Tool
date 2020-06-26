@@ -23,7 +23,7 @@ include('connect.php');
 <form action="option11.php" method="POST">
     <div class="form-group">
     <label for="Name">Name:</label>
-    <div class="col-5"><input type="name" class="form-control border border-secondary" placeholder="Enter name" name= "name2" id="name" required></div>
+    <div class="col-5"><input type="name" value="<?php echo $_SESSION['username'];?>" class="form-control border border-secondary" name= "name2" id="name" disabled></div>
     </div>
     <div class="form-group">
     <label for="Award">Name of Award:</label>
