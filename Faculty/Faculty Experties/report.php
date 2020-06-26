@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Report</title>
+    <link rel="stylesheet" href="reportstyle.css">
 </head>
 <body>
     
@@ -23,6 +24,22 @@
 
         $name=mysqli_real_escape_string($conn,$_GET['id']);
 
+        function fetch($result,$value){
+
+            // echo("<td>");
+            while ($rows=mysqli_fetch_assoc($result)){
+
+                    if($rows==NULL){
+                        echo("<td>N/A</td>");
+                        // echo("N/A");
+                        break;
+                    }
+                    echo("<td>".$rows[$value]."</td>");
+                    // echo($rows[$value]."<br>");
+            }
+            mysqli_data_seek($result,0);
+            // echo("</td>");
+        }
     ?>
 
     <div class="conatiner" style="border: 3px solid black;">

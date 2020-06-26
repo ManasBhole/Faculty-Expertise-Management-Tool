@@ -1,0 +1,25 @@
+@import url('https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css');
+table,
+thead,
+tr,
+tbody,
+th,
+td {
+  text-align: center;
+}
+.table{
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+.table td {
+  text-align: center;
+}
+h2{
+    font-family: sans-serif;
+    text-align: center;
+    font-size: 20px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+
+}

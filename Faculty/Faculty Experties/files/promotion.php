@@ -7,6 +7,7 @@
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+     <link rel="stylesheet" type="text/css" href="files/reportstyle.css">
     <title>Awardreport</title>
 </head>
 <body>
@@ -15,61 +16,60 @@
                 SELECT * FROM `faculty_promotion` WHERE `Faculty_name`='$name';
             ";
             $result=$conn->query($sql);
-            $rows=mysqli_fetch_assoc($result);
         ?>
         <div class="container">
   <h2>FACULTY PROMOTION</h2>
               
-  <table class="table table-hover">
+  <table class="table table-hover  table-sm">
 
     <tbody>
       <tr>
-        <td>FACULTY NAME</td>
-        <td></<?php echo($rows['Faculty_name'])?></td>
+        <td class="table-active">FACULTY NAME</td>
+        <?php fetch($result,'Faculty_name')?>
       </tr>
       <tr>
-        <td>DATE OF JOINING</td>
-        <td><?php echo($rows['Date_of_joining'])?></td>
+        <td class="table-active">DATE OF JOINING</td>
+        <?php fetch($result,'Date_of_joining')?>
       </tr>
       <tr>
-        <td>SDRN NUMBER</td>
-        <td><?php echo($rows['SDNR_number'])?></td>
+        <td class="table-active">SDRN NUMBER</td>
+        <?php fetch($result,'SDNR_number')?>
       </tr>
       <tr>
-        <td>RAIT EXPERIENCE</td>
-        <td><?php echo($rows['RAIT_experience'])?></td>
+        <td class="table-active">RAIT EXPERIENCE</td>
+        <?php fetch($result,'RAIT_experience')?>
       </tr>
       <tr>
-        <td>OTHER EXPERIENCE</td>
-        <td><?php echo($rows['Other_experience'])?></td>
+        <td class="table-active">OTHER EXPERIENCE</td>
+        <?php fetch($result,'Other_experience')?>
       </tr>
       <tr>
-        <td>INDUSTRY EXPERIENCE</td>
-        <td><?php echo($rows['Industry_experience'])?></td>
+        <td class="table-active">INDUSTRY EXPERIENCE</td>
+        <?php fetch($result,'Industry_experience')?>
       </tr>
       <tr>
-        <td>TOTAL EXPERIENCE</td>
-        <td><?php echo($rows['Total_experience'])?></td>
+        <td class="table-active">TOTAL EXPERIENCE</td>
+        <?php fetch($result,'Total_experience')?>
       </tr>
       <tr>
-        <td>STARTING DESIGNATION</td>
-        <td><?php echo($rows['Starting_designation'])?></td>
+        <td class="table-active">STARTING DESIGNATION</td>
+        <?php fetch($result,'Starting_designation')?>
       </tr>
       <tr>
-        <td>PROMOTION 1</td>
-        <td><?php echo($rows['Promotion_1'])?></td>
+        <td class="table-active">PROMOTION 1</td>
+        <?php fetch($result,'Promotion_1')?>
       </tr>
       <tr>
-        <td>DATE PROMOTION 1</td>
-        <td><?php echo($rows['Date_promotion_1'])?></td>
+        <td class="table-active">DATE PROMOTION 1</td>
+        <?php fetch($result,'Date_promotion_1')?>
       </tr>
       <tr>
-        <td>PROMOTION 2</td>
-        <td><?php echo($rows['Promotion_2'])?></td>
+        <td class="table-active">PROMOTION 2</td>
+        <?php fetch($result,'Promotion_2')?>
       </tr>
       <tr>
-        <td>DATE PROMOTION 2</td>
-        <td><?php echo($rows['Date_promotion_2'])?></td>
+        <td class="table-active">DATE PROMOTION 2</td>
+        <?php fetch($result,'Date_promotion_2')?>
       </tr>
     
     </tbody>

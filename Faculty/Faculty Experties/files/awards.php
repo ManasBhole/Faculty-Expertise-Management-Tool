@@ -7,6 +7,7 @@
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+     <link rel="stylesheet" type="text/css" href="files/reportstyle.css">
     <title>Awardreport</title>
 </head>
 <body>
@@ -15,41 +16,40 @@
                 SELECT * FROM `awards` WHERE `Faculty_name`='$name';
             ";
             $result=$conn->query($sql);
-            $rows=mysqli_fetch_assoc($result);
         ?>
         <div class="container">
   <h2>Awards</h2>
               
-  <table class="table table-hover">
+  <table class="table table-hover  table-sm">
 
     <tbody>
       <tr>
-        <td>FACULTY NAME</td>
-        <td></<?php echo($rows['Faculty_name'])?></td>
+        <td class="table-active">FACULTY NAME</td>
+        <?php fetch($result,'Faculty_name')?>
       </tr>
       <tr>
-        <td>AWARD NAME</td>
-        <td><?php echo($rows['Award_name'])?></td>
+        <td class="table-active">AWARD NAME</td>
+        <?php fetch($result,'Award_name')?>
       </tr>
       <tr>
-        <td>POSITION</td>
-        <td><?php echo($rows['Position'])?></td>
+        <td class="table-active">POSITION</td>
+        <?php fetch($result,'Position')?>
       </tr>
       <tr>
-        <td>EVENT NAME</td>
-        <td><?php echo($rows['Event_name'])?></td>
+        <td class="table-active">EVENT NAME</td>
+        <?php fetch($result,'Event_name')?>
       </tr>
       <tr>
-        <td>UNIVERSITY</td>
-        <td><?php echo($rows['University'])?></td>
+        <td class="table-active">UNIVERSITY</td>
+        <?php fetch($result,'University')?>
       </tr>
       <tr>
-        <td>COLLEGE NAME</td>
-        <td><?php echo($rows['College_name'])?></td>
+        <td class="table-active">COLLEGE NAME</td>
+        <?php fetch($result,'College_name')?>
       </tr>
       <tr>
-        <td>LEVEL</td>
-        <td><?php echo($rows['Level'])?></td>
+        <td class="table-active">LEVEL</td>
+        <?php fetch($result,'Level')?>
       </tr>
     
     </tbody>

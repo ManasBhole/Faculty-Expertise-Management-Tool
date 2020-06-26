@@ -7,6 +7,7 @@
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+     <link rel="stylesheet" type="text/css" href="files/reportstyle.css">
     <title>Awardreport</title>
 </head>
 <body>
@@ -15,33 +16,32 @@
                 SELECT * FROM `faculty_long_live` WHERE `Faculty_name`='$name';
             ";
             $result=$conn->query($sql);
-            $rows=mysqli_fetch_assoc($result);
         ?>>
         <div class="container">
   <h2>FACULTY LONG LIVE</h2>
               
-  <table class="table table-hover">
+  <table class="table table-hover table-sm">
 
     <tbody>
       <tr>
-        <td>FACULTY NAME</td>
-        <td></<?php echo($rows['Faculty_name'])?></td>
+        <td class="table-active">FACULTY NAME</td>
+        <?php fetch($result,'Faculty_name')?>
       </tr>
       <tr>
-        <td>REASON OF LONG LIVE</td>
-        <td><?php echo($rows['Reason_long_live'])?></td>
+        <td class="table-active">REASON OF LONG LIVE</td>
+        <?php fetch($result,'Reason_long_live')?>
       </tr>
       <tr>
-        <td>FROM DATE</td>
-        <td><?php echo($rows['From_date'])?></td>
+        <td class="table-active">FROM DATE</td>
+        <?php fetch($result,'From_date')?>
       </tr>
       <tr>
-        <td>TO DATE</td>
-        <td><?php echo($rows['To_date'])?></td>
+        <td class="table-active">TO DATE</td>
+        <?php fetch($result,'To_date')?>
       </tr>
       <tr>
-        <td>DATE OF JOINING AFTER LONG LIVE</td>
-        <td><?php echo($rows['Date_of_joining_after_long_live'])?></td>
+        <td class="table-active">DATE OF JOINING AFTER LONG LIVE</td>
+        <?php fetch($result,'Date_of_joining_after_long_live')?>
       </tr>
       <tr>
         

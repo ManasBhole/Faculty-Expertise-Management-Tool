@@ -7,6 +7,7 @@
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+     <link rel="stylesheet" type="text/css" href="files/reportstyle.css">
     <title>Resources</title>
 </head>
 <body>
@@ -15,53 +16,52 @@
                 SELECT * FROM `qualification` WHERE `Faculty_name`='$name';
             ";
             $result=$conn->query($sql);
-            $rows=mysqli_fetch_assoc($result);
         ?>
         <div class="container">
   <h2>QUALIFICATION</h2>
               
-  <table class="table table-hover">
+  <table class="table table-hover  table-sm">
 
     <tbody>
       <tr>
-        <td>FACULTY NAME</td>
-        <td></<?php echo($rows['Faculty_name'])?></td>
+        <td class="table-active">FACULTY NAME</td>
+        <?php fetch($result,'Faculty_name')?>
       </tr>
       <tr>
-        <td>ADMITTED FOR PROGRAM</td>
-        <td><?php echo($rows['Admitted_for_program'])?></td>
+        <td class="table-active">ADMITTED FOR PROGRAM</td>
+        <?php fetch($result,'Admitted_for_program')?>
       </tr>
       <tr>
-        <td>SPECIALIZATION</td>
-        <td><?php echo($rows['Specialization'])?></td>
+        <td class="table-active">SPECIALIZATION</td>
+        <?php fetch($result,'Specialization')?>
       </tr>
       <tr>
-        <td>YEAR OF ADMISSION</td>
-        <td><?php echo($rows['Year_of_admission'])?></td>
+        <td class="table-active">YEAR OF ADMISSION</td>
+        <?php fetch($result,'Year_of_admission')?>
       </tr>
       <tr>
-        <td>UNIVERSITY</td>
-        <td><?php echo($rows['University'])?></td>
+        <td class="table-active">UNIVERSITY</td>
+        <?php fetch($result,'University')?>
       </tr>
       <tr>
-        <td>REGISTRATION NUMBER</td>
-        <td><?php echo($rows['Registration_number'])?></td>
+        <td class="table-active">REGISTRATION NUMBER</td>
+        <?php fetch($result,'Registration_number')?>
       </tr>
       <tr>
-        <td>COLLEGE NAME</td>
-        <td><?php echo($rows['College_name'])?></td>
+        <td class="table-active">COLLEGE NAME</td>
+        <?php fetch($result,'College_name')?>
       </tr>
       <tr>
-        <td>STATUS</td>
-        <td><?php echo($rows['Status'])?></td>
+        <td class="table-active">STATUS</td>
+        <?php fetch($result,'Status')?>
       </tr>
       <tr>
-        <td>RESEARCH TOPIC</td>
-        <td><?php echo($rows['Research_topic'])?></td>
+        <td class="table-active">RESEARCH TOPIC</td>
+        <?php fetch($result,'Research_topic')?>
       </tr>
       <tr>
-        <td>GUIDE NAME</td>
-        <td><?php echo($rows['Guide_name'])?></td>
+        <td class="table-active">GUIDE NAME</td>
+        <?php fetch($result,'Guide_name')?>
       </tr>
     
     </tbody>

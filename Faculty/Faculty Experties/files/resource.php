@@ -7,6 +7,7 @@
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+     <link rel="stylesheet" type="text/css" href="files/reportstyle.css">
     <title>Resources</title>
 </head>
 <body>
@@ -15,41 +16,40 @@
                 SELECT * FROM `faculty_as_resource` WHERE `Faculty_name`='$name';
             ";
             $result=$conn->query($sql);
-            $rows=mysqli_fetch_assoc($result);
         ?>
         <div class="container">
   <h2>FACULTY AS A RESOURCE PERSON</h2>
               
-  <table class="table table-hover">
+  <table class="table table-hover table-sm">
 
     <tbody>
       <tr>
-        <td>FACULTY NAME</td>
-        <td><?php echo(($rows==NULL)?$rows['Faculty_name']:"N/A");?></td>
+        <td class="table-active">FACULTY NAME</td>
+        <?php fetch($result,'Faculty_name')?>
       </tr>
       <tr>
-        <td>RESOURCE PERSON</td>
-        <td><?php echo(($rows==NULL)?$rows['Resource_person']:"N/A");?></td>
+        <td class="table-active">RESOURCE PERSON</td>
+        <?php fetch($result,'Resource_person')?>
       </tr>
       <tr>
-        <td>TOPIC NAME</td>
-        <td><?php echo(($rows==NULL)?$rows['Topic_name']:"N/A");?></td>
+        <td class="table-active">TOPIC NAME</td>
+        <?php fetch($result,'Topic_name')?>
       </tr>
       <tr>
-        <td>EVENT NAME</td>
-        <td><?php echo(($rows==NULL)?$rows['Event_name']:"N/A");?></td>
+        <td class="table-active">EVENT NAME</td>
+        <?php fetch($result,'Event_name')?>
       </tr>
       <tr>
-        <td>LEVEL</td>
-        <td><?php echo(($rows==NULL)?$rows['Level']:"N/A");?></td>
+        <td class="table-active">LEVEL</td>
+        <?php fetch($result,'Level')?>
       </tr>
       <tr>
-        <td>VENUE</td>
-        <td><?php echo(($rows==NULL)?$rows['Venue']:"N/A");?></td>
+        <td class="table-active">VENUE</td>
+        <?php fetch($result,'Venue')?>
       </tr>
       <tr>
-        <td>DATE</td>
-        <td><?php echo(($rows==NULL)?$rows['Date']:"N/A");?></td>
+        <td class="table-active">DATE</td>
+        <?php fetch($result,'Date')?>
       </tr>
     
     </tbody>

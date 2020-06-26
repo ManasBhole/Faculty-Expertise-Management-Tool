@@ -35,6 +35,7 @@
  <th> Username </th>
  <th> Email </th>
  <th> Report </th>
+ <th>Delete</th>
 
 
  </tr >
@@ -54,7 +55,7 @@
  <td> <?php echo $res['username'];  ?> </td>
  <td> <?php echo $res['userid'];  ?> </td>
  <td> <button class="btn-danger btn"> <a href="report.php?id=<?php echo $res['username']; ?>" class="text-white"> Report </a>  </button> </td>
- 
+ <td> <button class="btn-danger btn" > <a href="delete.php?id=<?php echo $res['username']; ?>" class="text-white"> Delete </a>  </button> </td>
 
  </tr>
 

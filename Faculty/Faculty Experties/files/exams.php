@@ -7,49 +7,49 @@
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+     <link rel="stylesheet" type="text/css" href="files/reportstyle.css">
     <title>Awardreport</title>
 </head>
 <body>
-<?php
+        <?php
             $sql="
                 SELECT * FROM `competitive_exam` WHERE `Faculty_name`='$name';
             ";
             $result=$conn->query($sql);
-            $rows=mysqli_fetch_assoc($result);
         ?>
         <div class="container">
   <h2>COMPETITIVE EXAMS</h2>
               
-  <table class="table table-hover">
+  <table class="table table-hover  table-sm">
 
     <tbody>
       <tr>
-        <td>FACULTY NAME</td>
-        <td></<?php echo($rows['Faculty_name'])?></td>
+        <td class="table-active">FACULTY NAME</td>
+        <?php fetch($result,'Faculty_name')?>
       </tr>
       <tr>
-        <td>PET APPEARED</td>
-        <td><?php echo($rows['PET_appeared'])?></td>
+        <td class="table-active">PET APPEARED</td>
+        <?php fetch($result,'PET_appeared')?>
       </tr>
       <tr>
-        <td>PET DATE</td>
-        <td><?php echo($rows['PET_date'])?></td>
+        <td class="table-active">PET DATE</td>
+        <?php fetch($result,'PET_date')?>
       </tr>
       <tr>
-        <td>PET SCORE</td>
-        <td><?php echo($rows['PET_score'])?></td>
+        <td class="table-active">PET SCORE</td>
+        <?php fetch($result,'PET_score')?>
       </tr>
       <tr>
-        <td>GATE APPEARED</td>
-        <td><?php echo($rows['GATE_appeared'])?></td>
+        <td class="table-active">GATE APPEARED</td>
+        <?php fetch($result,'GATE_appeared')?>
       </tr>
       <tr>
-        <td>GATE DATE</td>
-        <td><?php echo($rows['GATE_date'])?></td>
+        <td class="table-active">GATE DATE</td>
+        <?php fetch($result,'GATE_date')?>
       </tr>
       <tr>
-        <td>GATE SCORE</td>
-        <td><?php echo($rows['GATE_score'])?></td>
+        <td class="table-active">GATE SCORE</td>
+        <?php fetch($result,'GATE_score')?>
       </tr>
     
     </tbody>
