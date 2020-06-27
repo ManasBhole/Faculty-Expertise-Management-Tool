@@ -1,6 +1,11 @@
 <?php
 @session_start();
 include('connect.php');
+
+// Defining the size of bytes
+define('KB', 1024);
+define('MB', 1048576);
+
  
 
 if(isset($_POST['submit1'])){
@@ -26,12 +31,12 @@ $allowed=array('jpg','jpeg','png','pdf');
 if(in_array($fileActualExt, $allowed))
 {
     if($fileError==0){
-        if($fileSize<4096000){
+        if($fileSize<4*MB){
 
             $fileNameNew=uniqid("",true).".".$fileActualExt;
-            $fileDestination="upload_files/".$fileNameNew;
-            move_uploaded_file($fileTmpName, $fileDestination);
-            header("Location:detail.php?uploadsuccess");
+            $fileDestination1="upload_files/resource_person/".$fileNameNew;
+            move_uploaded_file($fileTmpName, $fileDestination1);
+            
         }
         else{
             echo "<script language='javascript'>alert('The Size of the file you are trying to upload exceeded the the size limit.\nTry Again.')</script>";
@@ -72,6 +77,48 @@ $college_name=$_POST['college_name'];
 $status=$_POST['status'];
 $topic_name=$_POST['topic_name'];
 $guide_name=$_POST['guide_name'];
+
+// Uploading the file
+$file=$_FILES['file'];
+
+$fileName=$_FILES['file']['name'];
+$fileTmpName=$_FILES['file']['tmp_name'];
+$fileSize=$_FILES['file']['size'];
+$fileError=$_FILES['file']['error'];
+$fileType=$_FILES['file']['type'];
+
+$fileExt=explode(".", $fileName);
+$fileActualExt=strtolower(end($fileExt));
+$allowed=array('jpg','jpeg','png','pdf');
+if(in_array($fileActualExt, $allowed))
+{
+    if($fileError==0){
+        if($fileSize<4*MB){
+
+            $fileNameNew=uniqid("",true).".".$fileActualExt;
+            $fileDestination3="upload_files/qualification/".$fileNameNew;
+            move_uploaded_file($fileTmpName, $fileDestination3);
+            
+        }
+        else{
+            echo "<script language='javascript'>alert('The Size of the file you are trying to upload exceeded the the size limit.\nTry Again.')</script>";
+            header("Location:detail.php");
+        }
+
+    }
+    else{
+        echo "<script language='javascript'>alert('There was an error uploading your file.\nTry Again')</script>";
+    header("Location:detail.php");
+    }
+}
+else
+{
+    echo "<script language='javascript'>alert('You cannot upload files of this type!')</script>";
+    header("Location:detail.php");
+}
+
+
+
 }
 
 if(isset($_POST['submit4'])){
@@ -114,7 +161,7 @@ if(isset($_POST['submit6'])){
 
 
 if(!empty($name)){
-$query="INSERT INTO `faculty_as_resource`(`Faculty_name`,`Resource_person`,`Topic_name`,`Event_name`,`Level`,`Venue`,`Date`,`pdf`) VALUES('$name','$sel1','$tpc','$event','$lvl','$venue','$date','$fileDestination');";
+$query="INSERT INTO `faculty_as_resource`(`Faculty_name`,`Resource_person`,`Topic_name`,`Event_name`,`Level`,`Venue`,`Date`,`pdf`) VALUES('$name','$sel1','$tpc','$event','$lvl','$venue','$date','$fileDestination1');";
 
 mysqli_query($conn,$query);
 header('location:detail.php');
@@ -129,7 +176,7 @@ if(!empty($name1)){
     
 } 
 if(!empty($name2)){
-    $query2="INSERT INTO `qualification`(`Faculty_name`,`Admitted_for_program`,`Specialization`,`Year_of_admission`,`University`,`Registration_number`,`College_name`,`Status`,`Research_topic`,`Guide_name`) VALUES('$name2','$program_name','$spec','$addYear','$University','$Registration_no','$college_name','$status','$topic_name','$guide_name');";
+    $query2="INSERT INTO `qualification`(`Faculty_name`,`Admitted_for_program`,`Specialization`,`Year_of_admission`,`University`,`Registration_number`,`College_name`,`Status`,`Research_topic`,`Guide_name`,`pdf`) VALUES('$name2','$program_name','$spec','$addYear','$University','$Registration_no','$college_name','$status','$topic_name','$guide_name','$fileDestination3');";
     mysqli_query($conn,$query2);
     header('location:detail.php');
 
