@@ -11,7 +11,44 @@ $event=$_POST['event'];
 $lvl=$_POST['lvl'];
 $venue=$_POST['venue'];
 $date=$_POST['date'];
+// Uploading the file
+$file=$_FILES['file'];
 
+$fileName=$_FILES['file']['name'];
+$fileTmpName=$_FILES['file']['tmp_name'];
+$fileSize=$_FILES['file']['size'];
+$fileError=$_FILES['file']['error'];
+$fileType=$_FILES['file']['type'];
+
+$fileExt=explode(".", $fileName);
+$fileActualExt=strtolower(end($fileExt));
+$allowed=array('jpg','jpeg','png','pdf');
+if(in_array($fileActualExt, $allowed))
+{
+    if($fileError==0){
+        if($fileSize<4096000){
+
+            $fileNameNew=uniqid("",true).".".$fileActualExt;
+            $fileDestination="upload_files/".$fileNameNew;
+            move_uploaded_file($fileTmpName, $fileDestination);
+            header("Location:detail.php?uploadsuccess");
+        }
+        else{
+            echo "<script language='javascript'>alert('The Size of the file you are trying to upload exceeded the the size limit.\nTry Again.')</script>";
+            header("Location:detail.php");
+        }
+
+    }
+    else{
+        echo "<script language='javascript'>alert('There was an error uploading your file.\nTry Again')</script>";
+    header("Location:detail.php");
+    }
+}
+else
+{
+    echo "<script language='javascript'>alert('You cannot upload files of this type!')</script>";
+    header("Location:detail.php");
+}
 }
 
 if(isset($_POST['submit2'])){
@@ -77,7 +114,7 @@ if(isset($_POST['submit6'])){
 
 
 if(!empty($name)){
-$query="INSERT INTO `faculty_as_resource`(`Faculty_name`,`Resource_person`,`Topic_name`,`Event_name`,`Level`,`Venue`,`Date`) VALUES('$name','$sel1','$tpc','$event','$lvl','$venue','$date');";
+$query="INSERT INTO `faculty_as_resource`(`Faculty_name`,`Resource_person`,`Topic_name`,`Event_name`,`Level`,`Venue`,`Date`,`pdf`) VALUES('$name','$sel1','$tpc','$event','$lvl','$venue','$date','$fileDestination');";
 
 mysqli_query($conn,$query);
 header('location:detail.php');
