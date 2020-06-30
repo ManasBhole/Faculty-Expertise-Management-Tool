@@ -2,6 +2,13 @@
 <html lang="en">
 <?php
 @session_start();
+if(isset($_SESSION['o1'])){
+echo '<script language="javascript"> alert("DETAILS ALREADY EXISTS"); </script>';
+$_SESSION['o1']=NULL;
+}
+?>
+<?php
+
 include('connect.php');
 ?>
 <head>

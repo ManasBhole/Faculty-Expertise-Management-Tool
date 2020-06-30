@@ -18,7 +18,7 @@
 
 <h1>Individual Report</h1>
 
-<table  width="1000px" style="margin:auto" >
+<table  width="1400px" style="margin:auto" >
 
   
 <tr><td>&nbsp;</td><td>&nbsp;</td></tr>   
@@ -40,7 +40,7 @@ if ($_SESSION['logged_in'] = false) {
     
 } else {
     $username = $_SESSION['username'];
-    echo "Hello  ", $username;
+    echo "<p style='font-family: 'Times New Roman', Times, serif; margin:20px;' >Faculty Name: ".$username."</p>";
     
    
 }
@@ -70,7 +70,7 @@ if ($_SESSION['logged_in'] = false) {
 </table>
 </form>
 
-<table  width="1000px" style="margin:auto" >
+<table  width="1400px" style="margin:auto" >
 
   
 
@@ -108,7 +108,7 @@ if ($_SESSION['logged_in'] = false) {
 
 
 
- <table  width="1000px" style="margin:auto" >
+ <table  width="1400px" style="margin:auto" >
 
   
 
@@ -145,7 +145,7 @@ if ($_SESSION['logged_in'] = false) {
 </table>
 </form>
 
-<table  width="1000px" style="margin:auto" >
+<table  width="1400px" style="margin:auto" >
 
   
 
@@ -181,7 +181,7 @@ if ($_SESSION['logged_in'] = false) {
 			<?php } ?>
 			
 </table>
-<table  width="1000px" style="margin:auto" >
+<table  width="1400px" style="margin:auto" >
 
   
 
@@ -218,7 +218,7 @@ if ($_SESSION['logged_in'] = false) {
 </table>
 </form>
 
-<table  width="1000px" style="margin:auto" >
+<table  width="1400px" style="margin:auto" >
 
   
 

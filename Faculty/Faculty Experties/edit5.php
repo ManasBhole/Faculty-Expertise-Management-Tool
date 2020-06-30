@@ -33,30 +33,84 @@ echo '<p style="color:#FF0000;">'.$status.'</p>';
 }
 else {
 ?>
-
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Faculty Long live</title>
+    <link rel="stylesheet" type="text/css" href="optionstyle.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     
-<div>
-<form name="form" method="post" action=""> 
+</head>
+<body>
+<nav class="navbar navbar-expand-sm bg-dark ">
+    <div class="navbar_title">Faculty Long live</div>
+<img src="../img/rait logo.jpeg" class="navbar-brand ml-auto " alt="#" width=160px>
+</nav>
+    
+<form name="form" method="post" action="">
 <input type="hidden" name="new" value="1" />
 <input name="id" type="hidden" value="<?php echo $row['id'];?>" />
-<p><input type="text" name="name" placeholder="Enter Name" 
-required value="<?php echo $row['Faculty_name'];?>" /></p>
-<p><input type="text" name="rname" placeholder="Enter Reason for live" 
-required value="<?php echo $row['Reason_long_live'];?>" /></p>
-<p><input type="date" name="fname" placeholder="From_date" 
-required value="<?php echo $row['From_date'];?>" /></p>
-<p><input type="date" name="tname" placeholder="To_date" 
-required value="<?php echo $row['To_date'];?>" /></p>
-<p><input type="date" name="dname" placeholder="Date_of_joining_after_long_live" 
-required value="<?php echo $row['Date_of_joining_after_long_live'];?>" /></p>
-
-<p><input name="submit" type="submit" value="Update" /></p>
-
+    <div class="form-group">
+        <label for="Name">Name:</label>
+        <div class="col-5"><input type="text" name="name" placeholder="Enter Name" 
+required value="<?php echo $row['Faculty_name'];?>"  class="form-control border border-secondary" /></div>
+    </div>
+    <div class="form-group">
+        <label for="Reason">Reason For Long Live:</label>
+        <div class="col-5"><input type="text" class="form-control border border-secondary" name="rname" placeholder="Enter Reason for live" 
+required value="<?php echo $row['Reason_long_live'];?>" /></div>
+    </div>
+    <div class="col-5">
+      <label for="From_Date" >From Date </label>
+      <div class="col-6">
+        <input class="form-control border border-secondary" type="date" name="fname" placeholder="From_date" 
+required value="<?php echo $row['From_date'];?>" />
+      </div>
+    </div>
+    <div class="col-5">
+      <label for="To_Date" >To Date </label>
+      <div class="col-6">
+        <input class="form-control border border-secondary" type="date" name="tname" placeholder="To_date" 
+required value="<?php echo $row['To_date'];?>" />
+      </div>
+    </div>
+    <div class="col-5">
+      <label for="Longlive" >Date of joining after Long Live </label>
+      <div class="col-6">
+        <input class="form-control border border-secondary" type="date" name="dname" placeholder="Date_of_joining_after_long_live" 
+required value="<?php echo $row['Date_of_joining_after_long_live'];?>" />
+      </div>
+    </div>
+    <div class="btn">
+    <button name="submit" type="submit" value="Update" class="btn btn-primary "/>Update</button>
+    </div>
 
 
 </form>
+
 <?php } ?>
-</div>
-</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 </body>
 </html>

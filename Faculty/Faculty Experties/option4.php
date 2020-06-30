@@ -2,8 +2,14 @@
 <html lang="en">
 <?php
 @session_start();
-include('connect.php');
+if(isset($_SESSION['o1'])){
+echo '<script language="javascript"> alert("DETAILS ALREADY EXISTS"); </script>';
+$_SESSION['o1']=NULL;
+}
+?>
+<?php
 
+include('connect.php');
 ?>
 <head>
     <meta charset="UTF-8">
@@ -55,7 +61,7 @@ include('connect.php');
     <div class="form-group">
   <label for="sel1">Select level:</label>
   <div class="col-4">
-  <select class="form-control border border-secondary" name="lvl1" id="lvl">
+  <select class="form-control border border-secondary" name="lvl1" id="lvl" >
     <option>Local level</option>
     <option>State level</option>
     <option>National level</option>

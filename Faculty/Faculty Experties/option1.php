@@ -4,8 +4,16 @@
 <html lang="en">
 <?php
 @session_start();
+if(isset($_SESSION['o1'])){
+echo '<script language="javascript"> alert("DETAILS ALREADY EXISTS"); </script>';
+$_SESSION['o1']=NULL;
+}
+?>
+<?php
+
 include('connect.php');
 ?>
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -49,7 +57,7 @@ $y="sahil";
   <div class="form-group">
     <label for="Event name">Event/Course Name:</label>
     <div class="col-4">
-    <input type="name" class="form-control border border-secondary" placeholder="Event Name/Course Name" name="event" id="event">
+    <input type="text" class="form-control border border-secondary" placeholder="Event Name/Course Name" name="event" id="event">
     </div>
   </div>
   <div class="form-group">
@@ -67,7 +75,7 @@ $y="sahil";
     </div>
     <div class="form-group">
     <label for="Event name">Venue</label>
-    <div class="col-5"><input type="name" class="form-control border border-secondary" placeholder="venue name" name="venue" id="venue"></div>
+    <div class="col-5"><input type="text" class="form-control border border-secondary" placeholder="venue name" name="venue" id="venue"></div>
     </div>
     <div class="col-5">
       <label for="example-date-input" >Date</label>

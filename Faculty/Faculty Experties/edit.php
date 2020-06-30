@@ -35,46 +35,88 @@ echo '<p style="color:#FF0000;">'.$status.'</p>';
 else {
 ?>
 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="optionstyle.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     
-<div>
+    <title>Edit4 </title>
+</head>    
+<nav class="navbar navbar-expand-sm bg-dark ">
+        <div class="navbar_title">Awards</div>
+    <img src="../img/rait logo.jpeg" class="navbar-brand ml-auto " alt="#" width=160px>
+    </nav>
+
+
 <form name="form" method="post" action=""> 
 <input type="hidden" name="new" value="1" />
 <input name="id" type="hidden" value="<?php echo $row['id'];?>" />
-<p><input type="text" name="name" placeholder="Enter Name" 
-required value="<?php echo $row['Faculty_name'];?>" /></p>
-<p><input type="text" name="uiname" placeholder="Enter University" 
-required value="<?php echo $row['University'];?>" /></p>
-<p><input type="text" name="aname" placeholder="Enter Award Name" 
-required value="<?php echo $row['Award_name'];?>" /></p>
-<p><input type="text" name="cname" placeholder="Enter College Name" 
-required value="<?php echo $row['College_name'];?>" /></p>
-<p><input type="text" name="ename" placeholder="Enter Event Name" 
-required value="<?php echo $row['Event_name'];?>" /></p>
-<p><name="pname" placeholder="Enter Position" 
+    <div class="form-group">
+    <label for="Name">Name:</label>
+    <div class="col-5"><input type="name" name="name" class="form-control border border-secondary"  placeholder="Enter Name"  
+required value="<?php echo $row['Faculty_name'];?>" /></div>
+    </div>
+    <div class="form-group">
+    <label for="Award">Name of Award:</label>
+    <div class="col-5"><input type="name" class="form-control border border-secondary" name="aname" placeholder="Enter Award Name" 
+required value="<?php echo $row['Award_name'];?>" /></div>
+    </div>
+    <div class="form-group">
+      <label for="position">Select Position:</label>
+      <div class="col-5">
+     <select class="form-control  border border-secondary" name="pname" placeholder="Enter Position" 
 required value="<?php echo $row['Position'];?>" />
-<select  name="pname" >
         <option>1st</option>
         <option>2nd</option>
         <option>3rd</option>
         <option>Participating</option>
-     </select></p>
-     
-     <p><name="lname" placeholder="Enter Level" 
+     </select>
+        </div>
+    </div>
+    <div class="form-group">
+    <label for="Award">Name of the event:</label>
+    <div class="col-5"><input type="name" class="form-control border border-secondary" name="ename" placeholder="Enter Event Name" 
+required value="<?php echo $row['Event_name'];?>" /></div>
+    </div>
+    <div class="form-group">
+    <label for="Award">University:</label>
+    <div class="col-5"><input type="name" class="form-control border border-secondary" name="uiname" placeholder="Enter University" 
+required value="<?php echo $row['University'];?>" /></div>
+    </div>
+    <div class="form-group">
+    <label for="Award">Name of the college</label>
+    <div class="col-5"><input type="name" class="form-control border border-secondary" name="cname" placeholder="Enter College Name" 
+required value="<?php echo $row['College_name'];?>" /></div>
+    </div>
+    <div class="form-group">
+  <label for="sel1">Select level:</label>
+  <div class="col-4">
+  <select class="form-control border border-secondary" name="lname" placeholder="Enter Level" 
 required value="<?php echo $row['Level'];?>" />
-<select  name="lname" >
-        <option>Local level</option>
+    <option>Local level</option>
     <option>State level</option>
     <option>National level</option>
     <option>International level</option>   
   </select>
-  </p>
-<p><input name="submit" type="submit" value="Update" /></p>
+  </div>
 
 
+    <div class="btn">
+    <button name="submit" type="submit" value="Update" class="btn btn-primary "/>Update</button>
+    </div>
 
 </form>
 <?php } ?>
-</div>
-</div>
+
+
+
+
+
+
+
+
+
+
 </body>
 </html>

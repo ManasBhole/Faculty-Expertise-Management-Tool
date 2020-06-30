@@ -2,8 +2,14 @@
 <html lang="en">
 <?php
 @session_start();
-include('connect.php');
+if(isset($_SESSION['o1'])){
+echo '<script language="javascript"> alert("DETAILS ALREADY EXISTS"); </script>';
+$_SESSION['o1']=NULL;
+}
+?>
+<?php
 
+include('connect.php');
 ?>
 <head>
     <meta charset="UTF-8">
@@ -22,7 +28,7 @@ include('connect.php');
     <img src="../img/rait logo.jpeg" class="navbar-brand ml-auto " alt="#" width=160px>
     </nav>
 
-<form action="option11.php" method="POST" enctype="multipart/form-data">
+<form action="option11.php" method="POST">
     <div class="form-group">
     <label for="Name">Name:</label>
     <div class="col-5"><input type="name" value="<?php echo $_SESSION['username'];?>" class="form-control border border-secondary" name="name1" id="name" disabled></div>
@@ -37,7 +43,7 @@ include('connect.php');
     </div>
     <div class="form-group">
     <label for="Year of Admission:">Year of Admission:</label>
-    <div class="col-5"><input type="name" class="form-control border border-secondary" placeholder="Enter Year" name="addYear" id="addYear"></div>
+    <div class="col-5"><input type="number" class="form-control border border-secondary" placeholder="Enter Year" name="addYear" id="addYear"></div>
     </div>
     <div class="form-group">
     <label for="University:">University:</label>
@@ -45,7 +51,7 @@ include('connect.php');
     </div>
     <div class="form-group">
     <label for="Registration Number:">Registration Number:</label>
-    <div class="col-5"><input type="name" class="form-control border border-secondary" placeholder="Enter Number" name="Registration_no" id="Registration Number"></div>
+    <div class="col-5"><input type="number" class="form-control border border-secondary" placeholder="Enter Number" name="Registration_no" id="Registration Number"></div>
     </div>
     <div class="form-group">
     <label for="Name of College:">Name of College:</label>
@@ -67,7 +73,7 @@ include('connect.php');
     <label style="margin-left:10px" for="pdf Upload" >pdf Upload:</label>
     <div class="custom-file mb-3">
     <div class="col-5">
-      <input  type="file" class="custom-file-input" id="customFile" name="file">
+      <input  type="file" class="custom-file-input" id="customFile" name="filename">
       <label style="margin-left:33px" class="custom-file-label border border-secondary" for="customFile">Choose file</label>
     </div>
     </div>

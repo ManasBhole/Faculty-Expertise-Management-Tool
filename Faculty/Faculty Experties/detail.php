@@ -1,8 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
 <?php
-    @session_start();
+@session_start();
+if(isset($_SESSION['s1'])){
+echo '<script language="javascript"> alert("form submitted successfully");</script>';
+$_SESSION['s1']=NULL;
+}
+?>
+<?php
+    
     include('connect.php');
+
      
 if ($_SESSION['logged_in'] = false) {
     $_SESSION['message'] = 'You must Login to continue use this section.';

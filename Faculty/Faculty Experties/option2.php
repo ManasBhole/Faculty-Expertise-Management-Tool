@@ -3,8 +3,14 @@
 <html lang="en">
 <?php
 @session_start();
-include('connect.php');
+if(isset($_SESSION['o1'])){
+echo '<script language="javascript"> alert("DETAILS ALREADY EXISTS"); </script>';
+$_SESSION['o1']=NULL;
+}
+?>
+<?php
 
+include('connect.php');
 ?>
 <head>
     <meta charset="UTF-8">
@@ -27,7 +33,7 @@ include('connect.php');
    </div>
    <div class="form-group">
     <label for="PET">PET Appeared</label>
-    <div class="col-5"><input type="name" class="form-control border border-secondary" name="pet" id="PET"></div>
+    <div class="col-5"><input type="number" class="form-control border border-secondary" name="pet" id="PET"></div>
    </div>
     <div class="col-5">
     <label for="Date of PET Exam" >Date of PET Exam</label>
@@ -37,11 +43,11 @@ include('connect.php');
     </div>
     <div class="form-group">
     <label for="PET Score">PET score:</label>
-    <div class="col-5"><input type="name" class="form-control border border-secondary" placeholder="Enter score" name="pet_score" id="PET_score"></div>
+    <div class="col-5"><input type="number" class="form-control border border-secondary" placeholder="Enter score" name="pet_score" id="PET_score"></div>
     </div>
     <div class="form-group">
     <label for="Gate Appeared">Gate Appeared:</label>
-    <div class="col-5"><input type="name" class="form-control border border-secondary" name="gate_appeared" id="Gate Appeared"></div>
+    <div class="col-5"><input type="number" class="form-control border border-secondary" name="gate_appeared" id="Gate Appeared"></div>
     </div>
     <div class="col-5">
     <label for="GATE-date-input" >Date of GATE</label>
@@ -51,7 +57,7 @@ include('connect.php');
     </div>
     <div class="form-group">
     <label for="GET_score">GATE score</label>
-    <div class="col-5"><input type="name" class="form-control border border-secondary" name="gate_score" id="GATE_score"></div>
+    <div class="col-5"><input type="number" class="form-control border border-secondary" name="gate_score" id="GATE_score"></div>
     </div>
     </div>
 

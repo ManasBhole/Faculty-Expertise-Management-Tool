@@ -2,8 +2,14 @@
 <html lang="en">
 <?php
 @session_start();
-include('connect.php');
+if(isset($_SESSION['o1'])){
+echo '<script language="javascript"> alert("DETAILS ALREADY EXISTS"); </script>';
+$_SESSION['o1']=NULL;
+}
+?>
+<?php
 
+include('connect.php');
 ?>
 <head>
     <meta charset="UTF-8">
@@ -15,14 +21,14 @@ include('connect.php');
 </head>
 <body>
 <nav class="navbar navbar-expand-sm bg-dark ">
-    <div class="navbar_title">Faculty Promotion</div>
+    <div class="navbar_title">Faculty Long live</div>
 <img src="../img/rait logo.jpeg" class="navbar-brand ml-auto " alt="#" width=160px>
 </nav>
 
 <form action="option11.php" method="POST">
     <div class="form-group">
         <label for="Name">Name:</label>
-        <div class="col-5"><input type="name" value="<?php echo $_SESSION['username'];?>" class="form-control border border-secondary" name="name4" id="name" disabled></div>
+        <div class="col-5"><input type="text" value="<?php echo $_SESSION['username'];?>" class="form-control border border-secondary" name="name4" id="name" disabled></div>
     </div>
     <div class="form-group">
         <label for="Reason">Reason For Long Live:</label>
