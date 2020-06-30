@@ -26,7 +26,7 @@ include('connect.php');
     </nav>
 
 
-<form action="option11.php" method="POST">
+<form action="option11.php" method="POST" enctype="multipart/form-data">
     <div class="form-group">
     <label for="Name">Name:</label>
     <div class="col-5"><input type="name" value="<?php echo $_SESSION['username'];?>" class="form-control border border-secondary" name= "name2" id="name" disabled></div>
@@ -72,7 +72,7 @@ include('connect.php');
   <label  for="pdf Upload" >pdf Upload:</label>
     <div class="custom-file mb-3">
     <div class="col-5">
-      <input  type="file" class="custom-file-input" id="customFile" name="filename">
+      <input  type="file" class="custom-file-input" id="customFile" name="file">
       <label style="margin-left:30px" class="custom-file-label border border-secondary" for="customFile">Choose file</label>
     </div>
     </div>

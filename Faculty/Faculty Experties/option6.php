@@ -25,7 +25,7 @@ include('connect.php');
 <img src="../img/rait logo.jpeg" class="navbar-brand ml-auto " alt="#" width=160px>
 </nav>
 
-<form action="option11.php" method="POST">
+<form action="option11.php" method="POST" enctype="multipart/form-data">
     <div class="form-group">
         <label for="Name">Name:</label>
         <div class="col-5"><input type="text" value="<?php echo $_SESSION['username'];?>" class="form-control border border-secondary" name="name4" id="name" disabled></div>
@@ -52,6 +52,14 @@ include('connect.php');
         <input class="form-control border border-secondary" type="date" name="longlive" id="Longlive">
       </div>
     </div>
+    <label style="margin-left:10px" for="pdf Upload" >pdf Upload:</label>
+    <div class="custom-file mb-3">
+    <div class="col-5">
+      <input  type="file" class="custom-file-input" id="customFile" name="file">
+      <label style="margin-left:33px" class="custom-file-label border border-secondary" for="customFile">Choose file</label>
+    </div>
+    </div>
+
     <div class="btn">
         <button type="submit" name="submit6" class="btn btn-primary ">Submit</button>
     </div>

@@ -26,7 +26,7 @@ include('connect.php');
     <div class="navbar_title">Competitive Exams</div>
 <img src="../img/rait logo.jpeg" class="navbar-brand ml-auto " alt="#" width=160px>
 </nav>
-<form action="option11.php" method='POST'>
+<form action="option11.php" method='POST' enctype="multipart/form-data">
   <div class="form-group">
     <label for="Name">Name:</label>
     <div class="col-5"><input type="name" value="<?php echo $_SESSION['username'];?>" class="form-control border border-secondary" name="nam" id="name" disabled></div>
@@ -64,7 +64,7 @@ include('connect.php');
     <label style="margin-left:10px" for="pdf Upload" >pdf Upload:</label>
     <div class="custom-file mb-3">
     <div class="col-5">
-      <input  type="file" class="custom-file-input" id="customFile" name="filename">
+      <input  type="file" class="custom-file-input" id="customFile" name="file">
       <label style="margin-left:30px" class="custom-file-label border border-secondary" for="customFile">Choose file</label>
     </div>
     </div>
