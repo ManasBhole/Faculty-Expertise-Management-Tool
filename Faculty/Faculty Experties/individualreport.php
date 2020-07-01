@@ -10,8 +10,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
    
     <link rel="stylesheet" type="text/css" href="individualstyle.css">
-   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-   
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
+  <link rel="stylesheet" type="text/css" href="http://ajax.aspnetcdn.com/ajax/jquery.dataTables/1.9.4/css/jquery.dataTables.css">
+   <script type="text/javascript" charset="utf8" src="https://ajax.aspnetcdn.com/ajax/jquery.dataTables/1.9.4/jquery.dataTables.min.js"></script>
+
     <title>Individual Report</title>
 </head>
 <body>
@@ -57,11 +63,11 @@ if ($_SESSION['logged_in'] = false) {
                 
                      ";?>
                      <td style=' padding-left:10px'>
-<a href="edit.php?id=<?php echo $data[0]; ?>">Edit</a>
+<a href="edit.php?id=<?php echo $data[0]; ?>"><button class="btn-success btn"  class="text-white">Edit</button></a>
 </td>
 
 <td style=' padding-left:10px'>
-<a href="delete1.php?id=<?php echo $data[0]; ?>">Delete</a>
+<a href="delete1.php?id=<?php echo $data[0]; ?>"><button class="btn-danger btn"  class="text-white">Delete</button></a>
 </td>
             
 
@@ -94,12 +100,13 @@ if ($_SESSION['logged_in'] = false) {
 	while($data=mysqli_fetch_array($result))
 	{
 				echo"<tr><td  style=' padding-left:10px;text-align: center;'>$data[1]</td><td  style=' padding-left:10px;text-align: center;'>$data[2]</td><td  style=' padding-left:20px;text-align: center;'>$data[3]</td><td  style=' padding-left:20px;text-align: center;'>$data[4]</td><td  style=' padding-left:50px;text-align: center;'>$data[5]</td><td  style=' padding-left:50px;text-align: center;'>$data[6]</td><td  style=' padding-left:60px;text-align: center;'>$data[7]</td>";?>
-                <td style=' padding-left:10px'>
-<a href="edit2.php?id=<?php echo $data[0]; ?>">Edit</a>
+				<td style=' padding-left:10px'>
+
+<a href="edit2.php?id=<?php echo $data[0]; ?>"><button class="btn-success btn"  class="text-white">Edit</button></a>
 </td>
 
 <td style=' padding-left:10px;text-align: center;'>
-<a href="delete2.php?id=<?php echo $data[0]; ?>">Delete</a>
+<a href="delete2.php?id=<?php echo $data[0]; ?>"><button class="btn-danger btn"  class="text-white">Delete</button></a>
 </td>
 </tr>
 			<?php } ?>
@@ -133,11 +140,11 @@ if ($_SESSION['logged_in'] = false) {
 	{
 				echo"<tr><td  style=' padding-left:10px;text-align: center;'>$data[1]</td><td  style=' padding-left:10px;text-align: center;'>$data[2]</td><td  style=' padding-left:20px;text-align: center;'>$data[3]</td><td  style=' padding-left:20px;text-align: center;'>$data[4]</td><td  style=' padding-left:50px;text-align: center;'>$data[5]</td><td  style=' padding-left:50px;text-align: center;'>$data[6]</td><td  style=' padding-left:60px;text-align: center;'>$data[7]</td><td  style=' padding-left:60px;text-align: center;'>$data[8]</td><td  style=' padding-left:60px;text-align: center;'>$data[9]</td><td  style=' padding-left:60px;text-align: center;'>$data[10]</td>";?>
                 <td style=' padding-left:10px'>
-<a href="edit3.php?id=<?php echo $data[0]; ?>">Edit</a>
+				<a href="edit3.php?id=<?php echo $data[0]; ?>"><button class="btn-success btn"  class="text-white">Edit</button></a>
 </td>
 
 <td style=' padding-left:10px;text-align: center;'>
-<a href="delete3.php?id=<?php echo $data[0]; ?>">Delete</a>
+<a href="delete3.php?id=<?php echo $data[0]; ?>"><button class="btn-danger btn"  class="text-white">Delete</button></a>
 </td>
 </tr>
 			<?php } ?>
@@ -171,11 +178,11 @@ if ($_SESSION['logged_in'] = false) {
 	{
 				echo"<tr><td  style=' padding-left:10px;text-align: center;'>$data[1]</td><td  style=' padding-left:10px;text-align: center;'>$data[2]</td><td  style=' padding-left:20px;text-align: center;'>$data[3]</td><td  style=' padding-left:20px;text-align: center;'>$data[4]</td><td  style=' padding-left:50px;text-align: center;'>$data[5]</td><td  style=' padding-left:50px;text-align: center;'>$data[6]</td><td  style=' padding-left:60px;text-align: center;'>$data[7]</td>";?>
                 <td style=' padding-left:10px'>
-<a href="edit4.php?id=<?php echo $data[0]; ?>">Edit</a>
+				<a href="edit4.php?id=<?php echo $data[0]; ?>"><button class="btn-success btn"  class="text-white">Edit</button></a>
 </td>
 
 <td style=' padding-left:10px;text-align: center;'>
-<a href="delete4.php?id=<?php echo $data[0]; ?>">Delete</a>
+<a href="delete4.php?id=<?php echo $data[0]; ?>"><button class="btn-danger btn"  class="text-white">Delete</button></a>
 </td>
 </tr>
 			<?php } ?>
@@ -206,11 +213,11 @@ if ($_SESSION['logged_in'] = false) {
 	{
 				echo"<tr><td  style=' padding-left:10px;text-align: center;'>$data[1]</td><td  style=' padding-left:10px;text-align: center;'>$data[2]</td><td  style=' padding-left:20px;text-align: center;'>$data[3]</td><td  style=' padding-left:20px;text-align: center;'>$data[4]</td><td  style=' padding-left:50px;text-align: center;'>$data[5]</td>";?>
                 <td style=' padding-left:10px'>
-<a href="edit5.php?id=<?php echo $data[0]; ?>">Edit</a>
+<a href="edit5.php?id=<?php echo $data[0]; ?>"><button class="btn-success btn"  class="text-white">Edit</button></a>
 </td>
 
 <td style=' padding-left:10px;text-align: center;'>
-<a href="delete5.php?id=<?php echo $data[0]; ?>">Delete</a>
+<a href="delete5.php?id=<?php echo $data[0]; ?>"><button class="btn-danger btn"  class="text-white">Delete</button></a>
 </td>
 </tr>
 			<?php } ?>
@@ -244,11 +251,11 @@ if ($_SESSION['logged_in'] = false) {
 	{
 				echo"<tr><td  style=' padding-left:10px;text-align: center;'>$data[1]</td><td  style=' padding-left:10px;text-align: center;'>$data[2]</td><td  style=' padding-left:20px;text-align: center;'>$data[3]</td><td  style=' padding-left:20px;text-align: center;'>$data[4]</td><td  style=' padding-left:50px;text-align: center;'>$data[5]</td><td  style=' padding-left:50px;text-align: center;'>$data[6]</td><td  style=' padding-left:60px'>$data[7]</td><td  style=' padding-left:10px;text-align: center;'>$data[8]</td><td  style=' padding-left:10px'>$data[9]</td><td  style=' padding-left:20px'>$data[10]</td><td  style=' padding-left:20px;text-align: center;'>$data[11]</td><td  style=' padding-left:50px;text-align: center;'>$data[12]</td>";?>
                 <td style=' padding-left:10px'>
-<a href="edit6.php?id=<?php echo $data[0]; ?>">Edit</a>
+				<a href="edit6.php?id=<?php echo $data[0]; ?>"><button class="btn-success btn"  class="text-white">Edit</button></a>
 </td>
 
 <td style=' padding-left:10px;text-align: center;'>
-<a href="delete6.php?id=<?php echo $data[0]; ?>">Delete</a>
+<a href="delete6.php?id=<?php echo $data[0]; ?>"><button class="btn-danger btn"  class="text-white">Delete</button></a>
 </td>
 </tr>
 			<?php } ?>
