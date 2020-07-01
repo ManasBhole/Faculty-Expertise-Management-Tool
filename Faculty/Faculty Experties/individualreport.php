@@ -24,13 +24,13 @@
 
 <h1>Individual Report</h1>
 
-<table  width="1400px" style="margin:auto" >
+<table  width="1500px" style="margin:auto;" >
 
   
 <tr><td>&nbsp;</td><td>&nbsp;</td></tr>   
  <tr style="background-color:grey" align="center" class="bold">            
              <td class="bold" style="color:blisque"  >Faculty_Name</td><td align="center">Award_name</td><td align="center">Position</td><td align="center">Event_name</td><td align="center">university</td>
-            <td align="center">College name</td> <td align="center">level</td><td align="center">Edit</td> <td align="center"></td><td align="center">Delete</td> <td align="center"></td>
+            <td align="center">College name</td> <td align="center">level</td><td align="center">Edit</td> <td align="center">Delete</td> 
         </tr>
                    
 
@@ -76,14 +76,14 @@ if ($_SESSION['logged_in'] = false) {
 </table>
 </form>
 
-<table  width="1400px" style="margin:auto" >
+<table  width="1500px" style="margin:auto" >
 
   
 
  <tr><td>&nbsp;</td><td>&nbsp;</td></tr>   
  <tr style="background-color:grey" align="center" class="bold">            
              <td class="bold" style="color:blisque"  >Faculty Name</td><td align="center">PET Appered</td><td align="center">PET Date</td><td align="center">PET Score</td><td align="center">GATE Appred</td>
-            <td align="center">GATE Date</td> <td align="center">GATE Score</td><td align="center">Edit</td> <td align="center"></td><td align="center">Delete</td> <td align="center"></td>
+            <td align="center">GATE Date</td> <td align="center">GATE Score</td><td align="center">Edit</td> <td align="center">Delete</td> 
         </tr>
                    
 
@@ -115,7 +115,7 @@ if ($_SESSION['logged_in'] = false) {
 
 
 
- <table  width="1400px" style="margin:auto" >
+ <table  width="1500px" style="margin:auto" >
 
   
 
@@ -123,7 +123,7 @@ if ($_SESSION['logged_in'] = false) {
  <tr style="background-color:grey" align="center" class="bold">           
              <td class="bold" style="color:blisque"  >Faculty Name</td><td align="center">Admitted Program</td><td align="center">Specialization</td><td align="center">Admission Year</td><td align="center">University</td>
             <td align="center">Registration No </td> <td align="center">College name</td><td align="center">Status </td> <td align="center">Reaserch topic </td><td align="center">Guide Name</td>
-            <td align="center">Edit</td> <td align="center"></td><td align="center">Delete</td> <td align="center"></td>
+            <td align="center">Edit</td> <td align="center">Delete</td> 
         </tr>           
 
 
@@ -152,7 +152,7 @@ if ($_SESSION['logged_in'] = false) {
 </table>
 </form>
 
-<table  width="1400px" style="margin:auto" >
+<table  width="1500px" style="margin:auto" >
 
   
 
@@ -160,7 +160,7 @@ if ($_SESSION['logged_in'] = false) {
  <tr style="background-color:grey" align="center" class="bold">               
              <td class="bold" style="color:blisque"  >Faculty Name</td><td align="center">Resource person</td><td align="center">Topic Name</td><td align="center">Event Name</td><td align="center">Level</td>
             <td align="center">Venue </td> <td align="center">Date</td>
-            <td align="center">Edit</td> <td align="center"></td><td align="center">Delete</td> <td align="center"></td>
+            <td align="center">Edit</td><td align="center">Delete</td> 
         </tr>
                    
 
@@ -188,14 +188,14 @@ if ($_SESSION['logged_in'] = false) {
 			<?php } ?>
 			
 </table>
-<table  width="1400px" style="margin:auto" >
+<table  width="1500px" style="margin:auto" >
 
   
 
  <tr><td>&nbsp;</td><td>&nbsp;</td></tr>   
  <tr style="background-color:grey" align="center" class="bold">          
              <td class="bold" style="color:blisque"  >Faculty Name</td><td align="center">Reason Long live</td><td align="center">From Date</td><td align="center">To Date</td><td align="center">Date of joining after long live</td>
-            <td align="center">Edit</td> <td align="center"></td><td align="center">Delete</td> <td align="center"></td>
+            <td align="center">Edit</td> <td align="center">Delete</td> 
         </tr>
                    
 
@@ -225,7 +225,7 @@ if ($_SESSION['logged_in'] = false) {
 </table>
 </form>
 
-<table  width="1400px" style="margin:auto" >
+<table  width="1500px" style="margin:auto" >
 
   
 
@@ -233,7 +233,7 @@ if ($_SESSION['logged_in'] = false) {
  <tr style="background-color:grey" align="center" class="bold">        
              <td class="bold" style="color:blisque"  >Faculty_Name</td><td align="center">Date of joining</td><td align="center">SDNR number</td><td align="center">RAIT Experience</td><td align="center">Other Experience</td>
             <td align="center">Industry Experience </td> <td align="center">Total Experience</td><td align="center">Starting Designation </td> <td align="center">1st Promotion</td><td align="center">1st Promotion Date</td><td align="center">2nd Promotion </td> <td align="center">2nd Promotion Date</td>
-            <td align="center">Edit</td> <td align="center"></td><td align="center">Delete</td> <td align="center"></td>
+            <td align="center">Edit</td> <td align="center">Delete</td> 
         </tr>
                    
 
