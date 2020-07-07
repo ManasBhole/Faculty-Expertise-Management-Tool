@@ -1,0 +1,59 @@
+body{
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+.from-row{
+    margin: 10px;
+}
+.navbar_title{
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 50px;
+    color: whitesmoke;
+}
+.navbar{
+    height: 110px;
+}
+#logo{
+    height: 70px;
+    width: 130px;
+    margin-left: auto;
+}
+
+#example1{
+    margin-left: 15px;
+    margin-top: 7px;
+    margin-bottom: 7px;
+    border-color: black;
+    border-width: 1px;
+    
+}
+#Selectoption{
+    margin-left: 15px;
+    margin-top: 7px;
+    margin-bottom: 7px;
+    padding: 15px;
+    color: black;
+    text-align: center;
+    border-color: black;
+       
+}
+#semlabel{
+    margin-top: 10px;
+}
+.btn{
+    margin-left: 15px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+table{
+    margin-top: 10px;
+    
+    text-align: justify;
+}
+td{
+     text-align: center;
+}
+th{
+    text-align: center;
+}

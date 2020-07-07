@@ -4,13 +4,12 @@
 	
 
 	<meta name="viewport" content="width=device-width, initial-scale=1">
- <link rel="stylesheet" type="text/css" href="hod1.css">
-    <!-- CSS only -->
- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
- <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
- <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">  
+	<link rel="stylesheet" type="text/css" href="try.css">   <!-- CSS only -->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">  
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.5.0/css/bootstrap-datepicker.css" rel="stylesheet">  
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js"></script>  
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>  
@@ -20,9 +19,16 @@
    <script type="text/javascript" charset="utf8" src="https://ajax.aspnetcdn.com/ajax/jquery.dataTables/1.9.4/jquery.dataTables.min.js"></script>
 </head>
 <body>
+
+<nav class="navbar navbar-expand-sm bg-dark ">
+    <div class="navbar_title">YEARLY Report</div>
+<img src="../img/rait logo.jpeg"  id=logo alt="#" >
+</nav>
+
 	
 <form action="try.php" method="POST">
-	<input class="bg-dark text-white" class="form-control" type="text" name='year' placeholder="Enter Academic Year" id="example1" autocomplete="off" required>
+<label for="Name">Select Year :</label>
+	<input class="text-black" class="form-control " type="text" name='year' placeholder="Enter Academic Year" id="example1" autocomplete="off" required>
 <script type="text/javascript">
             // When the document is ready
             $(document).ready(function () {
@@ -34,19 +40,27 @@
                 });  
             
             });
-        </script>	
-        <select name="sem" required>
-        <option value="" disabled selected >SEMESTER</option>
+		</script>
+		
+		<div class="form-row">
+		<label for="Name" id="semlabel">Select Semester :</label>
+		
+		<div class="col-3">	
+		
+        <select name="sem" class="form-control" id="Selectoption" placeholder="Select Semester" required>
+        
 		<option value="ALL">ALL</option>
 		<option value="ODD">ODD SEM</option>
 		<option value="EVEN">EVEN SEM</option>
-	</select>
-	<input type="submit" name="submit" value="Submit Values">
+		</select>
+		</div>
+		</div>
+		<button type="submit"  name="submit" value="Submit Values" class="btn btn-dark">Submit</button>
 </form>
 
 
-<table border="1" >
-	<thead>
+<table  id="tabledata" class=" table table-striped table-hover table-bordered">
+	<thead class="bg-dark text-white">
 		<th>Faculty Name</th>
 		<th>Resource Person</th>
 		<th>Topic Name</th>
@@ -54,7 +68,7 @@
 		<th>Level</th>
 		<th>Venue</th>
 		<th>Date</th>
-		<th>pdf</th>
+		
 	</thead>
 
 	<?php 
@@ -85,7 +99,7 @@
 
 		$sql="SELECT * FROM faculty_as_resource WHERE Date BETWEEN '$a' and '$b'";
 		$res=mysqli_query($conn,$sql);
-		echo (mysqli_num_rows($res));
+		
 
 		if(mysqli_num_rows($res)==0)
 		{
@@ -102,7 +116,7 @@
 			<td  style=' padding-left:50px'>$data[5]</td>
 			<td  style=' padding-left:50px'>$data[6]</td>
 			<td  style=' padding-left:60px'>$data[7]</td>
-			<td  style=' padding-left:60px'>$data[8]</td></tr>";
+			</tr>";
 		}
 	}
 	
@@ -113,8 +127,8 @@
 
 </table>
 
-<table border="1">
-	<thead>
+<table id="tabledata" class=" table table-striped table-hover table-bordered">
+	<thead class="bg-dark text-white text-center">
 		<th>Faculty Name</th>
 		<th>Award Name</th>
 		<th>Position</th>
@@ -122,7 +136,7 @@
 		<th>University</th>
 		<th>College Name</th>
 		<th>Level</th>
-		<th>pdf</th>
+		
 	</thead>
 	<?php 
 	$sql="SELECT * FROM awards WHERE Date BETWEEN '$a' and '$b'";
@@ -141,14 +155,14 @@
 			<td  style=' padding-left:50px'>$data[5]</td>
 			<td  style=' padding-left:50px'>$data[6]</td>
 			<td  style=' padding-left:60px'>$data[7]</td>
-			<td  style=' padding-left:60px'>$data[8]</td></tr>";
+			</tr>";
 	}
 	?>
 
 </table>
 
-<table border="1">
-	<thead>
+<table id="tabledata" class=" table table-striped table-hover table-bordered">
+	<thead class="bg-dark text-white text-center">
 		<th>Faculty Name</th>
 		<th>PET Appeared</th>
 		<th>PET Date </th>
@@ -156,7 +170,7 @@
 		<!-- <th>GATE Appeared</th>
 		<th>GATE Date</th>
 		<th>GATE Scored</th> -->
-		<th>pdf</th>
+		
 	</thead>
 	<?php 
 	$sql="SELECT * FROM competitive_exam WHERE PET_date BETWEEN '$a' and '$b'";
@@ -173,21 +187,21 @@
 			<td  style=' padding-left:20px'>$data[3]</td>
 			<td  style=' padding-left:20px'>$data[4]</td>
 			
-			<td  style=' padding-left:60px'>$data[8]</td></tr>";
+			</tr>";
 	}
 
 	?>
 
 </table>
 
-<table border="1">
-	<thead>
+<table id="tabledata" class=" table table-striped table-hover table-bordered">
+	<thead class="bg-dark text-white text-center">
 		<th>Faculty Name</th>
 		
 		<th>GATE Appeared</th>
 		<th>GATE Date</th>
 		<th>GATE Scored</th>
-		<th>pdf</th>
+		
 	</thead>
 	<?php 
 	$sql="SELECT * FROM competitive_exam WHERE GATE_date BETWEEN '$a' and '$b'";
@@ -204,7 +218,7 @@
 			<td  style=' padding-left:20px'>$data[6]</td>
 			<td  style=' padding-left:20px'>$data[7]</td>
 			
-			<td  style=' padding-left:60px'>$data[8]</td></tr>";
+			</tr>";
 	}
 
 	?>
@@ -216,12 +230,5 @@
 
 
 </body>
-<style type="text/css">
-	th{
-		padding: 3px;
-	}
-	table{
-		margin: 10px;
-	}
-</style>
+
 </html>
