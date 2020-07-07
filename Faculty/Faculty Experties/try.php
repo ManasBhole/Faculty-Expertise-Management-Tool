@@ -13,8 +13,9 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.5.0/css/bootstrap-datepicker.css" rel="stylesheet">  
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js"></script>  
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>  
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.5.0/js/bootstrap-datepicker.js"></script> </head>
-   
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.5.0/js/bootstrap-datepicker.js"></script> </head>
+	
+	<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.21/css/jquery.dataTables.min.css">  
  <link rel="stylesheet" type="text/css" href="http://ajax.aspnetcdn.com/ajax/jquery.dataTables/1.9.4/css/jquery.dataTables.css">
    <script type="text/javascript" charset="utf8" src="https://ajax.aspnetcdn.com/ajax/jquery.dataTables/1.9.4/jquery.dataTables.min.js"></script>
 </head>
@@ -137,8 +138,15 @@
 
 
 </table>
+<script>
+$(document).ready(function() {
+    $('#tabledata').DataTable( {
+        "order": [[ 3, "desc" ], [ 0, 'asc' ]]
+    } );
+} );
 
-<table id="tabledata" class=" table table-striped table-hover table-bordered">
+</script>
+<table id="tabledata2" class=" table table-striped table-hover table-bordered">
 	<thead class="bg-dark text-white text-center">
 		<th>Sr. No.</th>
 		<th>Faculty Name</th>
@@ -175,8 +183,15 @@
 	?>
 
 </table>
+<script>
+$(document).ready(function() {
+    $('#tabledata2').DataTable( {
+        "order": [[ 3, "desc" ], [ 0, 'asc' ]]
+    } );
+} );
 
-<table id="tabledata" class=" table table-striped table-hover table-bordered">
+</script>
+<table id="tabledata3" class=" table table-striped table-hover table-bordered">
 	<thead class="bg-dark text-white text-center">
 		<th>Sr. No.</th>
 		<th>Faculty Name</th>
@@ -212,8 +227,15 @@
 	?>
 
 </table>
+<script>
+$(document).ready(function() {
+    $('#tabledata3').DataTable( {
+        "order": [[ 3, "desc" ], [ 0, 'asc' ]]
+    } );
+} );
 
-<table id="tabledata" class=" table table-striped table-hover table-bordered">
+</script>
+<table id="tabledata4" class=" table table-striped table-hover table-bordered">
 	<thead class="bg-dark text-white text-center">
 		<th>Sr. No.</th>
 		<th>Faculty Name</th>
@@ -247,7 +269,14 @@
 	?>
 
 </table>
+<script>
+$(document).ready(function() {
+    $('#tabledata4').DataTable( {
+        "order": [[ 3, "desc" ], [ 0, 'asc' ]]
+    } );
+} );
 
+</script>
 
 
 
