@@ -61,6 +61,7 @@
 
 <table  id="tabledata" class=" table table-striped table-hover table-bordered">
 	<thead class="bg-dark text-white">
+		<th>Sr. No.</th>
 		<th>Faculty Name</th>
 		<th>Resource Person</th>
 		<th>Topic Name</th>
@@ -77,7 +78,11 @@
 	{
 		$year=$_POST['year'];
 		$sem=$_POST['sem'];
-
+	}
+	else
+	{
+		$sem="NONE";
+	}
 
 		if($sem=="ALL")
 
@@ -96,6 +101,10 @@
 				$a=$year."-01-01";
 				$b=$year."-05-31";
 		}
+		else{
+			$a=NULL;
+			$b=NULL;
+		}
 
 		$sql="SELECT * FROM faculty_as_resource WHERE Date BETWEEN '$a' and '$b'";
 		$res=mysqli_query($conn,$sql);
@@ -105,10 +114,11 @@
 		{
 			echo "<tr><td colspan='8' align='center'>No data for the Corresponding Date</td></tr>";
 		}
-
+		$count=1;
 		while($data=mysqli_fetch_array($res))
 		{
 			echo"<tr>
+			<td  style=' padding-left:10px'>$count</td>
 			<td  style=' padding-left:10px'>$data[1]</td>
 			<td  style=' padding-left:10px'>$data[2]</td>
 			<td  style=' padding-left:20px'>$data[3]</td>
@@ -117,8 +127,9 @@
 			<td  style=' padding-left:50px'>$data[6]</td>
 			<td  style=' padding-left:60px'>$data[7]</td>
 			</tr>";
+			$count++;
 		}
-	}
+	
 	
 
 
@@ -129,6 +140,7 @@
 
 <table id="tabledata" class=" table table-striped table-hover table-bordered">
 	<thead class="bg-dark text-white text-center">
+		<th>Sr. No.</th>
 		<th>Faculty Name</th>
 		<th>Award Name</th>
 		<th>Position</th>
@@ -145,9 +157,11 @@
 		{
 			echo "<tr><td colspan='8' align='center'>No data for the Corresponding Date</td></tr>";
 		}
+	$count=1;
 	while($data=mysqli_fetch_array($res))
 	{
 		echo"<tr>
+			<td  style=' padding-left:10px'>$count</td>
 			<td  style=' padding-left:10px'>$data[1]</td>
 			<td  style=' padding-left:10px'>$data[2]</td>
 			<td  style=' padding-left:20px'>$data[3]</td>
@@ -156,6 +170,7 @@
 			<td  style=' padding-left:50px'>$data[6]</td>
 			<td  style=' padding-left:60px'>$data[7]</td>
 			</tr>";
+			$count++;
 	}
 	?>
 
@@ -163,6 +178,7 @@
 
 <table id="tabledata" class=" table table-striped table-hover table-bordered">
 	<thead class="bg-dark text-white text-center">
+		<th>Sr. No.</th>
 		<th>Faculty Name</th>
 		<th>PET Appeared</th>
 		<th>PET Date </th>
@@ -179,15 +195,18 @@
 		{
 			echo "<tr><td colspan='5' align='center'>No data for the Corresponding Date</td></tr>";
 		}
+		$count=1;
 	while($data=mysqli_fetch_array($res))
 	{
 		echo"<tr>
+			<td  style=' padding-left:10px'>$count</td>
 			<td  style=' padding-left:10px'>$data[1]</td>
 			<td  style=' padding-left:10px'>$data[2]</td>
 			<td  style=' padding-left:20px'>$data[3]</td>
 			<td  style=' padding-left:20px'>$data[4]</td>
 			
 			</tr>";
+			$count++;
 	}
 
 	?>
@@ -196,6 +215,7 @@
 
 <table id="tabledata" class=" table table-striped table-hover table-bordered">
 	<thead class="bg-dark text-white text-center">
+		<th>Sr. No.</th>
 		<th>Faculty Name</th>
 		
 		<th>GATE Appeared</th>
@@ -210,15 +230,18 @@
 		{
 			echo "<tr><td colspan='5' align='center'>No data for the Corresponding Date</td></tr>";
 		}
+		$count=1;
 	while($data=mysqli_fetch_array($res))
 	{
 		echo"<tr>
+			<td  style=' padding-left:10px'>$count</td>
 			<td  style=' padding-left:10px'>$data[1]</td>
 			<td  style=' padding-left:10px'>$data[5]</td>
 			<td  style=' padding-left:20px'>$data[6]</td>
 			<td  style=' padding-left:20px'>$data[7]</td>
 			
 			</tr>";
+		$count++;
 	}
 
 	?>
