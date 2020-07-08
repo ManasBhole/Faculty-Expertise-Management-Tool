@@ -1,3 +1,4 @@
+ 
 @import url('https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css');
 table,
 thead,
@@ -10,10 +11,12 @@ td {
 .table{
     padding-top: 15px;
     padding-bottom: 15px;
+    border: 2px solid #80808061;
 }
 
 .table td {
   text-align: center;
+  border: 2px solid #80808061;
 }
 h2{
     font-family: sans-serif;
@@ -22,4 +25,15 @@ h2{
     margin-top: 15px;
     margin-bottom: 15px;
 
+}
+.btn{
+  border: none;
+  font-size: 20px;
+  border-radius: 10px;
+  color: white;
+  background-color: #0ed401;
+  margin: 5px;
+}
+form{
+  display: contents;
 }

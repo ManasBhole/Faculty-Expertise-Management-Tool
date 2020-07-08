@@ -18,7 +18,7 @@
 <body>
 <nav class="navbar navbar-expand-sm bg-dark ">
     <div class="navbar_title" style=" font-family: 'Times New Roman', Times, serif; font-size: 50px; color: whitesmoke;">Report</div>
-<img src="../img/rait logo.jpeg" class="navbar-brand ml-auto " alt="#" width=160px>
+<img src="images/rait_logo.jpeg" class="navbar-brand ml-auto " alt="#" width=160px>
 </nav>
 
  <div class="container">
@@ -32,10 +32,9 @@
  <tr class="bg-dark text-white text-center">
  
  
+ <th> UserID </th>
  <th> Username </th>
- <th> Email </th>
  <th> Report </th>
- 
 
 
  </tr >
@@ -50,13 +49,18 @@
  while($res = mysqli_fetch_array($query))
  {
  ?>
- <tr class="text-center">
+  <tr class="text-center">
 
- <td> <?php echo $res['username'];  ?> </td>
- <td> <?php echo $res['userid'];  ?> </td>
- <td> <button class="btn-danger btn"> <a href="report.php?id=<?php echo $res['username']; ?>" class="text-white"> Report </a>  </button> </td>
- 
- </tr>
+    <td> <?php echo $res['userid'];  ?> </td>
+    <td> <?php echo $res['username'];  ?> </td>
+    <!-- <td> <button class="btn-danger btn"> <a href="report.php?id=<?php echo $res['username']; ?>" class="text-white"> Report </a>  </button> </td> -->
+    <td>
+      <form action="report.php" method="post">
+        <input type="hidden" name="id" value=<?php echo $res['username'];?>>
+        <input type="submit" class="btn-danger btn" value="Report">
+      </form>
+    </td>
+  </tr>
 
  <?php 
  }

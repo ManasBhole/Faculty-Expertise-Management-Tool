@@ -24,10 +24,6 @@
 
     <tbody>
       <tr>
-        <td class="table-active">FACULTY NAME</td>
-        <?php fetch($result,'Faculty_name')?>
-      </tr>
-      <tr>
         <td class="table-active">RESOURCE PERSON</td>
         <?php fetch($result,'Resource_person')?>
       </tr>
@@ -51,11 +47,14 @@
         <td class="table-active">DATE</td>
         <?php fetch($result,'Date')?>
       </tr>
-    
+      <tr>
+        <td class="table-active" style="padding-top:1rem">UPLOADS</td>
+        <?php fetch($result,'pdf')?>
+      </tr>
+
     </tbody>
   </table>
+
 </div>
-
-
 </body>
 </html>

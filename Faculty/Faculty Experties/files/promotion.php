@@ -8,7 +8,7 @@
       <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
      <link rel="stylesheet" type="text/css" href="files/reportstyle.css">
-    <title>Awardreport</title>
+    <title>Promotion</title>
 </head>
 <body>
         <?php
@@ -23,10 +23,6 @@
   <table class="table table-hover  table-sm">
 
     <tbody>
-      <tr>
-        <td class="table-active">FACULTY NAME</td>
-        <?php fetch($result,'Faculty_name')?>
-      </tr>
       <tr>
         <td class="table-active">DATE OF JOINING</td>
         <?php fetch($result,'Date_of_joining')?>
@@ -71,11 +67,14 @@
         <td class="table-active">DATE PROMOTION 2</td>
         <?php fetch($result,'Date_promotion_2')?>
       </tr>
-    
+      <tr>
+        <td class="table-active" style="padding-top:1rem">UPLOADS</td>
+        <?php fetch($result,'pdf')?>
+      </tr>
+
     </tbody>
   </table>
+
 </div>
-
-
 </body>
 </html>

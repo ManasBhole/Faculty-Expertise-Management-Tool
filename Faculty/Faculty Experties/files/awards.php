@@ -8,7 +8,7 @@
       <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
      <link rel="stylesheet" type="text/css" href="files/reportstyle.css">
-    <title>Awardreport</title>
+    <title>Awards</title>
 </head>
 <body>
     <?php
@@ -18,15 +18,11 @@
             $result=$conn->query($sql);
         ?>
         <div class="container">
-  <h2>Awards</h2>
+  <h2>AWARDS</h2>
               
   <table class="table table-hover  table-sm">
 
     <tbody>
-      <tr>
-        <td class="table-active">FACULTY NAME</td>
-        <?php fetch($result,'Faculty_name')?>
-      </tr>
       <tr>
         <td class="table-active">AWARD NAME</td>
         <?php fetch($result,'Award_name')?>
@@ -51,11 +47,14 @@
         <td class="table-active">LEVEL</td>
         <?php fetch($result,'Level')?>
       </tr>
-    
+      <tr>
+        <td class="table-active" style="padding-top:1rem">UPLOADS</td>
+        <?php fetch($result,'pdf')?>
+      </tr>
+
     </tbody>
   </table>
+  
 </div>
-
-
 </body>
 </html>

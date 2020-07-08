@@ -8,7 +8,7 @@
       <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
      <link rel="stylesheet" type="text/css" href="files/reportstyle.css">
-    <title>Awardreport</title>
+    <title>Long_Live</title>
 </head>
 <body>
         <?php
@@ -16,17 +16,13 @@
                 SELECT * FROM `faculty_long_live` WHERE `Faculty_name`='$name';
             ";
             $result=$conn->query($sql);
-        ?>>
+        ?>
         <div class="container">
   <h2>FACULTY LONG LIVE</h2>
               
   <table class="table table-hover table-sm">
 
     <tbody>
-      <tr>
-        <td class="table-active">FACULTY NAME</td>
-        <?php fetch($result,'Faculty_name')?>
-      </tr>
       <tr>
         <td class="table-active">REASON OF LONG LIVE</td>
         <?php fetch($result,'Reason_long_live')?>
@@ -44,12 +40,13 @@
         <?php fetch($result,'Date_of_joining_after_long_live')?>
       </tr>
       <tr>
-        
+        <td class="table-active" style="padding-top:1rem">UPLOADS</td>
+        <?php fetch($result,'pdf')?>
+      </tr>
     
     </tbody>
   </table>
+
 </div>
-
-
 </body>
 </html>
