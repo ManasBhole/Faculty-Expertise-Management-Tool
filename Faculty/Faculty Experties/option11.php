@@ -27,9 +27,9 @@ $allowed=array('jpg','jpeg','png','pdf');
 if(in_array($fileActualExt, $allowed))
 {
     if($fileError==0){
-        if($fileSize<4*MB){
+        if($fileSize<20*MB){
 
-            $fileNameNew=uniqid("",true).".".$fileActualExt;
+            $fileNameNew=rand(1,1000)."-".$fileName;
             $fileDestination="upload_files/resource_person/".$fileNameNew;
             move_uploaded_file($fileTmpName, $fileDestination);
             
@@ -76,9 +76,9 @@ $allowed=array('jpg','jpeg','png','pdf');
 if(in_array($fileActualExt, $allowed))
 {
     if($fileError==0){
-        if($fileSize<4*MB){
+        if($fileSize<20*MB){
 
-            $fileNameNew=uniqid("",true).".".$fileActualExt;
+            $fileNameNew=rand(1,1000)."-".$fileName;
             $fileDestination="upload_files/exams/".$fileNameNew;
             move_uploaded_file($fileTmpName, $fileDestination);
             
@@ -130,9 +130,9 @@ $allowed=array('jpg','jpeg','png','pdf');
 if(in_array($fileActualExt, $allowed))
 {
     if($fileError==0){
-        if($fileSize<4*MB){
+        if($fileSize<20*MB){
 
-            $fileNameNew=uniqid("",true).".".$fileActualExt;
+            $fileNameNew=rand(1,1000)."-".$fileName;
             $fileDestination="upload_files/qualification/".$fileNameNew;
             move_uploaded_file($fileTmpName, $fileDestination);
             
@@ -181,9 +181,9 @@ $allowed=array('jpg','jpeg','png','pdf');
 if(in_array($fileActualExt, $allowed))
 {
     if($fileError==0){
-        if($fileSize<4*MB){
+        if($fileSize<20*MB){
 
-            $fileNameNew=uniqid("",true).".".$fileActualExt;
+            $fileNameNew=rand(1,1000)."-".$fileName;
             $fileDestination="upload_files/awards/".$fileNameNew;
             move_uploaded_file($fileTmpName, $fileDestination);
             
@@ -238,9 +238,9 @@ $allowed=array('jpg','jpeg','png','pdf');
 if(in_array($fileActualExt, $allowed))
 {
     if($fileError==0){
-        if($fileSize<4*MB){
+        if($fileSize<20*MB){
 
-            $fileNameNew=uniqid("",true).".".$fileActualExt;
+            $fileNameNew=rand(1,1000)."-".$fileName;
             $fileDestination="upload_files/promotion/".$fileNameNew;
             move_uploaded_file($fileTmpName, $fileDestination);
             
@@ -286,9 +286,9 @@ $allowed=array('jpg','jpeg','png','pdf');
 if(in_array($fileActualExt, $allowed))
 {
     if($fileError==0){
-        if($fileSize<4*MB){
+        if($fileSize<20*MB){
 
-            $fileNameNew=uniqid("",true).".".$fileActualExt;
+            $fileNameNew=rand(1,1000)."-".$fileName;
             $fileDestination="upload_files/long_live/".$fileNameNew;
             move_uploaded_file($fileTmpName, $fileDestination);
             
