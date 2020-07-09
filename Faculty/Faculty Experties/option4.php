@@ -53,6 +53,14 @@ include('connect.php');
     <label for="Award">Name of the event:</label>
     <div class="col-5"><input type="name" name="Eventname" class="form-control border border-secondary" placeholder="Enter Event name" id="Eventname"></div>
     </div>
+
+    <div class="form-group">
+      <label for="example-date-input" >Date</label>
+      <div class="col-5">
+        <input class="form-control border border-secondary" type="date" name="date" id="example-date-input">
+      </div>
+    </div>
+
     <div class="form-group">
     <label for="Award">University:</label>
     <div class="col-5"><input type="name" class="form-control border border-secondary" placeholder="Enter University name" name="Universityname" id="Universityname"></div>
