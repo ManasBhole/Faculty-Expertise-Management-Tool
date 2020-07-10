@@ -21,11 +21,11 @@ if ($_SESSION['logged_in'] = false) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
    
-    <link rel="stylesheet" type="text/css" href="individualstyle.css">
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+  
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
 
   <link rel="stylesheet" type="text/css" href="http://ajax.aspnetcdn.com/ajax/jquery.dataTables/1.9.4/css/jquery.dataTables.css">
    <script type="text/javascript" charset="utf8" src="https://ajax.aspnetcdn.com/ajax/jquery.dataTables/1.9.4/jquery.dataTables.min.js"></script>
@@ -34,25 +34,68 @@ if ($_SESSION['logged_in'] = false) {
   
 
 
-    <title>Individual Report</title>
+	<title>Individual Report</title>
+	<style>
+		h1{
+    
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 50px;
+    text-align: center;
+    
+    margin-left: 20px;
+}
+
+th { 
+  background: #333; 
+  color: white; 
+  font-weight: bold;
+  text-align: center; 
+}
+td, th { 
+  padding: 6px; 
+  border: 1px solid #ccc; 
+  text-align: center; 
+}
+
+  tr:nth-of-type(odd) { 
+  background: #eee; 
+}
+
+  
+	
+	
+	
+	
+	
+	</style>
 </head>
 <body>
 
 <h1>Individual Report</h1>
 <?php echo "<p style='font-family: 'Times New Roman', Times, serif; margin:20px;' >Faculty Name: ".$username."</p>";?>
-<table  width="1500px" style="margin:auto;" >
 
+
+<div class="table-responsive">
+<table width=100% style=" border-collapse: collapse;
+    border-spacing: 0;
+    margin:auto;
+	text-align: center;
+	padding:10px;
+	margin-bottom:15px;
+    border: 1px solid #ddd;" class="table">
+
+<thead>
   
-<tr><td>&nbsp;</td><td>&nbsp;</td></tr>   
- <tr style="background-color:grey" align="center" class="bold">            
-             <td class="bold" style="color:blisque"  >Award_name</td><td align="center">Position</td><td align="center">Event_name</td><td align="center">university</td>
-            <td align="center">College name</td> <td align="center">level</td><td align="center">Edit</td> <td align="center">Delete</td><td>Preview</td>
+
+ <tr style="background-color:grey" >            
+             <th>Award name</th><th >Position</th><th >Event_name</th><th >university</th>
+            <th >College name</th> <th >level</th><th >Edit</th> <th >Delete</th><th>Preview</th>
             
         </tr>
                    
 
-
-
+</thead>
+<tbody>
 <?php
 
    
@@ -84,29 +127,33 @@ if ($_SESSION['logged_in'] = false) {
 </tr>
          
 	<?php } ?>
+	</tbody>
 </table>
-<script>
-    $(function()
-{
-	$('.scroll-pane').jScrollPane();
-});
-</script>
-</form>
+</div>
 
-<table  width="1500px" style="margin:auto" >
+
+<div class="table-responsive">
+<table width=100% style=" border-collapse: collapse;
+    border-spacing: 0;
+    margin:auto;
+	text-align: center;
+	padding:10px;
+	margin-bottom:15px;
+    border: 1px solid #ddd;" class="table">
 
   
-
- <tr><td>&nbsp;</td><td>&nbsp;</td></tr>   
+<thead>
+  
+ 
  <tr style="background-color:grey" align="center" class="bold">            
-             <td class="bold" style="color:blisque"  >PET Appered</td><td align="center">PET Date</td><td align="center">PET Score</td><td align="center">GATE Appred</td>
-            <td align="center">GATE Date</td> <td align="center">GATE Score</td><td align="center">Edit</td> <td align="center">Delete</td> <td align="center">Preview</td> 
+             <th >PET Appered</th><th >PET Date</th><th >PET Score</th><th >GATE Appred</th>
+            <th >GATE Date</th> <th >GATE Score</th><th >Edit</th> <th>Delete</th> <th >Preview</th> 
             
         </tr>
                    
+	</thead>
 
-
-
+<tbody>
 <?php
 
 	include('connect.php');
@@ -133,24 +180,34 @@ if ($_SESSION['logged_in'] = false) {
 
 </tr>
 			<?php } ?>
+	</tbody>
 </table>
-</form>
+</div>
 
 
 
- <table  width="1500px" style="margin:auto"  id=scroll-pane >
+<div class="table-responsive">
+<table width=100% style=" border-collapse: collapse;
+    border-spacing: 0;
+    margin:auto;
+	text-align: center;
+	padding:10px;
+	margin-bottom:15px;
+    border: 1px solid #ddd;" class="table">
 
   
-
- <tr><td>&nbsp;</td><td>&nbsp;</td></tr>   
- <tr style="background-color:grey" align="center" class="bold">           
-             <td class="bold" style="color:blisque"  >Admitted Program</td><td align="center">Specialization</td><td align="center">Admission Year</td><td align="center">University</td>
-            <td align="center">Registration No </td> <td align="center">College name</td><td align="center">Status </td> <td align="center">Reaserch topic </td><td align="center">Guide Name</td>
-            <td align="center">Edit</td> <td align="center">Delete</td> <td>Preview</td>
+<thead> 
+ 
+ 
+ <tr style="background-color:grey" >           
+             <th >Admitted Program</th><th>Specialization</th><th >Admission Year</th><th >University</th>
+            <th >Registration No </th> <th >College name</th><th >Status </th> <th >Reaserch topic </th><th >Guide Name</th>
+            <th >Edit</th> <th >Delete</th> <th>Preview</th>
             
         </tr>           
 
-
+	</thead>
+	<tbody>
 
 <?php
 
@@ -176,26 +233,34 @@ if ($_SESSION['logged_in'] = false) {
 
 </tr>
 			<?php } ?>
-			
+	</tbody>	
 </table>
+</div>
 
-</form>
-
-<table  width="1500px" style="margin:auto" >
+<div class="table-responsive">
+<table width=100% style=" border-collapse: collapse;
+    border-spacing: 0;
+    margin:auto;
+	text-align: center;
+	padding:10px;
+	margin-bottom:15px;
+    border: 1px solid #ddd;" class="table">
 
   
 
- <tr><td>&nbsp;</td><td>&nbsp;</td></tr>   
+<thead> 
+   
+ 
  <tr style="background-color:grey" align="center" class="bold">               
-             <td class="bold" style="color:blisque"  >Resource person</td><td align="center">Topic Name</td><td align="center">Event Name</td><td align="center">Level</td>
-            <td align="center">Venue </td> <td align="center">Date</td>
-            <td align="center">Edit</td><td align="center">Delete</td>  <td>Preview</td>
+             <th >Resource person</th><th >Topic Name</th><th>Event Name</th><th >Level</th>
+            <th >Venue </th> <th >Date</th>
+            <th >Edit</th><th >Delete</th>  <th>Preview</th>
             
         </tr>
                    
 
-
-
+	</thead>
+<tbody>
 <?php
 
 	include('connect.php');
@@ -221,22 +286,31 @@ if ($_SESSION['logged_in'] = false) {
 
 </tr>
 			<?php } ?>
-			
+	</tbody>	
 </table>
-<table  width="1500px" style="margin:auto" >
+</div>
+<div class="table-responsive">
+<table width=100% style=" border-collapse: collapse;
+    border-spacing: 0;
+    margin:auto;
+	text-align: center;
+	padding:10px;
+	margin-bottom:15px;
+    border: 1px solid #ddd;" class="table">
 
   
-
- <tr><td>&nbsp;</td><td>&nbsp;</td></tr>   
+<thead>
+   
+ 
  <tr style="background-color:grey" align="center" class="bold">          
-             <td class="bold" style="color:blisque"  >Reason Long live</td><td align="center">From Date</td><td align="center">To Date</td><td align="center">Date of joining after long live</td>
-            <td align="center">Edit</td> <td align="center">Delete</td><td>Preview</td>
+             <th  >Reason Long live</th><th >From Date</th><th >To Date</th><th >Date of joining after long live</th>
+            <th >Edit</th> <th ">Delete</th><th>Preview</th>
             
         </tr>
                    
 
-
-
+	</thead>
+<tbody>
 <?php
 
 	include('connect.php');
@@ -261,25 +335,35 @@ if ($_SESSION['logged_in'] = false) {
 
 </tr>
 			<?php } ?>
-			
+	</tbody>	
 </table>
-</form>
+</div>
 
-<table  width="1500px" style="margin:auto" >
+<div class="table-responsive">
+<table width=100% style=" border-collapse: collapse;
+    border-spacing: 0;
+    margin:auto;
+	text-align: center;
+	padding:10px;
+	margin-bottom:15px;
+    border: 1px solid #ddd;" class="table">
 
   
 
- <tr><td>&nbsp;</td><td>&nbsp;</td></tr>   
+<thead> 
+ 
+   
  <tr style="background-color:grey" align="center" class="bold">        
-             <td class="bold" style="color:blisque"  >Date of joining</td><td align="center">SDNR number</td><td align="center">RAIT Experience</td><td align="center">Other Experience</td>
-            <td align="center">Industry Experience </td> <td align="center">Total Experience</td><td align="center">Starting Designation </td> <td align="center">1st Promotion</td><td align="center">1st Promotion Date</td><td align="center">2nd Promotion </td> <td align="center">2nd Promotion Date</td>
-            <td align="center">Edit</td> <td align="center">Delete</td> <td>Preview</td>
+             <th >Date of joining</th><th >SDNR number</th><th >RAIT Experience</th><th >Other Experience</th>
+            <th >Industry Experience </th> <th >Total Experience</th><th >Starting Designation </th> <th >1st Promotion</th><th >1st Promotion Date</th><th >2nd Promotion </th> <th >2nd Promotion Date</th>
+            <th >Edit</th> <th >Delete</th> <th>Preview</th>
             
         </tr>
                    
 
 
-
+	</thead>
+	<tbody>
 <?php
 
 	include('connect.php');
@@ -305,8 +389,10 @@ if ($_SESSION['logged_in'] = false) {
 
 </tr>
 			<?php } ?>
+	</tbody>
       </table>
-</form>
+	  </div>
+
     
             </body>
 </html>
