@@ -164,7 +164,7 @@ $eventname=$_POST['Eventname'];
 $universityname=$_POST['Universityname'];
 $collegename=$_POST['collegename'];
 $lvl1=$_POST['lvl1'];
-
+$date=$_POST['date'];
 
 // Uploading the file
 $file=$_FILES['file'];
@@ -212,10 +212,16 @@ if(isset($_POST['submit5'])){
 $name4=$_SESSION['username'];
 $join_date=$_POST['joindate'];
 $sdrn=$_POST['sdrn'];
-$rait_experience=$_POST['RAIT_experience'];
-$other_teaching_experience=$_POST['Other_teaching_experience'];
-$industry_experience=$_POST['Industry_experience'];
-$total_experience=$_POST['Total_experience'];
+
+$rait_year=$_POST['RAITyear'];
+$rait_months=$_POST['RAITmonths'];
+$other_year=$_POST['Otheryear'];
+$other_months=$_POST['Othermonths'];
+$industry_year=$_POST["Industryyear"];
+$industry_months=$_POST['Industrymonths'];
+$total_year=$_POST['Totalyear'];
+$total_months=$_POST['Totalmonths'];
+
 $designation=$_POST['Designation'];
 $promoted_designation_1=$_POST['Promoted_designation_1'];
 $promotion_first_date=$_POST['Promotion_first_date'];
@@ -373,13 +379,13 @@ if(mysqli_num_rows($r1)>0){
 
 
 if(!empty($name3)){
-    $q1="SELECT * FROM `awards` WHERE Faculty_name='$name3' AND Award_name='$award' AND Position='$position' AND Event_name='$eventname' AND University='$universityname' AND College_name='$collegename' AND Level='$lvl1'";
+    $q1="SELECT * FROM `awards` WHERE Faculty_name='$name3' AND Award_name='$award' AND Position='$position' AND Event_name='$eventname' AND University='$universityname' AND College_name='$collegename' AND Level='$lvl1' AND Date='$date' ";
     $r1=mysqli_query($conn,$q1);
     if(mysqli_num_rows($r1)>0){
     $_SESSION['o1']=1;
     header('location:option4.php');    
     }else{
-    $query3="INSERT INTO `awards`(`Faculty_name`,`Award_name`,`Position`,`Event_name`,`University`,`College_name`,`Level`,`pdf`) VALUES('$name3','$award','$position','$eventname','$universityname','$collegename','$lvl1','$fileDestination' );";
+    $query3="INSERT INTO `awards`(`Faculty_name`,`Award_name`,`Position`,`Event_name`,`Date`,`University`,`College_name`,`Level`,`pdf`) VALUES('$name3','$award','$position','$eventname','$date','$universityname','$collegename','$lvl1','$fileDestination' );";
     $_SESSION['s1']=0;
     mysqli_query($conn,$query3);
     header('location:detail.php');
@@ -390,6 +396,46 @@ if(!empty($name3)){
 
 if(!empty($name4)){
     
+	if($rait_year<10)
+	{
+		$rait_year="0".strval($rait_year);
+	}
+	if($rait_months<10)
+	{
+		$rait_months="0".strval($rait_months);
+	}
+
+	if($other_year<10)
+	{
+		$other_year="0".strval($other_year);
+	}
+	if($other_months<10)
+	{
+		$other_months="0".strval($other_months);
+	}
+	if($industry_year<10)
+	{
+		$industry_year="0".strval($industry_year);
+	}
+	if($industry_months<10)
+	{
+		$industry_months="0".strval($industry_months);
+	}
+	if($total_year<10)
+	{
+		$total_year="0".strval($total_year);
+	}
+	if($total_months<10)
+	{
+		$total_months="0".strval($total_months);
+	}
+
+	$rait_experience=$rait_year."y-".$rait_months."m";
+	$other_teaching_experience=$other_year."y-".$other_months."m";
+	$industry_experience=$industry_year."y-".$industry_months."m";
+	$total_experience=$total_year."y-".$total_months."m";
+
+
     $q1="SELECT * FROM `faculty_promotion` WHERE Faculty_name='$name4' AND Date_of_joining='$join_date' AND SDNR_number='$sdrn' AND RAIT_experience='$rait_experience' AND Other_experience='$other_teaching_experience' AND Industry_experience='$industry_experience' AND Total_experience='$total_experience' AND Starting_designation='$designation' AND Promotion_1='$promoted_designation_1' AND Date_promotion_1='$promotion_first_date' AND Promotion_2='$promoted_designation_2' AND Date_promotion_2='$promotion_second_date'";
     $r1=mysqli_query($conn,$q1);
     if(mysqli_num_rows($r1)>0){
