@@ -45,6 +45,9 @@ include('connect.php');
              <form id="register" class="input-group" action="signup.php" method="POST"> 
                  <input type="text" class="input-field" placeholder="Username" required name="username">
                  <input type="email" class="input-field" placeholder="User-Id" required name="userid">
+                 <input type="number" class="input-field" placeholder="SDRN" required name="SDRN">
+                 <input type="text" class="input-field" placeholder="Designation" required name="Designation">
+
                  <input type="password" class="input-field" placeholder="Enter password" required name="password">
                  
                  <button type="submit" class="submit-btn" >Register</button>

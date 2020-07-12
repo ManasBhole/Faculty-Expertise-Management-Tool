@@ -11,6 +11,8 @@
     //setting variable using post array
     $user = $_POST['username']; 
     $userid=$_POST['userid'];
+    $SDRN=$_POST['SDRN'];
+    $Designation=$_POST['Designation'];
     $password = $_POST['password'];
     
     $user_check_query="SELECT * FROM login_info where userid='$userid' ";
@@ -28,7 +30,7 @@
 
 
     else{
-    $query1="INSERT INTO `login_info`(`username`, `userid`, `password`) VALUES ('$user','$userid','$password');";
+    $query1="INSERT INTO `login_info`(`username`, `userid`,`SDRN`,`Designation`, `password`) VALUES ('$user','$userid','$SDRN','$Designation','$password');";
 
     $res1 = mysqli_query($conn, $query1);
     
@@ -44,6 +46,8 @@
         $_SESSION['username']=$user;
         $_SESSION['password']=$password;
         $_SESSION['userid'] = $row['userid'];
+        $_SESSION['SDRN'] = $row['SDRN'];
+        $_SESSION['Designation'] = $row['Designation'];
        
         
         header('Location:newlogin.php');

@@ -19,7 +19,8 @@
         $_SESSION['userid']=$userid;
         $_SESSION['password']=$password;
         $_SESSION['username'] = $row['username'];
-        
+        $_SESSION['SDRN'] = $row['SDRN'];
+        $_SESSION['Designation'] = $row['Designation'];
         
         header('Location:detail.php');
     }

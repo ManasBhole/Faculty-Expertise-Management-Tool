@@ -55,11 +55,12 @@
 
 }
 .input-group{
-    top: 180px;
+    top: 130px;
     position: absolute;
     width:280px;
     transition: .5s;
 }
+
 .input-field{
     width: 100%;
     padding: 10px 0;
@@ -100,3 +101,4 @@ span{
 #register{
     left: 450px;
 }
+
