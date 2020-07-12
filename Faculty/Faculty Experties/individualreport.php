@@ -4,14 +4,19 @@
 <?php
  @session_start();
     include('connect.php');
-     
+if (!empty($_POST["id"])) {
+ if($_SERVER['REQUEST_METHOD']=='POST')
+            $_SESSION['name']=mysqli_real_escape_string($conn,$_POST['id']);
+    $username=$_SESSION['name'];  
+}
+else{		
 if ($_SESSION['logged_in'] = false) {
     $_SESSION['message'] = 'You must Login to continue use this section.';
     
 } else {
     $username = $_SESSION['username'];
     
-    
+} 
    
 }
 ?>
@@ -88,7 +93,8 @@ td, th {
   
 
  <tr style="background-color:grey" >            
-             <th>Award name</th><th >Position</th><th >Event_name</th><th >university</th>
+             <th>Award name</th><th >Position</th><th >Event_name</th>
+			 <th>Date</th><th >university</th>
             <th >College name</th> <th >level</th><th >Edit</th> <th >Delete</th><th>Preview</th>
             
         </tr>
@@ -110,6 +116,7 @@ td, th {
 	while($data=mysqli_fetch_array($result))
 	{
 				echo"<tr><td  style=' padding-left:10px'>$data[2]</td><td  style=' padding-left:20px'>$data[3]</td><td  style=' padding-left:20px'>$data[4]</td><td  style=' padding-left:50px'>$data[5]</td><td  style=' padding-left:50px'>$data[6]</td><td  style=' padding-left:60px'>$data[7]</td>
+				<td  style=' padding-left:60px'>$data[8]</td>
                     
                 
                      ";?>

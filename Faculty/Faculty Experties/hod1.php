@@ -13,7 +13,7 @@
 
  <link rel="stylesheet" type="text/css" href="http://ajax.aspnetcdn.com/ajax/jquery.dataTables/1.9.4/css/jquery.dataTables.css">
    <script type="text/javascript" charset="utf8" src="https://ajax.aspnetcdn.com/ajax/jquery.dataTables/1.9.4/jquery.dataTables.min.js"></script>
-
+   <script src="https://kit.fontawesome.com/16e94d9d43.js" crossorigin="anonymous"></script>
 </head>
 <body>
 <nav class="navbar navbar-expand-sm bg-dark ">
@@ -34,7 +34,9 @@
  
  <th> UserID </th>
  <th> Username </th>
+ <th> Edit </th>
  <th> Report </th>
+ 
 
 
  </tr >
@@ -55,9 +57,17 @@
     <td> <?php echo $res['username'];  ?> </td>
     <!-- <td> <button class="btn-danger btn"> <a href="report.php?id=<?php echo $res['username']; ?>" class="text-white"> Report </a>  </button> </td> -->
     <td>
+	<form action="individualreport.php" method="post">
+        <input type="hidden" name="id" value=<?php echo $res['username'];?>>
+        <button class="btn-primary btn" type="submit"  class="text-white"><i class="far fa-edit"></i> Edit</button>
+        
+      </form>
+ </td>
+ <td>
       <form action="report.php" method="post">
         <input type="hidden" name="id" value=<?php echo $res['username'];?>>
-        <input type="submit" class="btn-danger btn" value="Report">
+        <button class="btn-danger btn" type="submit"  class="text-white"><i class="far fa-file"></i> Report</button>
+       
       </form>
     </td>
   </tr>
