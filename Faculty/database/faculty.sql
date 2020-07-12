@@ -2,10 +2,10 @@
 -- version 4.9.2
 -- https://www.phpmyadmin.net/
 --
--- Host: localhost
--- Generation Time: Jul 06, 2020 at 08:54 PM
--- Server version: 5.7.28
--- PHP Version: 7.4.7
+-- Host: 127.0.0.1
+-- Generation Time: Jul 12, 2020 at 02:39 PM
+-- Server version: 10.4.11-MariaDB
+-- PHP Version: 7.4.1
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -47,7 +47,10 @@ CREATE TABLE `awards` (
 
 INSERT INTO `awards` (`id`, `Faculty_name`, `Award_name`, `Position`, `Event_name`, `Date`, `University`, `College_name`, `Level`, `pdf`) VALUES
 (3, '', 'hello', '1st', 'hello', NULL, 'hello', 'hello', 'Local level', NULL),
-(4, 'Shubham', 'bye', '1st', 'bye', NULL, 'bye', 'bye', 'Local level', NULL);
+(4, 'Shubham', 'bye', '1st', 'bye', NULL, 'bye', 'bye', 'Local level', NULL),
+(6, 'Shubham', 'Best Student', '3rd', 'award distribution', NULL, 'mumbai', 'beststudent', 'Local level', 'upload_files/awards/5f046f402ff163.41860202.pdf'),
+(7, 'Shubham', 'Best Student', '1st', 'award distribution', NULL, 'none', 'hello', 'International level', ''),
+(8, 'Shubham', 'none', 'Participating', 'none', NULL, 'none', 'ggg', 'International level', '');
 
 -- --------------------------------------------------------
 
@@ -72,9 +75,6 @@ CREATE TABLE `competitive_exam` (
 --
 
 INSERT INTO `competitive_exam` (`id`, `Faculty_name`, `PET_appeared`, `PET_date`, `PET_score`, `GATE_appeared`, `GATE_date`, `GATE_score`, `pdf`) VALUES
-(3, 'Shubham', '2', '2020-06-11', 2, '1', '2020-06-13', 2, NULL),
-(4, 'hershalrao', '1', '2020-06-11', 201, '1', '2020-06-18', 122, ''),
-(5, 'hershalrao', '12', '2020-06-03', 201, '1', '2020-06-23', 12, ''),
 (6, 'hershalrao', '12', '2020-06-10', 201, '12', '2020-06-09', 122, ''),
 (7, 'hershalrao', '', '2020-06-01', 20, '1', '2020-06-01', 12, 'upload_files/exams/5efb82d221a2d3.91422516.png'),
 (8, 'hershalrao', '12', '2020-07-23', 20, '12', '2020-07-22', 122, 'upload_files/exams/5efb8819195451.44560951.png');
@@ -114,7 +114,8 @@ INSERT INTO `faculty_as_resource` (`id`, `Faculty_name`, `Resource_person`, `Top
 (15, 'hershalrao', 'Judge', 'dafwe', 'wegt', 'State level', 'KJHIGJUIwe324r', '2020-07-30', 'upload_files/resource_person/5efb88b7411338.11900690.png'),
 (16, 'hershalrao', 'Judge', 'dafwe', 'wegt', 'National level', 'asd', '2020-07-23', 'upload_files/resource_person/5efb8afb3f8b35.66155329.png'),
 (17, 'hershalrao', 'Judge', 'dafwemngjh', 'wegt', 'State level', 'we324r', '2019-06-11', 'upload_files/resource_person/5f02353f8c7974.77654821.png'),
-(18, 'hershalrao', 'Expert speaker', 'aklj', 'wegt', 'State level', 'we324r', '2021-02-08', 'upload_files/resource_person/5f0372a44621c8.51094527.png');
+(18, 'hershalrao', 'Expert speaker', 'aklj', 'wegt', 'State level', 'we324r', '2021-02-08', 'upload_files/resource_person/5f0372a44621c8.51094527.png'),
+(19, 'Shubham', 'Chairperson', 'none', 'none', 'State level', 'none', '2020-07-30', 'upload_files/resource_person/5f04a794dcf941.43126765.pdf');
 
 -- --------------------------------------------------------
 
@@ -139,7 +140,6 @@ CREATE TABLE `faculty_long_live` (
 INSERT INTO `faculty_long_live` (`id`, `Faculty_name`, `Reason_long_live`, `From_date`, `To_date`, `Date_of_joining_after_long_live`, `pdf`) VALUES
 (1, 'Smruti Singh', 'Not feeling well', '2020-06-15', '2020-06-26', '2020-06-26', NULL),
 (2, 'B', 'Not feeling well 34', '2020-06-18', '2020-11-25', '2020-11-25', NULL),
-(4, 'Shubham', 'nothing', '2020-06-04', '2020-06-12', '2020-07-16', NULL),
 (5, 'hershalrao', 'kjhkjnkjn', '2020-07-16', '2020-07-23', '2020-07-28', 'upload_files/long_live/5efb883a03ed08.29054701.png');
 
 -- --------------------------------------------------------
@@ -171,7 +171,8 @@ CREATE TABLE `faculty_promotion` (
 
 INSERT INTO `faculty_promotion` (`id`, `Faculty_name`, `Date_of_joining`, `SDNR_number`, `RAIT_experience`, `Other_experience`, `Industry_experience`, `Total_experience`, `Starting_designation`, `Promotion_1`, `Date_promotion_1`, `Promotion_2`, `Date_promotion_2`, `pdf`) VALUES
 (1, 'Shubham', '2020-06-05', '12345', 'none', 'none', 'none', 'none', 'none', 'none', '2020-07-09', 'none', '2020-06-18', NULL),
-(2, 'hershalrao', '2020-07-23', '12365', 'as,dnqejk', 'qw,njdej', 'qw,mdkjqe', 'qw ekj', 'a,smDLKWE', 'ASDWKEL', '2020-07-14', 'AS,MJKDEW', '2020-07-10', 'upload_files/promotion/5efb8865c06ce2.54046193.png');
+(2, 'hershalrao', '2020-07-23', '12365', 'as,dnqejk', 'qw,njdej', 'qw,mdkjqe', 'qw ekj', 'a,smDLKWE', 'ASDWKEL', '2020-07-14', 'AS,MJKDEW', '2020-07-10', 'upload_files/promotion/5efb8865c06ce2.54046193.png'),
+(3, 'Shubham', '2020-07-09', '12345', '02y-05m', '03y-04m', '04y-04m', '05y-03m', 'none', 'none', '2020-07-10', 'none', '2020-07-22', '');
 
 -- --------------------------------------------------------
 
@@ -183,6 +184,8 @@ CREATE TABLE `login_info` (
   `id` int(50) NOT NULL,
   `username` varchar(50) NOT NULL,
   `userid` varchar(50) NOT NULL,
+  `SDRN` int(100) NOT NULL,
+  `Designation` varchar(100) NOT NULL,
   `password` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -190,9 +193,10 @@ CREATE TABLE `login_info` (
 -- Dumping data for table `login_info`
 --
 
-INSERT INTO `login_info` (`id`, `username`, `userid`, `password`) VALUES
-(1, 'Shubham', 'shubham.mohapess@gmail.com', 'SAM'),
-(2, 'hershalrao', 'hershalrao@gmail.com', 'aaaa');
+INSERT INTO `login_info` (`id`, `username`, `userid`, `SDRN`, `Designation`, `password`) VALUES
+(1, 'Shubham', 'shubham.mohapess@gmail.com', 0, '', 'SAM'),
+(2, 'hershalrao', 'hershalrao@gmail.com', 0, '', 'aaaa'),
+(3, 'Chirag', 'chiragnawale@gmail.com', 12345, 'none', '12345');
 
 -- --------------------------------------------------------
 
@@ -286,7 +290,7 @@ ALTER TABLE `qualification`
 -- AUTO_INCREMENT for table `awards`
 --
 ALTER TABLE `awards`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `competitive_exam`
@@ -298,7 +302,7 @@ ALTER TABLE `competitive_exam`
 -- AUTO_INCREMENT for table `faculty_as_resource`
 --
 ALTER TABLE `faculty_as_resource`
-  MODIFY `id` int(26) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+  MODIFY `id` int(26) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 
 --
 -- AUTO_INCREMENT for table `faculty_long_live`
@@ -310,13 +314,13 @@ ALTER TABLE `faculty_long_live`
 -- AUTO_INCREMENT for table `faculty_promotion`
 --
 ALTER TABLE `faculty_promotion`
-  MODIFY `id` int(26) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(26) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `login_info`
 --
 ALTER TABLE `login_info`
-  MODIFY `id` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `qualification`
