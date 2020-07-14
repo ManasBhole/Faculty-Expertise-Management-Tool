@@ -77,7 +77,53 @@ td, th {
 <body>
 
 <h1>Individual Report</h1>
-<?php echo "<p style='font-family: 'Times New Roman', Times, serif; margin:20px;' >Faculty Name: ".$username."</p>";?>
+
+
+
+<div class="table-responsive">
+<table width=100% style=" border-collapse: collapse;
+    border-spacing: 0;
+    margin:auto;
+	text-align: center;
+	padding:10px;
+	margin-bottom:15px;
+    border: 1px solid #ddd;" class="table">
+
+  
+<thead>
+  
+ 
+ <tr style="background-color:grey" align="center" class="bold">            
+             <th >Username</th><th >User ID</th><th >SDRN</th><th >Designation</th>
+            
+        </tr>
+                   
+	</thead>
+
+<tbody>
+<?php
+
+	include('connect.php');
+   
+    $s="select * from login_info where username='$username'  ";
+	$result=mysqli_query($conn,$s);
+	$r=mysqli_num_rows($result);
+	//echo $r;
+	while($data=mysqli_fetch_array($result))
+	{
+				echo"<tr><td  style=' padding-left:10px;text-align: center;'>$data[1]</td><td  style=' padding-left:10px;text-align: center;'>$data[2]</td><td  style=' padding-left:20px;text-align: center;'>$data[3]</td><td  style=' padding-left:20px;text-align: center;'>$data[4]</td>
+				
+		";?>
+</tr>		
+
+
+
+
+
+			<?php } ?>
+	</tbody>
+</table>
+</div>
 
 
 <div class="table-responsive">
