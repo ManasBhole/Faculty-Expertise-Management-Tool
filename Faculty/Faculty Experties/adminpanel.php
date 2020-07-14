@@ -26,15 +26,11 @@
 </a>
 </div>
 <div class="container">
-<a href="option3.php">
+<a href="finaldreport.php">
 <button class="button">Department report</button>
 </a>
 </div>
-<div class="container">
-<a href="test.php">
-<button class="button">Scores</button>
-</a>
-</div>
+
 </header>
 </body>
 </html>
