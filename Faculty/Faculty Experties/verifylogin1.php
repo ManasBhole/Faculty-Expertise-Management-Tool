@@ -19,6 +19,12 @@
         $_SESSION['Sdrn']=$Sdrn;
         $_SESSION['Password']=$Password;
         $_SESSION['Sdrn'] = $row['Sdrn'];
+        $_SESSION['firstname']=$row['First_name'];
+        $_SESSION['middlename']=$row['Middle_name'];
+        $_SESSION['thirdname']=$row['Last_name'];
+
+
+        
         
         
         header('Location:detail.php');

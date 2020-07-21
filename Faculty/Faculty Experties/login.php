@@ -39,7 +39,7 @@ include('connect.php');
                 <i class="fas fa-lock"></i>
                 <input  placeholder="Password" type="password" name="Password" id="field_password" class='input_field'>
             </div>
-             <input type="submit" value="Login" id='input_submit' class='input_field'>
+             <button type="submit" name="Login" id='input_submit' class='input_field'>LOGIN</button>
                 <span>Forgot <a href="#"> Username / Password ?</a></span>
                 <span id='create_account'>
                     <a href="logsignup.php">Create your account &#x27A1; </a>

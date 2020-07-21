@@ -31,13 +31,10 @@ include('connect.php');
     <div class="navbar_title">Faculty as Resource Person</div>
 <img src="../img/rait logo.jpeg" class="navbar-brand ml-auto " alt="#" width=160px>
 </nav>
-<?php
-$y="sahil";
-?>
 <form action="option11.php" method="POST" enctype="multipart/form-data">
     <div class="form-group">
     <label for="Name">Name:</label>
-    <div class="col-5"><input type="name" value="<?php echo $_SESSION['username'];?>" name="name"  class="form-control border border-secondary" id="name" disabled> </div>
+    <div class="col-5"><input type="name" value="<?php echo $_SESSION['firstname'] ." ". $_SESSION['middlename'] ." ". $_SESSION['thirdname'];?>" name="name"  class="form-control border border-secondary" id="name" disabled> </div>
     </div>
   <div class="form-group">
   <label for="sel1">Select list:</label>

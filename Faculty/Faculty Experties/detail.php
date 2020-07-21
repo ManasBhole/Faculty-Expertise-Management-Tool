@@ -15,11 +15,7 @@ $_SESSION['s1']=NULL;
 if ($_SESSION['logged_in'] = false) {
     $_SESSION['message'] = 'You must Login to continue use this section.';
     header('location: error.php');
-} else {
-    $username = $_SESSION['username'];
-   
-}
-
+} 
 ?>   
 <head>
     <meta charset="UTF-8">

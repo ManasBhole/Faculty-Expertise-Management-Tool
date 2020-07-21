@@ -5,7 +5,8 @@ define('KB', 1024);
 define('MB', 1048576);
 
 if(isset($_POST['submit1'])){
-$name=$_SESSION['username'];
+$name=$_SESSION['firstname'] ." ". $_SESSION['middlename'] ." ". $_SESSION['thirdname'];
+$sdrno=$_SESSION['Sdrn'];
 $sel1=$_POST['sel1'];
 $tpc=$_POST['tpc'];
 $event=$_POST['event'];
@@ -53,7 +54,8 @@ else
 }
 
 if(isset($_POST['submit2'])){
-$name1=$_SESSION['username'];
+$name1=$_SESSION['firstname'] ." ". $_SESSION['middlename'] ." ". $_SESSION['thirdname'];
+$sdrno=$_SESSION['Sdrn'];
 $pet=$_POST['pet'];
 $pet_date=$_POST['pet_date'];
 $pet_score=$_POST['pet_score'];
@@ -103,7 +105,8 @@ else
 }
 
 if(isset($_POST['submit3'])){
-$name2=$_SESSION['username'];
+$name2=$_SESSION['firstname'] ." ". $_SESSION['middlename'] ." ". $_SESSION['thirdname'];
+$sdrno=$_SESSION['Sdrn'];
 $program_name=$_POST['program_name'];
 $spec=$_POST['spec'];
 $addYear=$_POST['addYear'];
@@ -157,7 +160,8 @@ else
 }
 
 if(isset($_POST['submit4'])){
-$name3=$_SESSION['username'];
+$name3=$_SESSION['firstname'] ." ". $_SESSION['middlename'] ." ". $_SESSION['thirdname'];
+$sdrno=$_SESSION['Sdrn'];
 $award=$_POST['Award'];
 $position=$_POST['position'];
 $eventname=$_POST['Eventname'];
@@ -209,7 +213,8 @@ else
 
 
 if(isset($_POST['submit5'])){
-$name4=$_SESSION['username'];
+$name4=$_SESSION['firstname'] ." ". $_SESSION['middlename'] ." ". $_SESSION['thirdname'];
+$sdrno=$_SESSION['Sdrn'];
 $join_date=$_POST['joindate'];
 $sdrn=$_POST['sdrn'];
 
@@ -271,7 +276,8 @@ else
 }
 
 if(isset($_POST['submit6'])){
-    $name5=$_SESSION['username'];
+    $name5=$_SESSION['firstname'] ." ". $_SESSION['middlename'] ." ". $_SESSION['thirdname'];
+    $sdrno=$_SESSION['Sdrn'];
     $reason=$_POST['reason'];
     $from_date=$_POST['from_date'];
     $to_date=$_POST['to_date'];
@@ -333,7 +339,7 @@ if(!empty($name)){
         
     }else{
     
-        $query="INSERT INTO `faculty_as_resource`(`Faculty_name`,`Resource_person`,`Topic_name`,`Event_name`,`Level`,`Venue`,`Date`,`pdf`) VALUES('$name','$sel1','$tpc','$event','$lvl','$venue','$date','$fileDestination');";
+        $query="INSERT INTO `faculty_as_resource`(`Faculty_name`,`Resource_person`,`Topic_name`,`Event_name`,`Level`,`Venue`,`Date`,`pdf`,`sdrn`) VALUES('$name','$sel1','$tpc','$event','$lvl','$venue','$date','$fileDestination','$sdrno');";
         $_SESSION['s1']=0;
     mysqli_query($conn,$query);
     header('location:detail.php');
@@ -353,7 +359,7 @@ if(mysqli_num_rows($r1)>0){
 
 
 }else{
-$query1="INSERT INTO `competitive_exam`(`Faculty_name`,`PET_appeared`,`PET_date`,`PET_score`,`GATE_appeared`,`GATE_date`,`GATE_score`,`pdf`) VALUES('$name1','$pet','$pet_date','$pet_score','$gate_appeared','$gate_date','$gate_score','$fileDestination');";
+$query1="INSERT INTO `competitive_exam`(`Faculty_name`,`PET_appeared`,`PET_date`,`PET_score`,`GATE_appeared`,`GATE_date`,`GATE_score`,`pdf`,`sdrn`) VALUES('$name1','$pet','$pet_date','$pet_score','$gate_appeared','$gate_date','$gate_score','$fileDestination','$sdrno');";
 $_SESSION['s1']=0;    
 mysqli_query($conn,$query1);
     header('location:detail.php');
@@ -369,7 +375,7 @@ if(mysqli_num_rows($r1)>0){
     header('location:option3.php');
 }else{
     
-    $query2="INSERT INTO `qualification`(`Faculty_name`,`Admitted_for_program`,`Specialization`,`Year_of_admission`,`University`,`Registration_number`,`College_name`,`Status`,`Research_topic`,`Guide_name`,`pdf`) VALUES('$name2','$program_name','$spec','$addYear','$University','$Registration_no','$college_name','$status','$topic_name','$guide_name','$fileDestination');";
+    $query2="INSERT INTO `qualification`(`Faculty_name`,`Admitted_for_program`,`Specialization`,`Year_of_admission`,`University`,`Registration_number`,`College_name`,`Status`,`Research_topic`,`Guide_name`,`pdf`,`sdrn`) VALUES('$name2','$program_name','$spec','$addYear','$University','$Registration_no','$college_name','$status','$topic_name','$guide_name','$fileDestination','$sdrno');";
     $_SESSION['s1']=0;
     mysqli_query($conn,$query2);
     header('location:detail.php');
@@ -385,7 +391,7 @@ if(!empty($name3)){
     $_SESSION['o1']=1;
     header('location:option4.php');    
     }else{
-    $query3="INSERT INTO `awards`(`Faculty_name`,`Award_name`,`Position`,`Event_name`,`Date`,`University`,`College_name`,`Level`,`pdf`) VALUES('$name3','$award','$position','$eventname','$date','$universityname','$collegename','$lvl1','$fileDestination' );";
+    $query3="INSERT INTO `awards`(`Faculty_name`,`Award_name`,`Position`,`Event_name`,`Date`,`University`,`College_name`,`Level`,`pdf`,`sdrn`) VALUES('$name3','$award','$position','$eventname','$date','$universityname','$collegename','$lvl1','$fileDestination','$sdrno');";
     $_SESSION['s1']=0;
     mysqli_query($conn,$query3);
     header('location:detail.php');
@@ -442,7 +448,7 @@ if(!empty($name4)){
     $_SESSION['o1']=1;
     header('location:option5.php'); 
     }else{    
-    $query4="INSERT INTO `faculty_promotion`(`Faculty_name`,`Date_of_joining`,`SDNR_number`,`RAIT_experience`,`Other_experience`,`Industry_experience`,`Total_experience`,`Starting_designation`,`Promotion_1`,`Date_promotion_1`,`Promotion_2`,`Date_promotion_2`,`pdf` ) VALUES('$name4','$join_date','$sdrn','$rait_experience','$other_teaching_experience','$industry_experience','$total_experience','$designation','$promoted_designation_1','$promotion_first_date','$promoted_designation_2','$promotion_second_date','$fileDestination' );";
+    $query4="INSERT INTO `faculty_promotion`(`Faculty_name`,`Date_of_joining`,`SDNR_number`,`RAIT_experience`,`Other_experience`,`Industry_experience`,`Total_experience`,`Starting_designation`,`Promotion_1`,`Date_promotion_1`,`Promotion_2`,`Date_promotion_2`,`pdf`,`sdrn`) VALUES('$name4','$join_date','$sdrn','$rait_experience','$other_teaching_experience','$industry_experience','$total_experience','$designation','$promoted_designation_1','$promotion_first_date','$promoted_designation_2','$promotion_second_date','$fileDestination','$sdrno');";
     $_SESSION['s1']=0;
     mysqli_query($conn,$query4);
     header('location:detail.php');
@@ -459,7 +465,7 @@ if(!empty($name5)){
         header('location:option6.php');
     }else{
     
-    $query5="INSERT INTO `faculty_long_live`(`Faculty_name`,`Reason_long_live`,`From_date`,`To_date`,`Date_of_joining_after_long_live`,`pdf`) VALUES('$name5','$reason','$from_date','$to_date','$longlive','$fileDestination' );";
+    $query5="INSERT INTO `faculty_long_live`(`Faculty_name`,`Reason_long_live`,`From_date`,`To_date`,`Date_of_joining_after_long_live`,`pdf`,`sdrn`) VALUES('$name5','$reason','$from_date','$to_date','$longlive','$fileDestination','$sdrno');";
     
     $_SESSION['s1']=0;
     mysqli_query($conn,$query5);

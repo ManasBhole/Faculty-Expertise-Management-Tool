@@ -1,4 +1,8 @@
 <!DOCTYPE html>
+<?php
+@session_start();
+
+?>
 <html>
 
 <head>
@@ -72,7 +76,7 @@
             </div><br>
         
             
-            <input type="submit" class="input_field" value="Send OTP" id='input_submit'>
+            <button type="submit" class="input_field" name="Send_OTP" id='input_submit'>Send OTP</button>
                 <div class="error"></div>
         </form>
 
