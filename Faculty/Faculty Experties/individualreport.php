@@ -6,15 +6,15 @@
     include('connect.php');
 if (!empty($_POST["id"])) {
  if($_SERVER['REQUEST_METHOD']=='POST')
-            $_SESSION['name']=mysqli_real_escape_string($conn,$_POST['id']);
-    $username=$_SESSION['name'];  
+            $_SESSION['Sdrn']=mysqli_real_escape_string($conn,$_POST['id']);
+    $Sdrn = $_SESSION['Sdrn'];
 }
 else{		
 if ($_SESSION['logged_in'] = false) {
     $_SESSION['message'] = 'You must Login to continue use this section.';
     
 } else {
-    $username = $_SESSION['username'];
+    $Sdrn = $_SESSION['Sdrn'];
     
 } 
    
@@ -94,7 +94,8 @@ td, th {
   
  
  <tr style="background-color:grey" align="center" class="bold">            
-             <th >Username</th><th >User ID</th><th >SDRN</th><th >Designation</th>
+             <th >Faculty_name</th><th >SDRN</th><th>Email ID</th><th >Date of joining</th><th >Qualification</th>
+			 <th >Designation</th>
             
         </tr>
                    
@@ -105,13 +106,14 @@ td, th {
 
 	include('connect.php');
    
-    $s="select * from login_info where username='$username'  ";
+    $s="select * from faculty_info where Sdrn='$Sdrn'  ";
 	$result=mysqli_query($conn,$s);
 	$r=mysqli_num_rows($result);
 	//echo $r;
 	while($data=mysqli_fetch_array($result))
 	{
-				echo"<tr><td  style=' padding-left:10px;text-align: center;'>$data[1]</td><td  style=' padding-left:10px;text-align: center;'>$data[2]</td><td  style=' padding-left:20px;text-align: center;'>$data[3]</td><td  style=' padding-left:20px;text-align: center;'>$data[4]</td>
+				echo"<tr><td  style=' padding-left:10px;text-align: center;'>$data[1]  $data[2]  $data[3]</td><td  style=' padding-left:10px;text-align: center;'>$data[0]</td><td  style=' padding-left:10px;text-align: center;'>$data[8]</td><td  style=' padding-left:20px;text-align: center;'>$data[9]</td><td  style=' padding-left:20px;text-align: center;'>$data[10]</td>
+				<td  style=' padding-left:10px;text-align: center;'>$data[11]</td>
 				
 		";?>
 </tr>		
@@ -154,7 +156,7 @@ td, th {
    
 	include('connect.php');
    
-    $s="select * from awards where Faculty_name='$username' ";
+    $s="select * from awards where Sdrn='$Sdrn' ";
 	$result=mysqli_query($conn,$s);
 	$r=mysqli_num_rows($result);
      
@@ -211,7 +213,7 @@ td, th {
 
 	include('connect.php');
    
-    $s="select * from competitive_exam where Faculty_name='$username'  ";
+    $s="select * from competitive_exam where Sdrn='$Sdrn'  ";
 	$result=mysqli_query($conn,$s);
 	$r=mysqli_num_rows($result);
 	//echo $r;
@@ -266,7 +268,7 @@ td, th {
 
 	include('connect.php');
    
-    $s="select * from qualification where Faculty_name='$username' ";
+    $s="select * from qualification where Sdrn='$Sdrn' ";
 	$result=mysqli_query($conn,$s);
 	$r=mysqli_num_rows($result);
 	//echo $r;
@@ -318,7 +320,7 @@ td, th {
 
 	include('connect.php');
    
-    $s="select * from faculty_as_resource where Faculty_name='$username' ";
+    $s="select * from faculty_as_resource where Sdrn='$Sdrn' ";
 	$result=mysqli_query($conn,$s);
 	$r=mysqli_num_rows($result);
 	//echo $r;
@@ -368,7 +370,7 @@ td, th {
 
 	include('connect.php');
    
-    $s="select * from faculty_long_live where Faculty_name='$username' ";
+    $s="select * from faculty_long_live where Sdrn='$Sdrn' ";
 	$result=mysqli_query($conn,$s);
 	$r=mysqli_num_rows($result);
 	//echo $r;
@@ -421,7 +423,7 @@ td, th {
 
 	include('connect.php');
    
-    $s="select * from faculty_promotion where Faculty_name='$username' ";
+    $s="select * from faculty_promotion where Sdrn='$Sdrn' ";
 	$result=mysqli_query($conn,$s);
 	$r=mysqli_num_rows($result);
 	//echo $r;

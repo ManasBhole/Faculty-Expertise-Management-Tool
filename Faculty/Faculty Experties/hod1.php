@@ -44,7 +44,7 @@
  <?php
 
  include 'conn.php'; 
- $q = "select * from login_info ";
+ $q = "select * from faculty_info ";
 
  $query = mysqli_query($con,$q);
 
@@ -53,19 +53,19 @@
  ?>
   <tr class="text-center">
 
-    <td> <?php echo $res['userid'];  ?> </td>
-    <td> <?php echo $res['username'];  ?> </td>
-    <!-- <td> <button class="btn-danger btn"> <a href="report.php?id=<?php echo $res['username']; ?>" class="text-white"> Report </a>  </button> </td> -->
+    <td> <?php echo $res['Sdrn'];  ?> </td>
+    <td> <?php echo $res['First_name']."  ".$res['Middle_name']."   ".$res['Last_name'];  ?> </td>
+    <!-- <td> <button class="btn-danger btn"> <a href="report.php?id=<?php echo $res['First_name']; ?>" class="text-white"> Report </a>  </button> </td> -->
     <td>
 	<form action="individualreport.php" method="post">
-        <input type="hidden" name="id" value=<?php echo $res['username'];?>>
+        <input type="hidden" name="id" value=<?php echo $res['Sdrn'];?>>
         <button class="btn-primary btn" type="submit"  class="text-white"><i class="far fa-edit"></i> Edit</button>
         
       </form>
  </td>
  <td>
       <form action="report.php" method="post">
-        <input type="hidden" name="id" value=<?php echo $res['username'];?>>
+        <input type="hidden" name="id" value=<?php echo $res['Sdrn'];?>>
         <button class="btn-danger btn" type="submit"  class="text-white"><i class="far fa-file"></i> Report</button>
        
       </form>
