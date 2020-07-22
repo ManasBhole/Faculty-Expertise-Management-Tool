@@ -32,8 +32,8 @@
  <tr class="bg-dark text-white text-center">
  
  
- <th> UserID </th>
  <th> Username </th>
+ <th> SDRN </th>
  <th> Edit </th>
  <th> Report </th>
  
@@ -52,9 +52,9 @@
  {
  ?>
   <tr class="text-center">
-
+  <td> <?php echo $res['First_name']."  ".$res['Middle_name']."   ".$res['Last_name'];  ?> </td>
     <td> <?php echo $res['Sdrn'];  ?> </td>
-    <td> <?php echo $res['First_name']."  ".$res['Middle_name']."   ".$res['Last_name'];  ?> </td>
+    
     <!-- <td> <button class="btn-danger btn"> <a href="report.php?id=<?php echo $res['First_name']; ?>" class="text-white"> Report </a>  </button> </td> -->
     <td>
 	<form action="individualreport.php" method="post">
