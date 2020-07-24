@@ -15,10 +15,12 @@
   <link rel="stylesheet" type="text/css" href="http://ajax.aspnetcdn.com/ajax/jquery.dataTables/1.9.4/css/jquery.dataTables.css">
    <script type="text/javascript" charset="utf8" src="https://ajax.aspnetcdn.com/ajax/jquery.dataTables/1.9.4/jquery.dataTables.min.js"></script>
    <script src="https://kit.fontawesome.com/16e94d9d43.js" crossorigin="anonymous"></script>
-
+   
+   <link rel="stylesheet" type="text/css" href="reportstyle.css">
+    
 </head>
 <body>
-    
+
     <?php
         
         $severname="localhost";
@@ -33,19 +35,16 @@
         }
         mysqli_select_db($conn, $dbname);
 
-        // $name=mysqli_real_escape_string($conn,$_GET['id']);
-
         if($_SERVER['REQUEST_METHOD']=='POST')
-            $_SESSION['name']=mysqli_real_escape_string($conn,$_POST['id']);
-        $name=$_SESSION['name'];
-       
+            $_SESSION['sdrn']=mysqli_real_escape_string($conn,$_POST['Sdrn']);
+        $Sdrn=$_SESSION['sdrn'];
+    
         function fetch($result,$value){
 
+            $counter=0;
             while ($rows=mysqli_fetch_assoc($result)){
-                
-                if($rows==NULL)
-                    break;
-
+             
+                $counter=1;
                 if($value=="pdf"){
 
                     $file_ext = pathinfo($rows[$value], PATHINFO_EXTENSION);
@@ -68,6 +67,10 @@
                 else
                     echo("<td>".$rows[$value]."</td>");
             }
+            
+            if ($counter==0) 
+                echo("<td>N/A</td>");
+
             mysqli_data_seek($result,0);
         }
 
@@ -101,8 +104,14 @@
         }
     ?>
 
+    <nav class="navbar navbar-expand-sm">
+        <div class="navbar_title" style=" font-family: 'Times New Roman', Times, serif; font-size: 50px; color: whitesmoke;">Report</div>
+        <img src="images/rait_logo.jpeg" class="navbar-brand ml-auto " alt="#" width=160px>
+    </nav>  
+
     <div class="conatiner" style="border: 2px solid #80808061; margin: 1rem">
-        <?php 
+        <?php
+            include 'files/faculty.php'; 
             include 'files/resource.php';
             include 'files/exams.php';
             include 'files/qualification.php';
@@ -114,5 +123,9 @@
 
     <?php $conn->close();?>
 
+    <script>
+        if (window.history.replaceState)  
+            window.history.replaceState(null,null,window.location.href);
+    </script>
 </body>
 </html>

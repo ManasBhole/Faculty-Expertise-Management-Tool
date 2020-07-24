@@ -3,58 +3,52 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
-      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
-     <link rel="stylesheet" type="text/css" href="files/reportstyle.css">
-    <title>Awards</title>
 </head>
+
 <body>
     <?php
             $sql="
-                SELECT * FROM `awards` WHERE `Faculty_name`='$name';
+                SELECT * FROM `awards` WHERE `Sdrn`='$Sdrn';
             ";
             $result=$conn->query($sql);
-        ?>
+    ?>
         <div class="container">
   <h2>AWARDS</h2>
               
-  <table class="table table-hover  table-sm">
-
-    <tbody>
+  <div class="scroll">
+  <table class="table table-hover table-sm">
+  
       <tr>
-        <td class="table-active">AWARD NAME</td>
+        <th class="table-active">AWARD NAME</th>
         <?php fetch($result,'Award_name')?>
       </tr>
       <tr>
-        <td class="table-active">POSITION</td>
+        <th class="table-active">POSITION</th>
         <?php fetch($result,'Position')?>
       </tr>
       <tr>
-        <td class="table-active">EVENT NAME</td>
+        <th class="table-active">EVENT NAME</th>
         <?php fetch($result,'Event_name')?>
       </tr>
       <tr>
-        <td class="table-active">UNIVERSITY</td>
+        <th class="table-active">UNIVERSITY</th>
         <?php fetch($result,'University')?>
       </tr>
       <tr>
-        <td class="table-active">COLLEGE NAME</td>
+        <th class="table-active">COLLEGE NAME</th>
         <?php fetch($result,'College_name')?>
       </tr>
       <tr>
-        <td class="table-active">LEVEL</td>
+        <th class="table-active">LEVEL</th>
         <?php fetch($result,'Level')?>
       </tr>
       <tr>
-        <td class="table-active" style="padding-top:1rem">UPLOADS</td>
+        <th class="table-active" style="padding-top:1rem">UPLOADS</th>
         <?php fetch($result,'pdf')?>
       </tr>
 
-    </tbody>
   </table>
-  
+  </div>
 </div>
 </body>
 </html>
