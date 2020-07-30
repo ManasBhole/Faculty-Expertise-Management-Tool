@@ -11,12 +11,17 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
   <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">  
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.5.0/css/bootstrap-datepicker.css" rel="stylesheet">  
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js"></script>  
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>  
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.5.0/js/bootstrap-datepicker.js"></script> </head>
-   
+  
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+		<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" />
+
  <link rel="stylesheet" type="text/css" href="http://ajax.aspnetcdn.com/ajax/jquery.dataTables/1.9.4/css/jquery.dataTables.css">
    <script type="text/javascript" charset="utf8" src="https://ajax.aspnetcdn.com/ajax/jquery.dataTables/1.9.4/jquery.dataTables.min.js"></script>
    <style type="text/css">     
@@ -78,6 +83,15 @@
         top : 45px;
 
     }
+    .op6{
+      position:absolute;
+      right:100px;
+        width:150px;
+        height:32px;
+        top : 45px;
+
+
+    }
     
 </style>
 <script language="javascript">
@@ -133,6 +147,36 @@ function populate(){
 
 }
 </script>
+<script>
+$(document).ready(function(){
+	load_data();
+	function load_data(query)
+	{
+		$.ajax({
+			url:"fetch.php",
+			method:"post",
+			data:{query:query},
+			success:function(data)
+			{
+				$('#result').html(data);
+			}
+		});
+	}
+	
+	$('#search_text').keyup(function(){
+		var search = $(this).val();
+		if(search != '')
+		{
+			load_data(search);
+		}
+		else
+		{
+			load_data();			
+		}
+	});
+});
+</script>
+
 </head>
 <body>
 
@@ -161,7 +205,10 @@ function populate(){
             
             });
         </script>
-        
+  
+					<input type="text" name="search_text" id="search_text" placeholder="Faculty name" class="bg-dark text-white op6" />
+			
+      <div id="result"></div>
   <select class="bg-dark text-white" name="exam1" id="exam1" required onchange="populate()">
   <option value="" selected disabled hidden>SELECT AN OPTION</option>
   <option value="FACULTY AS RESOURCE">FACULTY AS RESOURCE</option>
@@ -218,6 +265,7 @@ function populate(){
 <div class="btn">
     <button type="submit" name="submit" class="btn btn-dark">Search</button>
       </div>
+      <hr>
   </form> 
  
 
@@ -227,15 +275,15 @@ function populate(){
 <?php
 @session_start();
 include('connect.php');
-if(isset($_POST['exam1'])){
+if(isset($_POST['exam1']) && !isset($_POST['query'])){
 $_SESSION['exam']=$_POST['exam1'];
-
-if($_SESSION['exam']=='FACULTY AS RESOURCE'){?>
-  
+if($_SESSION['exam']=='FACULTY AS RESOURCE' ){?>
+  <h2>FACULTY AS RESOURCE</h2>
   <tr class="bg-dark text-white text-center">
  
  
   <th> Username </th>
+  <th>SDRN</th>
   <th>Resource Person </th>
   <th> Topic Name</th>
   <th> Event Name</th>
@@ -270,6 +318,7 @@ if($_SESSION['exam']=='FACULTY AS RESOURCE'){?>
   while($row=mysqli_fetch_assoc($result)){?>
     <tr class="text-center">
     <td> <?php echo $row['Faculty_name'];?></td>
+    <td> <?php echo $row['Sdrn'];?></td>
     <td> <?php echo $row['Resource_person'];?></td>
     <td> <?php echo $row['Topic_name']; ?> </td>
     <td> <?php echo $row['Event_name']; ?> </td>
@@ -284,10 +333,12 @@ if($_SESSION['exam']=='FACULTY AS RESOURCE'){?>
 }
 }
 if($_SESSION['exam']=='QUALIFICATION'){?>
+  <h2>QUALIFICATION</h2>
   <tr class="bg-dark text-white text-center">
  
  
  <th> Username </th>
+ <th>SDRN</th>
  <th>Admitted for program </th>
  <th> Specialization</th>
  <th> Year of admission</th>
@@ -311,6 +362,7 @@ while($row=mysqli_fetch_assoc($result)){
     ?>
     <tr class="text-center">
     <td> <?php echo $row['Faculty_name'];?></td>
+    <td> <?php echo $row['Sdrn'];?></td>
     <td> <?php echo $row['Admitted_for_program'];?></td>
     <td> <?php echo $row['Specialization']; ?> </td>
     <td> <?php echo $row['Year_of_admission']; ?> </td>
@@ -327,13 +379,14 @@ while($row=mysqli_fetch_assoc($result)){
 }
 }
 if($_SESSION['exam']=='FACULTY PROMOTION'){?>
-  
+  <h2>FACULTY PROMOTION</h2>
     <tr class="bg-dark text-white text-center">
    
    
     <th> Username </th>
+    <th>SDRN</th>
     <th>Date of joining</th>
-    <th> SDNR number</th>
+    
     <th> RAIT experience</th>
     <th> Other experience</th>
     <th> Industry experience</th>
@@ -352,8 +405,9 @@ if($_SESSION['exam']=='FACULTY PROMOTION'){?>
   while($row=mysqli_fetch_assoc($result)){?>
       <tr class="text-center">
       <td> <?php echo $row['Faculty_name'];?></td>
-      <td> <?php echo $row['Date_of_joining'];?></td>
       <td> <?php echo $row['SDNR_number']; ?> </td>
+      <td> <?php echo $row['Date_of_joining'];?></td>
+      
       <td> <?php echo $row['RAIT_experience']; ?> </td>
       <td> <?php echo $row['Other_experience']; ?> </td>
       <td> <?php echo $row['Industry_experience']; ?> </td>
@@ -370,11 +424,12 @@ if($_SESSION['exam']=='FACULTY PROMOTION'){?>
 }
 }
 if($_SESSION['exam']=='FACULTY LONG LIVE'){?>
-  
+  <h2>FACULTY LONG LIVE</h2>
     <tr class="bg-dark text-white text-center">
    
    
     <th> Username </th>
+    <th>SDRN</th>
     <th>Reason</th>
     <th> From date</th>
     <th> To date</th>
@@ -391,6 +446,7 @@ if($_SESSION['exam']=='FACULTY LONG LIVE'){?>
       ?>
       <tr class="text-center">
       <td> <?php echo $row['Faculty_name'];?></td>
+      <td> <?php echo $row['Sdrn'];?></td>
       <td> <?php echo $row['Reason_long_live'];?></td>
       <td> <?php echo $row['From_date']; ?> </td>
       <td> <?php echo $row['To_date']; ?> </td>
@@ -402,11 +458,12 @@ if($_SESSION['exam']=='FACULTY LONG LIVE'){?>
 }
 }
 if($_SESSION['exam']=='AWARDS'){?>
-  
+  <h2>AWARDS</h2>
     <tr class="bg-dark text-white text-center">
    
    
     <th> Username </th>
+    <th>SDRN</th>
     <th>Award </th>
     <th> Position</th>
     <th> Event Name</th>
@@ -440,6 +497,7 @@ if($_SESSION['exam']=='AWARDS'){?>
     while($row=mysqli_fetch_assoc($result)){?>
       <tr class="text-center">
       <td> <?php echo $row['Faculty_name'];?></td>
+      <td> <?php echo $row['Sdrn'];?></td>
       <td> <?php echo $row['Award_name'];?></td>
       <td> <?php echo $row['Position']; ?> </td>
       <td> <?php echo $row['Event_name']; ?> </td>
@@ -456,11 +514,12 @@ if($_SESSION['exam']=='COMPETITIVE EXAMS'){
   $z=$p+1;
 
 if($_POST['op4']=='PET'){?>
-  
+  <h2>COMPETITIVE EXAM</h2>
   <tr class="bg-dark text-white text-center">
  
  
   <th> Username </th>
+  <th>SDRN</th>
   <th>PET Score </th>
   <th> Date Appeared</th>
   
@@ -474,6 +533,7 @@ if($_POST['op4']=='PET'){?>
 while($row=mysqli_fetch_assoc($result)){?>
     <tr class="text-center">
     <td> <?php echo $row['Faculty_name'];?></td>
+    <td> <?php echo $row['Sdrn'];?></td>
     <td> <?php echo $row['PET_score'];?></td>
     <td> <?php echo $row['PET_date']; ?> </td>
     
@@ -483,10 +543,12 @@ while($row=mysqli_fetch_assoc($result)){?>
 }
 }
 if($_POST['op4']=='GATE'){?>
+  <h2>COMPETITIVE EXAM</h2>
   <tr class="bg-dark text-white text-center">
  
  
  <th> Username </th>
+ <th>SDRN</th>
  <th>GATE Score </th>
  <th> Date Appeared</th>
  
@@ -503,6 +565,7 @@ while($row=mysqli_fetch_assoc($result)){
     ?>
     <tr class="text-center">
     <td> <?php echo $row['Faculty_name'];?></td>
+    <td> <?php echo $row['Sdrn'];?></td>
     <td> <?php echo $row['GATE_score'];?></td>
     <td> <?php echo $row['GATE_date']; ?> </td>
     
@@ -512,21 +575,8 @@ while($row=mysqli_fetch_assoc($result)){
 }
 }
 }
+?>
 
-else{?>
-  <tr class="bg-dark text-white text-center">
- 
- 
-  <th> Username </th>
-  <th> Score </th>
-  <th> Date Appeared</th>
-  
- 
- 
-  </tr >
- <?php
- }
- ?>
  <?php
 $_SESSION['exam']=NULL;
 ?>
