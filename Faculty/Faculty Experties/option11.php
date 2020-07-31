@@ -216,7 +216,7 @@ if(isset($_POST['submit5'])){
 $name4=$_SESSION['firstname'] ." ". $_SESSION['middlename'] ." ". $_SESSION['thirdname'];
 $sdrno=$_SESSION['Sdrn'];
 $join_date=$_POST['joindate'];
-$sdrn=$_POST['sdrn'];
+$sdrn=$_SESSION['Sdrn'];
 
 $rait_year=$_POST['RAITyear'];
 $rait_months=$_POST['RAITmonths'];

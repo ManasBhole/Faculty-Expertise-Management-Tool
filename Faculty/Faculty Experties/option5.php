@@ -41,7 +41,7 @@ include('connect.php');
     </div>
     <div class="form-group">
         <label class="col-sm-2 col-form-label" for="SDRN">SDRN Number:</label>
-        <div class="col-2"><input type="name" class="form-control border border-secondary" placeholder="Enter number" name="sdrn" id="SDRN"></div>
+        <div class="col-2"><input type="name" value="<?php echo $_SESSION['Sdrn'];?>" class="form-control border border-secondary" name="sdrn" id="SDRN" disabled></div>
     </div>
 
     <div class="form-group">

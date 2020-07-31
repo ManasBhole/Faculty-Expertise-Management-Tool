@@ -15,8 +15,7 @@
   <link rel="stylesheet" type="text/css" href="http://ajax.aspnetcdn.com/ajax/jquery.dataTables/1.9.4/css/jquery.dataTables.css">
    <script type="text/javascript" charset="utf8" src="https://ajax.aspnetcdn.com/ajax/jquery.dataTables/1.9.4/jquery.dataTables.min.js"></script>
    <script src="https://kit.fontawesome.com/16e94d9d43.js" crossorigin="anonymous"></script>
-   
-   <link rel="stylesheet" type="text/css" href="reportstyle.css">
+   <link rel="stylesheet" href="reportstyle.css">
     
 </head>
 <body>
@@ -59,9 +58,7 @@
                         ($file_ext=='pdf')?$target='_blank':$target='_self';
                     }
 
-                    $file_name=basename($rows[$value]);
-                    $temp=explode('-',$file_name);
-                    $file_name=end($temp);
+                    $path=preg_replace('/\s+/','%20',$path);
                     echo("<td><a href=$path target=$target><button class='btn'>Preview</button></a></td>"); 
                 }
                 else
@@ -85,6 +82,8 @@
                     header('Content-Disposition: inline; filename="' .$file_path. '"'); 
                     header('Content-Transfer-Encoding: binary'); 
                     header('Accept-Ranges: bytes');  
+                    ob_clean();
+                    flush();
                     @readfile($file_path);  
                 }
 
