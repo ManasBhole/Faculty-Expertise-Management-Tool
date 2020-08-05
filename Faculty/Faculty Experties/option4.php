@@ -39,6 +39,14 @@ include('connect.php');
     <div class="col-5"><input type="name" class="form-control border border-secondary" placeholder="Enter Award name" name="Award" id="Award"></div>
     </div>
     <div class="form-group">
+    <label for="Award">Title of innovation:</label>
+    <div class="col-5"><input type="name" class="form-control border border-secondary" placeholder="Enter Innovation name" name="Innovation" id="Innovation"></div>
+    </div>
+    <div class="form-group">
+    <label for="Award">Name of Awardee:</label>
+    <div class="col-5"><input type="name" class="form-control border border-secondary" placeholder="Enter the name" name="Awardee" id="Awardee"></div>
+    </div>
+    <div class="form-group">
       <label for="position">Select Position:</label>
       <div class="col-5">
      <select class="form-control  border border-secondary" name="position" id="position">
@@ -51,9 +59,16 @@ include('connect.php');
     </div>
     <div class="form-group">
     <label for="Award">Name of the event:</label>
-    <div class="col-5"><input type="name" name="Eventname" class="form-control border border-secondary" placeholder="Enter Event name" id="Eventname"></div>
+    <div class="col-5"><input type="name" name="Eventname" class="form-control border border-secondary" placeholder="Enter Event/Agency name" id="Eventname"></div>
     </div>
-
+    <div class="form-group">
+    <label for="Award">Awarding Agency:</label>
+    <div class="col-5"><input type="name" name="Awardagency" class="form-control border border-secondary" placeholder="Enter Agency name" id="Awardagency"></div>
+    </div>
+    <div class="form-group">
+    <label for="Award">Category:</label>
+    <div class="col-5"><input type="Category" name="Awardagency" class="form-control border border-secondary" placeholder="Enter Category" id="Category"></div>
+    </div>
     <div class="form-group">
       <label for="example-date-input" >Date</label>
       <div class="col-5">
@@ -68,6 +83,10 @@ include('connect.php');
     <div class="form-group">
     <label for="Award">Name of the college</label>
     <div class="col-5"><input type="name" class="form-control border border-secondary" placeholder="Enter College name" name="collegename" id="collegename"></div>
+    </div>
+    <div class="form-group">
+    <label for="Name">Category:</label>
+    <div class="col-5"><input type="name" class="form-control border border-secondary" placeholder="Enter the category" name="categoryname" id="categoryname"></div>
     </div>
     <div class="form-group">
   <label for="sel1">Select level:</label>
