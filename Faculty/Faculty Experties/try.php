@@ -154,8 +154,13 @@ $(document).ready(function() {
 		<th>SDRN No.</th>
 		<th>Faculty Name</th>
 		<th>Award Name</th>
+		<th>Title Of Innovation</th>
+		<th>Name of Awardee</th>
 		<th>Position</th>
 		<th>Event Name</th>
+		<th>Awarding Agency</th>
+		<th>Category</th>
+		<th>Date</th>
 		<th>University</th>
 		<th>College Name</th>
 		<th>Level</th>
@@ -166,21 +171,26 @@ $(document).ready(function() {
 	$res=mysqli_query($conn,$sql);
 	if(mysqli_num_rows($res)==0)
 		{
-			echo "<tr><td colspan='9' align='center'>No data for the Corresponding Date</td></tr>";
+			echo "<tr><td colspan='14' align='center'>No data for the Corresponding Date</td></tr>";
 		}
 	$count=1;
 	while($data=mysqli_fetch_array($res))
 	{
 		echo"<tr>
 			<td  style=' padding-left:10px'>$count</td>
-			<td  style=' padding-left:10px'>$data[10]</td>
+			<td  style=' padding-left:10px'>$data[14]</td>
 			<td  style=' padding-left:10px'>$data[1]</td>
 			<td  style=' padding-left:10px'>$data[2]</td>
 			<td  style=' padding-left:20px'>$data[3]</td>
 			<td  style=' padding-left:20px'>$data[4]</td>
-			<td  style=' padding-left:50px'>$data[5]</td>
-			<td  style=' padding-left:50px'>$data[6]</td>
-			<td  style=' padding-left:60px'>$data[7]</td>
+			<td  style=' padding-left:20px'>$data[5]</td>
+			<td  style=' padding-left:20px'>$data[6]</td>
+			<td  style=' padding-left:20px'>$data[7]</td>
+			<td  style=' padding-left:10px'>$data[8]</td>
+			<td  style=' padding:3px'>$data[9]</td>
+			<td  style=' padding-left:20px'>$data[10]</td>
+			<td  style=' padding-left:20px'>$data[11]</td>
+			<td  style=' padding-left:20px'>$data[12]</td>
 			</tr>";
 			$count++;
 	}
