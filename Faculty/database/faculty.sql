@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 01, 2020 at 04:10 PM
+-- Generation Time: Aug 08, 2020 at 09:32 AM
 -- Server version: 10.4.11-MariaDB
 -- PHP Version: 7.4.1
 
@@ -51,8 +51,12 @@ CREATE TABLE `awards` (
   `id` int(11) NOT NULL,
   `Faculty_name` varchar(60) NOT NULL,
   `Award_name` varchar(60) NOT NULL,
+  `Title_of_innovation` varchar(30) NOT NULL,
+  `Name_of_awardee` varchar(30) NOT NULL,
   `Position` varchar(50) NOT NULL,
   `Event_name` varchar(60) NOT NULL,
+  `Awarding_agency` varchar(30) NOT NULL,
+  `Category` varchar(30) NOT NULL,
   `Date` date DEFAULT NULL,
   `University` varchar(60) NOT NULL,
   `College_name` varchar(60) NOT NULL,
@@ -65,8 +69,8 @@ CREATE TABLE `awards` (
 -- Dumping data for table `awards`
 --
 
-INSERT INTO `awards` (`id`, `Faculty_name`, `Award_name`, `Position`, `Event_name`, `Date`, `University`, `College_name`, `Level`, `pdf`, `Sdrn`) VALUES
-(1, 'Shubham Ashok Mohape', 'Best Student', '1st', 'award distribution', '2020-07-10', 'mumbai', 'beststudent', 'State level', 'upload_files/awards/721-Student Application Form PART-1.pdf', 12345);
+INSERT INTO `awards` (`id`, `Faculty_name`, `Award_name`, `Title_of_innovation`, `Name_of_awardee`, `Position`, `Event_name`, `Awarding_agency`, `Category`, `Date`, `University`, `College_name`, `Level`, `pdf`, `Sdrn`) VALUES
+(16, 'Shubham Ashok Mohape', 'none', 'none', 'none', '1st', 'none', 'none', 'none', '2020-08-06', 'none', 'none', 'Local level', '', 12345);
 
 -- --------------------------------------------------------
 
@@ -285,7 +289,7 @@ ALTER TABLE `qualification`
 -- AUTO_INCREMENT for table `awards`
 --
 ALTER TABLE `awards`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- AUTO_INCREMENT for table `competitive_exam`

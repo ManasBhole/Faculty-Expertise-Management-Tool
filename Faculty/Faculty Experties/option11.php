@@ -163,8 +163,12 @@ if(isset($_POST['submit4'])){
 $name3=$_SESSION['firstname'] ." ". $_SESSION['middlename'] ." ". $_SESSION['thirdname'];
 $sdrno=$_SESSION['Sdrn'];
 $award=$_POST['Award'];
+$title=$_POST['Innovation'];
+$awardee=$_POST['Awardee'];
 $position=$_POST['position'];
 $eventname=$_POST['Eventname'];
+$awardagency=$_POST['Awardagency'];
+$category=$_POST['categoryname'];
 $universityname=$_POST['Universityname'];
 $collegename=$_POST['collegename'];
 $lvl1=$_POST['lvl1'];
@@ -216,7 +220,7 @@ if(isset($_POST['submit5'])){
 $name4=$_SESSION['firstname'] ." ". $_SESSION['middlename'] ." ". $_SESSION['thirdname'];
 $sdrno=$_SESSION['Sdrn'];
 $join_date=$_POST['joindate'];
-$sdrn=$_SESSION['Sdrn'];
+$sdrn=$_POST['sdrn'];
 
 $rait_year=$_POST['RAITyear'];
 $rait_months=$_POST['RAITmonths'];
@@ -385,13 +389,13 @@ if(mysqli_num_rows($r1)>0){
 
 
 if(!empty($name3)){
-    $q1="SELECT * FROM `awards` WHERE Faculty_name='$name3' AND Award_name='$award' AND Position='$position' AND Event_name='$eventname' AND University='$universityname' AND College_name='$collegename' AND Level='$lvl1' AND Date='$date' ";
+    $q1="SELECT * FROM `awards` WHERE Faculty_name='$name3' AND Award_name='$award'AND Title_of_innovation='$title' AND Name_of_awardee='$awardee' AND Position='$position' AND Event_name='$eventname' AND Awarding_agency='$awardagency' AND Category='$category' AND University='$universityname' AND College_name='$collegename' AND Level='$lvl1' AND Date='$date' ";
     $r1=mysqli_query($conn,$q1);
     if(mysqli_num_rows($r1)>0){
     $_SESSION['o1']=1;
     header('location:option4.php');    
     }else{
-    $query3="INSERT INTO `awards`(`Faculty_name`,`Award_name`,`Position`,`Event_name`,`Date`,`University`,`College_name`,`Level`,`pdf`,`sdrn`) VALUES('$name3','$award','$position','$eventname','$date','$universityname','$collegename','$lvl1','$fileDestination','$sdrno');";
+    $query3="INSERT INTO `awards`(`Faculty_name`,`Award_name`,`Title_of_innovation`,`Name_of_awardee`,`Position`,`Event_name`,`Awarding_agency`,`Category`,`Date`,`University`,`College_name`,`Level`,`pdf`,`sdrn`) VALUES('$name3','$award','$title','$awardee','$position','$eventname','$awardagency','$category','$date','$universityname','$collegename','$lvl1','$fileDestination','$sdrno');";
     $_SESSION['s1']=0;
     mysqli_query($conn,$query3);
     header('location:detail.php');

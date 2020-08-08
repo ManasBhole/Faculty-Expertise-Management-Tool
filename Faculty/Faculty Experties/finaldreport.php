@@ -265,10 +265,10 @@ $(document).ready(function(){
 <div class="btn">
     <button type="submit" name="submit" class="btn btn-dark">Search</button>
       </div>
-      <hr>
+      
   </form> 
  
-
+<hr>
  <table  id="tabledata" class=" table table-striped table-hover table-bordered">
  
 
@@ -386,7 +386,7 @@ if($_SESSION['exam']=='FACULTY PROMOTION'){?>
     <th> Username </th>
     <th>SDRN</th>
     <th>Date of joining</th>
-    
+    <th> SDNR number</th>
     <th> RAIT experience</th>
     <th> Other experience</th>
     <th> Industry experience</th>
@@ -405,9 +405,8 @@ if($_SESSION['exam']=='FACULTY PROMOTION'){?>
   while($row=mysqli_fetch_assoc($result)){?>
       <tr class="text-center">
       <td> <?php echo $row['Faculty_name'];?></td>
-      <td> <?php echo $row['SDNR_number']; ?> </td>
       <td> <?php echo $row['Date_of_joining'];?></td>
-      
+      <td> <?php echo $row['SDNR_number']; ?> </td>
       <td> <?php echo $row['RAIT_experience']; ?> </td>
       <td> <?php echo $row['Other_experience']; ?> </td>
       <td> <?php echo $row['Industry_experience']; ?> </td>
@@ -465,11 +464,17 @@ if($_SESSION['exam']=='AWARDS'){?>
     <th> Username </th>
     <th>SDRN</th>
     <th>Award </th>
+    <th>Title of innovation</th>
+    <th>Name of Awardee</th>
     <th> Position</th>
     <th> Event Name</th>
+    <th>Awarding Agency</th>
+    <th>Category</th>
     <th> University</th>
     <th> College_name</th>
     <th> Level</th>
+    <th>Date</th>
+    
    
    
     </tr >
@@ -499,11 +504,16 @@ if($_SESSION['exam']=='AWARDS'){?>
       <td> <?php echo $row['Faculty_name'];?></td>
       <td> <?php echo $row['Sdrn'];?></td>
       <td> <?php echo $row['Award_name'];?></td>
+      <td> <?php echo $row['Title_of_innovation']; ?> </td>
+      <td> <?php echo $row['Name_of_awardee']; ?> </td>
       <td> <?php echo $row['Position']; ?> </td>
       <td> <?php echo $row['Event_name']; ?> </td>
+      <td> <?php echo $row['Awarding_agency']; ?> </td>
+      <td> <?php echo $row['Category']; ?> </td>
       <td> <?php echo $row['University']; ?> </td>
       <td> <?php echo $row['College_name']; ?> </td>
       <td> <?php echo $row['Level']; ?> </td>
+      <td> <?php echo $row['Date']; ?> </td>
       
   </tr>
 <?php  

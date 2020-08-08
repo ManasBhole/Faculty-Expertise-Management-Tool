@@ -65,6 +65,7 @@ if(mysqli_num_rows($result) > 0){?>
 <?php
 }
 else{?>
+<hr>
 <h2>FACULTY AS RESOURCE</h2>
 					<table  id="tabledata" class=" table table-striped table-hover table-bordered">
 					<tr class="bg-dark text-white text-center">
@@ -82,7 +83,7 @@ else{?>
 <?php
 echo "<h4>DATA NOT FOUND<h4>";
 }?>
-<hr>
+
 <?php
 
 $query = "
@@ -92,8 +93,9 @@ $query = "
 	$result = mysqli_query($connect, $query);
 	if(mysqli_num_rows($result) > 0){?>
 
-
+<hr>
 <h2>QUALIFICATION</h2>
+					
 					<table  id="tabledata" class=" table table-striped table-hover table-bordered">
 					<tr class="bg-dark text-white text-center">
 							
@@ -140,6 +142,7 @@ $query = "
 	<?php
 }
 else{?>
+<hr>
 <h2>QUALIFICATION</h2>
 					<table  id="tabledata" class=" table table-striped table-hover table-bordered">
 					<tr class="bg-dark text-white text-center">
@@ -211,6 +214,7 @@ $query = "
 	}
 	else{?>
 	<hr>
+	
 	<h2>COMPETITIVE EXAM</h2>
 					<table  id="tabledata" class=" table table-striped table-hover table-bordered">
 					<tr class="bg-dark text-white text-center">
@@ -305,26 +309,37 @@ $query = "
     <tr class="bg-dark text-white text-center">
    
    
+
     <th> Username </th>
     <th>SDRN</th>
     <th>Award </th>
+    <th>Title of innovation</th>
+    <th>Name of Awardee</th>
     <th> Position</th>
     <th> Event Name</th>
+    <th>Awarding Agency</th>
+    <th>Category</th>
     <th> University</th>
     <th> College_name</th>
     <th> Level</th>
+    <th>Date</th>
 	</tr>
 	<?php
 	while($row=mysqli_fetch_assoc($result)){?>
       <tr class="text-center">
-      <td> <?php echo $row['Faculty_name'];?></td>
+	  <td> <?php echo $row['Faculty_name'];?></td>
       <td> <?php echo $row['Sdrn'];?></td>
       <td> <?php echo $row['Award_name'];?></td>
+      <td> <?php echo $row['Title_of_innovation']; ?> </td>
+      <td> <?php echo $row['Name_of_awardee']; ?> </td>
       <td> <?php echo $row['Position']; ?> </td>
       <td> <?php echo $row['Event_name']; ?> </td>
+      <td> <?php echo $row['Awarding_agency']; ?> </td>
+      <td> <?php echo $row['Category']; ?> </td>
       <td> <?php echo $row['University']; ?> </td>
       <td> <?php echo $row['College_name']; ?> </td>
       <td> <?php echo $row['Level']; ?> </td>
+      <td> <?php echo $row['Date']; ?> </td>
       
   </tr>
   <?php	
@@ -384,10 +399,9 @@ if(mysqli_num_rows($result) > 0){?>
 	<?php
 	while($row=mysqli_fetch_assoc($result)){?>
       <tr class="text-center">
-	  <td> <?php echo $row['Faculty_name'];?></td>
-      <td> <?php echo $row['SDNR_number']; ?> </td>
+      <td> <?php echo $row['Faculty_name'];?></td>
       <td> <?php echo $row['Date_of_joining'];?></td>
-      
+      <td> <?php echo $row['SDNR_number']; ?> </td>
       <td> <?php echo $row['RAIT_experience']; ?> </td>
       <td> <?php echo $row['Other_experience']; ?> </td>
       <td> <?php echo $row['Industry_experience']; ?> </td>
@@ -415,6 +429,7 @@ else{?>
 		<th> Username </th>
 		<th>SDRN</th>
 		<th>Date of joining</th>
+		<th> SDNR number</th>
 		<th> RAIT experience</th>
 		<th> Other experience</th>
 		<th> Industry experience</th>
@@ -431,6 +446,7 @@ else{?>
 echo "<h4>DATA NOT FOUND<h4>";			
 }
 }?>
+
 
 </body>
 </html>
