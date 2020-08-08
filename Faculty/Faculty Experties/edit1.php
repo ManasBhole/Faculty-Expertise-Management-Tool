@@ -69,20 +69,25 @@ if(isset($_POST['new']) && $_POST['new']==1)
 $id=$_REQUEST['id'];
 
 $name =$_REQUEST['name'];
+$tname=$_REQUEST['tname'];
 $uname=$_REQUEST['uiname'];
 $aname=$_REQUEST['aname'];
 $cname=$_REQUEST['cname'];
 $ename=$_REQUEST['ename'];
 $pname=$_REQUEST['pname'];
 $lname=$_REQUEST['lname'];
+$cname=$_REQUEST['cname'];
+$aaname=$_REQUEST['aaname'];
+$anname=$_REQUEST['anname'];
+$adate=$_REQUEST['adate'];
 
 
 
 
         
 
-$submittedby = $_SESSION["username"];
-$update="update awards set Faculty_name='".$name."', University='".$uname."' ,Award_name='".$aname."'  ,College_name='".$cname."'  ,Event_name='".$ename."' ,Position='".$pname."',Level='".$lname."',pdf='".$fileDestination."'  where id='".$id."'";
+
+$update="update awards set Faculty_name='".$name."', Title_of_innovation='".$tname."' , Name_of_awardee='".$anname."' , University='".$uname."' ,Award_name='".$aname."'  , Awarding_agency='".$aaname."' , Category='".$cname."' , Date='".$adate."' ,College_name='".$cname."'  ,Event_name='".$ename."' ,Position='".$pname."',Level='".$lname."',pdf='".$fileDestination."'  where id='".$id."'";
 mysqli_query($conn, $update) or die(mysqli_error());
 $status = "Record Updated Successfully. </br></br>
 <a href='individualreport.php'>View Updated Record</a>";
@@ -121,6 +126,16 @@ required value="<?php echo $row['Faculty_name'];?>" /></div>
     <div class="col-5"><input type="name" class="form-control border border-secondary" name="aname" placeholder="Enter Award Name" 
 required value="<?php echo $row['Award_name'];?>" /></div>
     </div>
+	<div class="form-group">
+    <label for="Award">Title of Innovation:</label>
+    <div class="col-5"><input type="name" class="form-control border border-secondary" name="tname" placeholder="Enter title of innnovation" 
+required value="<?php echo $row['Title_of_innovation'];?>" /></div>
+    </div>
+	<div class="form-group">
+    <label for="Award">Name of Awardee:</label>
+    <div class="col-5"><input type="name" class="form-control border border-secondary" name="anname" placeholder="Enter name of awardee" 
+required value="<?php echo $row['Name_of_awardee'];?>" /></div>
+    </div>
     <div class="form-group">
       <label for="position">Select Position:</label>
       <div class="col-5">
@@ -138,6 +153,24 @@ required value="<?php echo $row['Position'];?>" />
     <div class="col-5"><input type="name" class="form-control border border-secondary" name="ename" placeholder="Enter Event Name" 
 required value="<?php echo $row['Event_name'];?>" /></div>
     </div>
+	<div class="form-group">
+    <label for="Award">Awarding_agency:</label>
+    <div class="col-5"><input type="name" class="form-control border border-secondary" name="aaname" placeholder="Enter Awarding_agency" 
+required value="<?php echo $row['Awarding_agency'];?>" /></div>
+    </div>
+	<div class="form-group">
+    <label for="Award">Category:</label>
+    <div class="col-5"><input type="name" class="form-control border border-secondary" name="cname" placeholder="Enter Category" 
+required value="<?php echo $row['Category'];?>" /></div>
+    </div>
+	
+	<div class="form-group">
+    <label for="Award" >Date</label>
+     <div class="col-5">
+    <input class="form-control border border-secondary" type="date"  name="adate" placeholder="Date" 
+required value="<?php echo $row['Date'];?>" />
+    </div>
+	
     <div class="form-group">
     <label for="Award">University:</label>
     <div class="col-5"><input type="name" class="form-control border border-secondary" name="uiname" placeholder="Enter University" 

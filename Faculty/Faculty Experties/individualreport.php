@@ -141,8 +141,8 @@ td, th {
   
 
  <tr style="background-color:grey" >            
-             <th>Award name</th><th >Position</th><th >Event_name</th>
-			 <th>Date</th><th >university</th>
+             <th>Award name</th><th>Title o Innovation</th><th>Name of Awardee</th><th >Position</th><th >Event_name</th>
+			 <th>Awarding Agency</th><th>Category</th><th>Date</th><th >university</th>
             <th >College name</th> <th >level</th><th >Edit</th> <th >Delete</th><th>Preview</th>
             
         </tr>
@@ -164,7 +164,8 @@ td, th {
 	while($data=mysqli_fetch_array($result))
 	{
 				echo"<tr><td  style=' padding-left:10px'>$data[2]</td><td  style=' padding-left:20px'>$data[3]</td><td  style=' padding-left:20px'>$data[4]</td><td  style=' padding-left:50px'>$data[5]</td><td  style=' padding-left:50px'>$data[6]</td><td  style=' padding-left:60px'>$data[7]</td>
-				<td  style=' padding-left:60px'>$data[8]</td>
+				<td  style=' padding-left:60px'>$data[8]</td><td  style=' padding-left:20px'>$data[9]</td><td  style=' padding-left:20px'>$data[10]</td>
+				<td  style=' padding-left:20px'>$data[11]</td><td  style=' padding-left:20px'>$data[12]</td>
                     
                 
                      ";?>
