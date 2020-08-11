@@ -23,12 +23,32 @@
         <?php fetch($result,'Award_name')?>
       </tr>
       <tr>
+        <th class="table-active">TITLE OF INNOVATION</th>
+        <?php fetch($result,'Title_of_innovation')?>
+      </tr>
+      <tr>
+        <th class="table-active">NAME OF AWARDEE</th>
+        <?php fetch($result,'Name_of_awardee')?>
+      </tr>
+      <tr>
         <th class="table-active">POSITION</th>
         <?php fetch($result,'Position')?>
       </tr>
       <tr>
         <th class="table-active">EVENT NAME</th>
         <?php fetch($result,'Event_name')?>
+      </tr>
+      <tr>
+        <th class="table-active">AWARDING AGENCY</th>
+        <?php fetch($result,'Awarding_agency')?>
+      </tr>
+      <tr>
+        <th class="table-active">CATEGORY</th>
+        <?php fetch($result,'Category')?>
+      </tr>
+      <tr>
+        <th class="table-active">DATE</th>
+        <?php fetch($result,'Date')?>
       </tr>
       <tr>
         <th class="table-active">UNIVERSITY</th>

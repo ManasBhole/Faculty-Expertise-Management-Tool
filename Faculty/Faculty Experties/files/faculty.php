@@ -19,16 +19,8 @@
   <table class="table table-hover table-sm">
   
     <tr>
-        <th class="table-active">FIRST NAME</th>
-        <?php fetch($result,'First_name')?>
-    </tr>
-    <tr>
-        <th class="table-active">MIDDLE NAME</th>
-        <?php fetch($result,'Middle_name')?>
-    </tr>
-    <tr>
-        <th class="table-active">LAST NAME</th>
-        <?php fetch($result,'Last_name')?>
+        <th class="table-active">NAME</th>
+        <?php fetch($result,'name')?>
     </tr>
     <tr>
         <th class="table-active">DOB</th>
@@ -57,10 +49,6 @@
     <tr>
         <th class="table-active">EMAIL</th>
         <?php fetch($result,'Email')?>
-    </tr>
-    <tr>
-        <th class="table-active">ADDRESS</th>
-        <?php fetch($result,'Addr')?>
     </tr>
   </table>
   </div>

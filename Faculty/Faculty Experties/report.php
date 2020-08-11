@@ -15,7 +15,7 @@
   <link rel="stylesheet" type="text/css" href="http://ajax.aspnetcdn.com/ajax/jquery.dataTables/1.9.4/css/jquery.dataTables.css">
    <script type="text/javascript" charset="utf8" src="https://ajax.aspnetcdn.com/ajax/jquery.dataTables/1.9.4/jquery.dataTables.min.js"></script>
    <script src="https://kit.fontawesome.com/16e94d9d43.js" crossorigin="anonymous"></script>
-   <link rel="stylesheet" href="reportstyle.css">
+   <link rel="stylesheet" href="files/reportstyle.css">
     
 </head>
 <body>
@@ -58,15 +58,22 @@
                         ($file_ext=='pdf')?$target='_blank':$target='_self';
                     }
 
-                    $path=preg_replace('/\s+/','%20',$path);
+                    $path=preg_replace('/\s/','%20',$path);
                     echo("<td><a href=$path target=$target><button class='btn'>Preview</button></a></td>"); 
                 }
+                elseif ($value=="name") 
+                    echo("<td>".$rows["First_name"]." ".$rows["Middle_name"]." ".$rows["Last_name"]."</td>");
                 else
                     echo("<td>".$rows[$value]."</td>");
             }
             
-            if ($counter==0) 
-                echo("<td>N/A</td>");
+            if ($counter==0){ 
+
+                if($value!="pdf")
+                    echo("<td>N/A</td>");
+                else 
+                    echo("<td><a href='report.php?file_path='><button class='btn'>Preview</button></a></td>"); 
+            }
 
             mysqli_data_seek($result,0);
         }
@@ -100,6 +107,8 @@
                     readfile($file_path);
                 }
             }
+            else
+                echo("<script>alert('No File Uploaded');window.location.href='report.php';</script>");
         }
     ?>
 
@@ -108,7 +117,7 @@
         <img src="images/rait_logo.jpeg" class="navbar-brand ml-auto " alt="#" width=160px>
     </nav>  
 
-    <div class="conatiner" style="border: 2px solid #80808061; margin: 1rem">
+    <div class="conatiner" style="border: 2px solid #80808061; margin: 1rem; text-align: center;">
         <?php
             include 'files/faculty.php'; 
             include 'files/resource.php';
@@ -118,6 +127,7 @@
             include 'files/promotion.php';
             include 'files/long_live.php';
         ?>
+        <a href="files/excel.php"><button class="btn excel">Excel Export</button></a>
     </div>
 
     <?php $conn->close();?>
