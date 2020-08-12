@@ -1,27 +1,22 @@
+<?php @session_start();
+
+	include('connect.php');
+	if (!empty($_POST["id"])) {
+		if($_SERVER['REQUEST_METHOD']=='POST')
+				$_SESSION['Sdrn']=mysqli_real_escape_string($conn,$_POST['id']);
+				$Sdrn = $_SESSION['Sdrn'];
+	}
+	else{		
+		if ($_SESSION['logged_in'] = false) {
+			$_SESSION['message'] = 'You must Login to continue use this section.';
+		}
+		else {
+			$Sdrn = $_SESSION['Sdrn'];	
+		} 
+	}
+?>
 <!DOCTYPE html>
 <html lang="en">
-
-<?php
- @session_start();
-    include('connect.php');
-if (!empty($_POST["id"])) {
- if($_SERVER['REQUEST_METHOD']=='POST')
-            $_SESSION['Sdrn']=mysqli_real_escape_string($conn,$_POST['id']);
-    $Sdrn = $_SESSION['Sdrn'];
-}
-else{		
-if ($_SESSION['logged_in'] = false) {
-    $_SESSION['message'] = 'You must Login to continue use this section.';
-    
-} else {
-    $Sdrn = $_SESSION['Sdrn'];
-    
-} 
-   
-}
-?>
-
-    
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -65,14 +60,8 @@ td, th {
   tr:nth-of-type(odd) { 
   background: #eee; 
 }
-
-  
 	
-	
-	
-	
-	
-	</style>
+</style>
 </head>
 <body>
 
@@ -446,9 +435,12 @@ td, th {
 </tr>
 			<?php } ?>
 	</tbody>
-      </table>
-	  </div>
+      </table>	  
+</div>
 
-    
-            </body>
+<div style="margin: 1rem;text-align: center;">
+	<a href="files/excel.php"><button class="btn-danger btn">Excel Export</button></a>
+</div>
+
+</body>
 </html>

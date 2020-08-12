@@ -1,6 +1,6 @@
 <?php @session_start();
 
-    $Sdrn=$_SESSION['sdrn'];
+    $Sdrn=$_SESSION['Sdrn'];
 
     $severname="localhost";
     $username="root";
@@ -30,7 +30,6 @@
 
         $styleArray = array(
             'font'  => array(
-                'color' => array('rgb' => '1cff00'),
                 'bold'  => true,
                 'italic'  => true,
         )); 

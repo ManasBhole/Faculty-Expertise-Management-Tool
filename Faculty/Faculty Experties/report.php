@@ -35,8 +35,8 @@
         mysqli_select_db($conn, $dbname);
 
         if($_SERVER['REQUEST_METHOD']=='POST')
-            $_SESSION['sdrn']=mysqli_real_escape_string($conn,$_POST['Sdrn']);
-        $Sdrn=$_SESSION['sdrn'];
+            $_SESSION['Sdrn']=mysqli_real_escape_string($conn,$_POST['Sdrn']);
+        $Sdrn=$_SESSION['Sdrn'];
     
         function fetch($result,$value){
 
