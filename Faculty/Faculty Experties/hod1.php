@@ -3,7 +3,7 @@
 <head>
  <title></title>
 
- <meta name="viewport" content="width=device-width, initial-scale=1">
+ <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
  <link rel="stylesheet" type="text/css" href="hod1.css">
     <!-- CSS only -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
@@ -43,10 +43,10 @@
 
  <?php
 
- include 'conn.php'; 
+ include 'connect.php'; 
  $q = "select * from faculty_info ";
 
- $query = mysqli_query($con,$q);
+ $query = mysqli_query($conn,$q);
 
  while($res = mysqli_fetch_array($query))
  {
@@ -65,7 +65,7 @@
  </td>
  <td>
       <form action="report.php" method="post">
-        <input type="hidden" name="id" value=<?php echo $res['Sdrn'];?>>
+        <input type="hidden" name=Sdrn value=<?php echo $res['Sdrn'];?>>
         <button class="btn-danger btn" type="submit"  class="text-white"><i class="far fa-file"></i> Report</button>
        
       </form>

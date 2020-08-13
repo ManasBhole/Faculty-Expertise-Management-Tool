@@ -32,7 +32,7 @@ td {
 
 .table-active{
   color: white !important;
-  background-color: #333 !important;
+  background-color: rgb(129, 127, 127) !important;
 }
 
 .scroll{

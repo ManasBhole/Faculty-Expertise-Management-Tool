@@ -3,16 +3,16 @@
 <head>
 	
 
-	<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 	<link rel="stylesheet" type="text/css" href="try.css">   <!-- CSS only -->
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
-	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">  
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script> 
+	
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.5.0/css/bootstrap-datepicker.css" rel="stylesheet">  
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js"></script>  
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>  
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.5.0/js/bootstrap-datepicker.js"></script> </head>
 	
 	<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.21/css/jquery.dataTables.min.css">  
@@ -22,8 +22,8 @@
 <body>
 
 <nav class="navbar navbar-expand-sm bg-dark ">
-    <div class="navbar_title">YEARLY Report</div>
-<img src="../img/rait logo.jpeg"  id=logo alt="#" >
+    <div class="navbar_title" style=" font-family: 'Times New Roman', Times, serif; font-size: 50px; color: whitesmoke;">Yearly Report</div>
+<img src="images/rait_logo.jpeg" class="navbar-brand ml-auto " alt="#" width=160px id="optionalstuff">
 </nav>
 
 	
@@ -48,18 +48,20 @@
 		
 		<div class="col-3">	
 		
-        <select name="sem" class="form-control" id="Selectoption" placeholder="Select Semester" required>
+        <select name="sem" class="form-control" id="Selectoption" required>
         
 		<option value="ALL">ALL</option>
 		<option value="ODD">ODD SEM</option>
 		<option value="EVEN">EVEN SEM</option>
 		</select>
+		
 		</div>
 		</div>
+
 		<button type="submit"  name="submit" value="Submit Values" class="btn btn-dark">Submit</button>
 </form>
 
-
+<div class="scroll">
 <table  id="tabledata" class=" table table-striped table-hover table-bordered">
 	<thead class="bg-dark text-white">
 		<th>Sr. No.</th>
@@ -140,6 +142,7 @@
 
 
 </table>
+	</div>
 <script>
 $(document).ready(function() {
     $('#tabledata').DataTable( {
@@ -148,6 +151,7 @@ $(document).ready(function() {
 } );
 
 </script>
+<div class="scroll">
 <table id="tabledata2" class=" table table-striped table-hover table-bordered">
 	<thead class="bg-dark text-white text-center">
 		<th>Sr. No.</th>
@@ -197,6 +201,7 @@ $(document).ready(function() {
 	?>
 
 </table>
+</div>
 <script>
 $(document).ready(function() {
     $('#tabledata2').DataTable( {
@@ -205,6 +210,7 @@ $(document).ready(function() {
 } );
 
 </script>
+<div class="scroll">
 <table id="tabledata3" class=" table table-striped table-hover table-bordered">
 	<thead class="bg-dark text-white text-center">
 		<th>Sr. No.</th>
@@ -243,6 +249,7 @@ $(document).ready(function() {
 	?>
 
 </table>
+</div>
 <script>
 $(document).ready(function() {
     $('#tabledata3').DataTable( {
@@ -251,6 +258,7 @@ $(document).ready(function() {
 } );
 
 </script>
+<div class="scroll">
 <table id="tabledata4" class=" table table-striped table-hover table-bordered">
 	<thead class="bg-dark text-white text-center">
 		<th>Sr. No.</th>
@@ -286,6 +294,7 @@ $(document).ready(function() {
 	?>
 
 </table>
+</div>
 <script>
 $(document).ready(function() {
     $('#tabledata4').DataTable( {

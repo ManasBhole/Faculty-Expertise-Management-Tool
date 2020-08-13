@@ -13,7 +13,7 @@ include('connect.php');
 ?>
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <title>Option6</title>
     <link rel="stylesheet" type="text/css" href="optionstyle.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
@@ -23,9 +23,10 @@ include('connect.php');
 
 </head>
 <body>
+
 <nav class="navbar navbar-expand-sm bg-dark ">
-    <div class="navbar_title">Faculty Long live</div>
-<img src="../img/rait logo.jpeg" class="navbar-brand ml-auto " alt="#" width=160px>
+    <div class="navbar_title" style=" font-family: 'Times New Roman', Times, serif; font-size: 50px; color: whitesmoke;">Faculty Long live</div>
+<img src="images/rait_logo.jpeg" class="navbar-brand ml-auto " alt="#" width=160px id="optionalstuff">
 </nav>
 
 <form action="option11.php" method="POST" enctype="multipart/form-data">

@@ -9,11 +9,15 @@ body{
 .navbar_title{
     font-family: 'Times New Roman', Times, serif;
     font-size: 50px;
+   
     color: whitesmoke;
 }
 .navbar{
     height: 110px;
 }
+.scroll{
+    overflow-x: auto;
+  }
 #logo{
     height: 70px;
     width: 130px;
@@ -33,13 +37,15 @@ body{
     margin-top: 7px;
     margin-bottom: 7px;
     padding: 15px;
-    color: black;
+  
     text-align: center;
     border-color: black;
        
 }
 #semlabel{
     margin-top: 10px;
+    margin: 10px;
+   
 }
 .btn{
     margin-left: 15px;
@@ -57,3 +63,13 @@ td{
 th{
     text-align: center;
 }
+option{
+     color: black;
+}
+@media (max-width:629px) {
+    img#optionalstuff {
+        display: none;
+      }
+  }
+
+
