@@ -1,62 +1,82 @@
 body{
-    background-image: url(../img/university_image.jpg);
-    background-attachment: fixed;
-    background-size:100% 100%;
-    background-repeat: no-repeat;  
-    margin: 0;
-    padding:0;
-    display: flex;
-    justify-content: center;
-    align-items:center ;
-    min-height: 130vh;
-    max-width: 50vw;
-    font-family: sans-serif;
-   
-    
+  background-image: url(images/university_image.jpg);
+  background-attachment: fixed;
+  background-size:100% 100%;
+  background-repeat: no-repeat;  
+  margin: 0;
+  padding:0;
+  display: flex;
+  justify-content: center;
+  align-items:center ;
+  min-height: 130vh;
+  max-width: 50vw;
+  font-family: sans-serif;
+ 
+  
 }
 
 .button {
-    position: relative;
-    background-color: whitesmoke;
-    border-radius: 15px;
-    border: none;
-    
-    font-size: 28px;
-    font-weight: 25px;
-    font-style: bold;
-    color: #751aff;
-    padding: 10px;
-    margin: 15px;
-    margin-left: 10px;
-    height: 100px;
-    width: 300px;
-    text-align: center;
-    transition-duration: 0.4s;
-    text-decoration: none;
-    overflow: hidden;
-    cursor: pointer;
-    box-shadow: 0 15px 25px rgba(0,0,0,.6);
-   
+  position: relative;
+  background-color: whitesmoke;
+  border-radius: 15px;
+  border: none;
+  
+  font-size: 28px;
+  font-weight: 25px;
+  font-style: bold;
+  color: #751aff;
+  padding: 10px;
+  margin: 15px;
+  margin-left: 10px;
+  height: 100px;
+  width: 300px;
+  text-align: center;
+  transition-duration: 0.4s;
+  text-decoration: none;
+  overflow: hidden;
+  cursor: pointer;
+  box-shadow: 0 15px 25px rgba(0,0,0,.6);
+ 
 
-  }
+}
+
+.button:after {
+  content: "";
+  background: #9c72dbfd;
+  display: block;
+  position: absolute;
+  padding-top: 300%;
+  padding-left: 350%;
+  margin-left: -20px !important;
+  margin-top: -120%;
+  opacity: 0;
+  transition: all 0.8s
+}
+
+.button:active:after {
+  padding: 0;
+  margin: 0;
+  opacity: 1;
   
-  .button:after {
-    content: "";
-    background: #9c72dbfd;
-    display: block;
-    position: absolute;
-    padding-top: 300%;
-    padding-left: 350%;
-    margin-left: -20px !important;
-    margin-top: -120%;
-    opacity: 0;
-    transition: all 0.8s
-  }
   
-  .button:active:after {
-    padding: 0;
-    margin: 0;
-    opacity: 1;
-    
-    
-  }
+}
+
+
+@media (max-width:629px)
+{
+body {
+    background-image: url(images/MyDY.jpg);
+    min-height:none;
+  max-width:none;
+  overflow:auto;
+}
+
+
+.button{
+  width: 195px;
+  height: 90px;
+  margin: 10% auto auto 10%;
+}
+
+
+}

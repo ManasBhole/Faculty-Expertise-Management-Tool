@@ -61,3 +61,12 @@ header{
     
     
   }
+  @media (max-width:629px)
+  {
+  body {
+      background-image: url(images/MyDY.jpg);
+  }
+  header{
+    margin: 35% auto auto auto;
+  }
+}

@@ -7,7 +7,7 @@ include('connect.php');
 <head>
  <title></title>
 
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+ <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <link rel="stylesheet" type="text/css" href="hod1.css">
     <!-- CSS only -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
@@ -103,18 +103,80 @@ include('connect.php');
     .scroll{
     overflow-x: auto;
   }
+
     
 @media (max-width:629px) {
     img#logo {
         display: none;
       }
-      select{
-        left: 20px;
-        right: auto;
-      }
+    
+      input{
+      
+      position:absolute;
+      top:50%;
+      bottom: auto;
+      height:32px;
+      right:700px;
+    }
+    button{
+      font-family: 'Arial'; 
+      font-size: 50px;
+      position:absolute;
+      top:45px;
+      right :auto;
+      left:50%;
+      height:32px;
+      
+    }
+    .op1,.op3,.op4{
+      position:absolute;
+      right:auto;
+      left: 10%;
+        width:150px;
+        height:32px;
+        top : 120px;
+        bottom: auto;
+    }
+    .op2{
+        position:absolute;
+        right:auto;
+        left: 10%;
+        width:150px;
+        height:32px;
+        top :160px;
+        bottom: auto;
+    }
+    .op5{
+      position:absolute;
+      right:auto;
+        left: 10%;
+        width:150px;
+        height:32px;
+        top : 120px;
+        bottom: auto;
+
+    }
+    .op6{
+      position:absolute;
+      right:auto;
+        left:10%;
+        width:150px;
+        height:32px;
+        top : 45px;
+        bottom: auto;
   
     }
-
+    #exam1{
+      position:absolute;
+      right:auto;
+        left: 10%;
+        width:150px;
+        height:32px;
+        top : 80px;
+        bottom: auto;
+    }
+ 
+  }
 </style>
 <script language="javascript">
 function populate(){
