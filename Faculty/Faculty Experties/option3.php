@@ -33,48 +33,48 @@ include('connect.php');
 <form action="option11.php" method="POST" enctype="multipart/form-data">
     <div class="form-group">
     <label for="Name">Name:</label>
-    <div class="col-5"><input type="name" value="<?php echo $_SESSION['firstname'] ." ". $_SESSION['middlename'] ." ". $_SESSION['thirdname'];?>" class="form-control border border-secondary" name="name1" id="name" disabled></div>
+    <div class="col-md-5"><input type="name" value="<?php echo $_SESSION['firstname'] ." ". $_SESSION['middlename'] ." ". $_SESSION['thirdname'];?>" class="form-control border border-secondary" name="name1" id="name" disabled></div>
     </div>
     <div class="form-group">
     <label for="Admitted for Programme">Admitted for Programme:</label>
-    <div class="col-5"><input type="name" class="form-control border border-secondary" placeholder="Enter programme name" name="program_name" id="program_name"></div>
+    <div class="col-md-5"><input type="name" class="form-control border border-secondary" placeholder="Enter programme name" name="program_name" id="program_name"></div>
     </div>
     <div class="form-group">
     <label for="Specialization/Department:">Specialization/Department:</label>
-    <div class="col-5"><input type="name" class="form-control border border-secondary" placeholder="Enter Specialization/Department" name="spec" id="spec"></div>
+    <div class="col-md-5"><input type="name" class="form-control border border-secondary" placeholder="Enter Specialization/Department" name="spec" id="spec"></div>
     </div>
     <div class="form-group">
     <label for="Year of Admission:">Year of Admission:</label>
-    <div class="col-5"><input type="number" class="form-control border border-secondary" placeholder="Enter Year" name="addYear" id="addYear"></div>
+    <div class="col-md-5"><input type="number" class="form-control border border-secondary" placeholder="Enter Year" name="addYear" id="addYear"></div>
     </div>
     <div class="form-group">
     <label for="University:">University:</label>
-    <div class="col-5"><input type="name" class="form-control border border-secondary" placeholder="Enter University Name" name="University" id="University"></div>
+    <div class="col-md-5"><input type="name" class="form-control border border-secondary" placeholder="Enter University Name" name="University" id="University"></div>
     </div>
     <div class="form-group">
     <label for="Registration Number:">Registration Number:</label>
-    <div class="col-5"><input type="number" class="form-control border border-secondary" placeholder="Enter Number" name="Registration_no" id="Registration Number"></div>
+    <div class="col-md-5"><input type="number" class="form-control border border-secondary" placeholder="Enter Number" name="Registration_no" id="Registration Number"></div>
     </div>
     <div class="form-group">
     <label for="Name of College:">Name of College:</label>
-    <div class="col-5"><input type="name" class="form-control border border-secondary" placeholder="Enter College Name" name="college_name" id="Name of College"></div>
+    <div class="col-md-5"><input type="name" class="form-control border border-secondary" placeholder="Enter College Name" name="college_name" id="Name of College"></div>
     </div>
     <div class="form-group">
     <label for="Status:">Status:</label>
-    <div class="col-5"><input type="name" class="form-control border border-secondary" placeholder="Enter the Status" name="status" id="Status"></div>
+    <div class="col-md-5"><input type="name" class="form-control border border-secondary" placeholder="Enter the Status" name="status" id="Status"></div>
     </div>
     <div class="form-group">
     <label for="Topic Name:">Research Topic Name /Course Topic Name:</label>
-    <div class="col-5"><input type="name" class="form-control border border-secondary" placeholder="Enter the Topic" name="topic_name" id="Topic Name"></div>
+    <div class="col-md-5"><input type="name" class="form-control border border-secondary" placeholder="Enter the Topic" name="topic_name" id="Topic Name"></div>
     </div>
     <div class="form-group">
     <label for="Guide Name:">Guide Name:</label>
-    <div class="col-5"><input type="name" class="form-control border border-secondary" placeholder="Enter the Name" name="guide_name" id="Guide Name"></div>
+    <div class="col-md-5"><input type="name" class="form-control border border-secondary" placeholder="Enter the Name" name="guide_name" id="Guide Name"></div>
     </div>
 
     <label style="margin-left:10px" for="pdf Upload" >pdf Upload:</label>
     <div class="custom-file mb-3">
-    <div class="col-5">
+    <div class="col-md-5">
       <input  type="file" class="custom-file-input" id="customFile" name="file">
       <label style="margin-left:33px" class="custom-file-label border border-secondary" for="customFile">Choose file</label>
     </div>

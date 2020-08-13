@@ -38,11 +38,11 @@ include('connect.php');
 <form action="option11.php" method="POST" enctype="multipart/form-data">
     <div class="form-group">
     <label for="Name">Name:</label>
-    <div class="col-5"><input type="name" value="<?php echo $_SESSION['firstname'] ." ". $_SESSION['middlename'] ." ". $_SESSION['thirdname'];?>" name="name"  class="form-control border border-secondary" id="name" disabled> </div>
+    <div class="col-md-5"><input type="name" value="<?php echo $_SESSION['firstname'] ." ". $_SESSION['middlename'] ." ". $_SESSION['thirdname'];?>" name="name"  class="form-control border border-secondary" id="name" disabled> </div>
     </div>
   <div class="form-group">
   <label for="sel1">Select list:</label>
-  <div class="col-4">
+  <div class="col-md-4">
   <select class="form-control border border-secondary" name="sel1" id="sel1">
     <option>Expert speaker</option>
     <option>Judge</option>
@@ -54,19 +54,19 @@ include('connect.php');
 </div>
   <div class="form-group">
     <label for="topic">Topic:</label>
-    <div class="col-4">
+    <div class="col-md-4">
     <input type="topic" class="form-control border border-secondary" name="tpc" placeholder="Topic name" id="tpc">
 </div>
     </div>
   <div class="form-group">
     <label for="Event name">Event/Course Name:</label>
-    <div class="col-4">
+    <div class="col-md-4">
     <input type="text" class="form-control border border-secondary" placeholder="Event Name/Course Name" name="event" id="event">
     </div>
   </div>
   <div class="form-group">
   <label for="sel1">Select level:</label>
-  <div class="col-4">
+  <div class="col-md-4">
   <select class="form-control border border-secondary" name="lvl" id="lvl">
     <option>Local level</option>
     <option>State level</option>
@@ -79,11 +79,11 @@ include('connect.php');
     </div>
     <div class="form-group">
     <label for="Event name">Venue</label>
-    <div class="col-5"><input type="text" class="form-control border border-secondary" placeholder="venue name" name="venue" id="venue"></div>
+    <div class="col-md-5"><input type="text" class="form-control border border-secondary" placeholder="venue name" name="venue" id="venue"></div>
     </div>
-    <div class="col-5">
+    <div class="col-md-5">
       <label for="example-date-input" >Date</label>
-      <div class="col-6">
+      <div class="col-md-6">
         <input class="form-control border border-secondary" type="date" name="date" id="example-date-input">
       </div>
     </div>
@@ -91,7 +91,7 @@ include('connect.php');
 
     <label style="margin-left:10px" for="pdf Upload" >pdf Upload:</label>
     <div class="custom-file mb-3">
-    <div class="col-5">
+    <div class="col-md-5">
       <input  type="file" class="custom-file-input" id="customFile" name="file">
       <label style="margin-left:33px" class="custom-file-label border border-secondary" for="customFile">Choose file</label>
     </div>

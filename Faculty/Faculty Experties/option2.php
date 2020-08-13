@@ -35,41 +35,41 @@ include('connect.php');
 <form action="option11.php" method='POST' enctype="multipart/form-data">
   <div class="form-group">
     <label for="Name">Name:</label>
-    <div class="col-5"><input type="name" value="<?php echo $_SESSION['firstname'] ." ". $_SESSION['middlename'] ." ". $_SESSION['thirdname'];?>" class="form-control border border-secondary" name="nam" id="name" disabled></div>
+    <div class="col-md-5"><input type="name" value="<?php echo $_SESSION['firstname'] ." ". $_SESSION['middlename'] ." ". $_SESSION['thirdname'];?>" class="form-control border border-secondary" name="nam" id="name" disabled></div>
    </div>
    <div class="form-group">
     <label for="PET">PET Appeared</label>
-    <div class="col-5"><input type="number" class="form-control border border-secondary" name="pet" id="PET"></div>
+    <div class="col-md-5"><input type="number" class="form-control border border-secondary" name="pet" id="PET"></div>
    </div>
     <div class="col-5">
     <label for="Date of PET Exam" >Date of PET Exam</label>
-     <div class="col-6">
+     <div class="col-md-6">
     <input class="form-control border border-secondary" type="date" name="pet_date" id="PET-date-input">
     </div>
     </div>
     <div class="form-group">
     <label for="PET Score">PET score:</label>
-    <div class="col-5"><input type="number" class="form-control border border-secondary" placeholder="Enter score" name="pet_score" id="PET_score"></div>
+    <div class="col-md-5"><input type="number" class="form-control border border-secondary" placeholder="Enter score" name="pet_score" id="PET_score"></div>
     </div>
     <div class="form-group">
     <label for="Gate Appeared">Gate Appeared:</label>
-    <div class="col-5"><input type="number" class="form-control border border-secondary" name="gate_appeared" id="Gate Appeared"></div>
+    <div class="col-md-5"><input type="number" class="form-control border border-secondary" name="gate_appeared" id="Gate Appeared"></div>
     </div>
-    <div class="col-5">
+    <div class="col-md-5">
     <label for="GATE-date-input" >Date of GATE</label>
-     <div class="col-6">
+     <div class="col-md-6">
     <input class="form-control border border-secondary" type="date" name="gate_date" id="GATE-date-input">
     </div>
     </div>
     <div class="form-group">
     <label for="GET_score">GATE score</label>
-    <div class="col-5"><input type="number" class="form-control border border-secondary" name="gate_score" id="GATE_score"></div>
+    <div class="col-md-5"><input type="number" class="form-control border border-secondary" name="gate_score" id="GATE_score"></div>
     </div>
     </div>
 
     <label style="margin-left:10px" for="pdf Upload" >pdf Upload:</label>
     <div class="custom-file mb-3">
-    <div class="col-5">
+    <div class="col-md-5">
       <input  type="file" class="custom-file-input" id="customFile" name="file">
       <label style="margin-left:30px" class="custom-file-label border border-secondary" for="customFile">Choose file</label>
     </div>

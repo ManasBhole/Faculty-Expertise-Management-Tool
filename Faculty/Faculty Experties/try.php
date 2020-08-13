@@ -29,6 +29,7 @@
 	
 <form action="try.php" method="POST">
 <label for="Name">Select Year :</label>
+
 	<input class="text-black" class="form-control " type="text" name='year' placeholder="Enter Academic Year" id="example1" autocomplete="off" required>
 <script type="text/javascript">
             // When the document is ready
@@ -46,15 +47,14 @@
 		<div class="form-row">
 		<label for="Name" id="semlabel">Select Semester :</label>
 		
-		<div class="col-3">	
+		<div class="col-2">	
 		
-        <select name="sem" class="form-control" id="Selectoption" required>
+        <select name="sem" class="form-control" placeholder="Select Semester" required>
         
 		<option value="ALL">ALL</option>
 		<option value="ODD">ODD SEM</option>
 		<option value="EVEN">EVEN SEM</option>
 		</select>
-		
 		</div>
 		</div>
 

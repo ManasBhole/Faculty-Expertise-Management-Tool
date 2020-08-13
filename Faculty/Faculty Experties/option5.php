@@ -34,26 +34,26 @@ include('connect.php');
 <form action="option11.php" method="POST" enctype="multipart/form-data">
     <div class="form-group">
         <label for="Name">Name:</label>
-        <div class="col-5"><input type="name" value="<?php echo $_SESSION['firstname'] ." ". $_SESSION['middlename'] ." ". $_SESSION['thirdname'];?>" class="form-control border border-secondary" name="name3" id="name" disabled></div>
+        <div class="col-md-5"><input type="name" value="<?php echo $_SESSION['firstname'] ." ". $_SESSION['middlename'] ." ". $_SESSION['thirdname'];?>" class="form-control border border-secondary" name="name3" id="name" disabled></div>
     </div>
-    <div class="col-5">
+    <div class="col-md-5">
       <label for="join-date-input" >Date of joining </label>
-      <div class="col-6">
+      <div class="col-md-6">
         <input class="form-control border border-secondary" type="date" name="joindate" id="join-date-input">
       </div>
     </div>
     <div class="form-group">
-        <label class="col-sm-2 col-form-label" for="SDRN">SDRN Number:</label>
-        <div class="col-2"><input type="name" value="<?php echo $_SESSION['Sdrn'];?>" class="form-control border border-secondary" name="sdrn" id="SDRN" disabled></div>
+        <label class="col-md-sm-2 col-md-form-label" for="SDRN">SDRN Number:</label>
+        <div class="col-md-2"><input type="name" value="<?php echo $_SESSION['Sdrn'];?>" class="form-control border border-secondary" name="sdrn" id="SDRN" disabled></div>
     </div>
 
     <div class="form-group">
     <label for="RAIT Experience">RAIT Experience</label> 
   <div class="form-row">
-    <div class="col-3">
+    <div class="col-md-3">
     <input type="number" class="form-control border border-secondary" placeholder="Enter Year" name="RAITyear" id="RAITyear">
     </div>
-    <div class="col-3">
+    <div class="col-md-3">
     <input type="number" class="form-control border border-secondary" placeholder="Enter Months" name="RAITmonths" id="RAITmonths">
     </div>
   </div>
@@ -62,10 +62,10 @@ include('connect.php');
   <div class="form-group">
   <label for="RAIT Experience">Other Teaching Experience</label> 
   <div class="form-row">
-    <div class="col-3">
+    <div class="col-md-3">
     <input type="number" class="form-control border border-secondary" placeholder="Enter Year" name="Otheryear" id="Otheryear">
     </div>
-    <div class="col-3">
+    <div class="col-md-3">
     <input type="number" class="form-control border border-secondary" placeholder="Enter Months" name="Othermonths" id="Othermonths">
     </div>
   </div>
@@ -74,10 +74,10 @@ include('connect.php');
   <div class="form-group">
   <label for="RAIT Experience">Industry Experience</label> 
   <div class="form-row">
-    <div class="col-3">
+    <div class="col-md-3">
     <input type="number" class="form-control border border-secondary" placeholder="Enter Year" name="Industryyear" id="Industryyear">
     </div>
-    <div class="col-3">
+    <div class="col-md-3">
     <input type="number" class="form-control border border-secondary" placeholder="Enter Months" name="Industrymonths" id="Industrymonths">
     </div>
   </div>
@@ -86,41 +86,41 @@ include('connect.php');
   <div class="form-group">
   <label for="RAIT Experience">Total Experience</label> 
   <div class="form-row">
-    <div class="col-3">
+    <div class="col-md-3">
     <input type="number" class="form-control border border-secondary" placeholder="Enter Year" name="Totalyear" id="Totalyear">
     </div>
-    <div class="col-3">
+    <div class="col-md-3">
     <input type="number" class="form-control border border-secondary" placeholder="Enter Months" name="Totalmonths" id="Totalmonths">
     </div>
   </div>
   </div>
     <div class="form-group">
         <label for="Designation">Designation of Faculty as on date of joining:</label>
-        <div class="col-5"><input type="text" class="form-control border border-secondary" name="Designation" id="Designation"></div>
+        <div class="col-md-5"><input type="text" class="form-control border border-secondary" name="Designation" id="Designation"></div>
     </div>
     <div class="form-group">
         <label for="Promoted Designation first">1st Promoted Designation:</label>
-        <div class="col-5"><input type="text" class="form-control border border-secondary" name="Promoted_designation_1" id=" Promoted Designation first"></div>
+        <div class="col-md-5"><input type="text" class="form-control border border-secondary" name="Promoted_designation_1" id=" Promoted Designation first"></div>
     </div>
-    <div class="col-5">
+    <div class="col-md-5">
       <label for="Promotionfirst" >Date of 1st Promotion </label>
-      <div class="col-6">
+      <div class="col-md-6">
         <input class="form-control border border-secondary" type="date" name="Promotion_first_date" id="Promotionfirst">
       </div>
     </div>
     <div class="form-group">
         <label for="Promoted Designation second">2nd Promoted Designation:</label>
-        <div class="col-5"><input type="text" class="form-control border border-secondary" name="Promoted_designation_2" id=" Promoted Designation second"></div>
+        <div class="col-md-5"><input type="text" class="form-control border border-secondary" name="Promoted_designation_2" id=" Promoted Designation second"></div>
     </div>
-    <div class="col-5">
+    <div class="col-md-5">
       <label for="Promotionsecond" >Date of2nd Promotion </label>
-      <div class="col-6">
+      <div class="col-md-6">
         <input class="form-control border border-secondary" type="date" name="Promotion_second_date" id="Promotionsecond">
       </div>
     </div>
     <label style="margin-left:10px" for="pdf Upload" >pdf Upload:</label>
     <div class="custom-file mb-3">
-    <div class="col-5">
+    <div class="col-md-5">
       <input  type="file" class="custom-file-input" id="customFile" name="file">
       <label style="margin-left:30px" class="custom-file-label border border-secondary" for="customFile">Choose file</label>
     </div>

@@ -32,33 +32,33 @@ include('connect.php');
 <form action="option11.php" method="POST" enctype="multipart/form-data">
     <div class="form-group">
         <label for="Name">Name:</label>
-        <div class="col-5"><input type="text" value="<?php echo $_SESSION['firstname'] ." ". $_SESSION['middlename'] ." ". $_SESSION['thirdname'];?>" class="form-control border border-secondary" name="name4" id="name" disabled></div>
+        <div class="col-md-5"><input type="text" value="<?php echo $_SESSION['firstname'] ." ". $_SESSION['middlename'] ." ". $_SESSION['thirdname'];?>" class="form-control border border-secondary" name="name4" id="name" disabled></div>
     </div>
     <div class="form-group">
         <label for="Reason">Reason For Long Live:</label>
-        <div class="col-5"><input type="name" class="form-control border border-secondary" placeholder="Enter Reason" name="reason" id="Reason"></div>
+        <div class="col-md-5"><input type="name" class="form-control border border-secondary" placeholder="Enter Reason" name="reason" id="Reason"></div>
     </div>
-    <div class="col-5">
+    <div class="col-md-5">
       <label for="From_Date" >From Date </label>
-      <div class="col-6">
+      <div class="col-md-6">
         <input class="form-control border border-secondary" type="date" name="from_date" id="From_Date">
       </div>
     </div>
-    <div class="col-5">
+    <div class="col-md-5">
       <label for="To_Date" >To Date </label>
-      <div class="col-6">
+      <div class="col-md-6">
         <input class="form-control border border-secondary" type="date" name="to_date" id="To_Date">
       </div>
     </div>
-    <div class="col-5">
+    <div class="col-md-5">
       <label for="Longlive" >Date of joining after Long Live </label>
-      <div class="col-6">
+      <div class="col-md-6">
         <input class="form-control border border-secondary" type="date" name="longlive" id="Longlive">
       </div>
     </div>
     <label style="margin-left:10px" for="pdf Upload" >pdf Upload:</label>
     <div class="custom-file mb-3">
-    <div class="col-5">
+    <div class="col-md-5">
       <input  type="file" class="custom-file-input" id="customFile" name="file">
       <label style="margin-left:33px" class="custom-file-label border border-secondary" for="customFile">Choose file</label>
     </div>
