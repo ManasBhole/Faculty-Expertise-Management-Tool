@@ -19,7 +19,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
    
   
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
@@ -60,15 +60,26 @@ td, th {
   tr:nth-of-type(odd) { 
   background: #eee; 
 }
+hr{
+	border: 0.5px solid black;
+	
+}
+h2{
+	font-family: 'Times New Roman', Times, serif;
+    font-size: 40px;
+    text-align: center;
+    
+    margin-left: 20px;
+}
 	
 </style>
 </head>
 <body>
 
 <h1>Individual Report</h1>
+<hr>
 
-
-
+<h2>Faculty Info</h2>
 <div class="table-responsive">
 <table width=100% style=" border-collapse: collapse;
     border-spacing: 0;
@@ -114,6 +125,9 @@ td, th {
 			<?php } ?>
 	</tbody>
 </table>
+<hr>
+
+<h2>Awards</h2>
 </div>
 
 
@@ -175,6 +189,8 @@ td, th {
 	</tbody>
 </table>
 </div>
+<hr>
+<h2>Competitive Exams</h2>
 
 
 <div class="table-responsive">
@@ -228,6 +244,8 @@ td, th {
 	</tbody>
 </table>
 </div>
+<hr>
+<h2>Qualification</h2>
 
 
 
@@ -281,6 +299,8 @@ td, th {
 	</tbody>	
 </table>
 </div>
+<hr>
+<h2>Faculty as Resource Person</h2>
 
 <div class="table-responsive">
 <table width=100% style=" border-collapse: collapse;
@@ -334,6 +354,9 @@ td, th {
 	</tbody>	
 </table>
 </div>
+<hr>
+<h2>Faculty Long Live</h2>
+
 <div class="table-responsive">
 <table width=100% style=" border-collapse: collapse;
     border-spacing: 0;
@@ -383,6 +406,8 @@ td, th {
 	</tbody>	
 </table>
 </div>
+<hr>
+<h2>Faculty Promotion</h2>
 
 <div class="table-responsive">
 <table width=100% style=" border-collapse: collapse;

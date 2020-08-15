@@ -87,9 +87,10 @@ $update="update faculty_promotion set Faculty_name='".$name."', Date_of_joining=
 ,Starting_designation='".$sd."',Promotion_1='".$pf."',Date_promotion_1='".$pdf."',Promotion_2='".$ps."',Date_promotion_2='".$pds."'  
 ,pdf='".$fileDestination."'   where id='".$id."'";
 mysqli_query($conn, $update) or die(mysqli_error());
-$status = "Record Updated Successfully. </br></br>
-<a href='individualreport.php'>View Updated Record</a>";
-echo '<p style="color:#FF0000;">'.$status.'</p>';
+echo '<script language="javascript">';
+echo 'alert("Report Updated");';
+echo 'window.location.href="individualreport.php";';
+echo '</script>';
 
 
 

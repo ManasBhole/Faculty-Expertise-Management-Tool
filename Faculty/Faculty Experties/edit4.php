@@ -77,9 +77,10 @@ $dname=$_REQUEST['dname'];
 $submittedby = $_SESSION["username"];
 $update="update faculty_as_resource set Faculty_name='".$name."', Resource_person='".$rname."' ,Topic_name='".$tname."'   ,Event_name='".$ename."' ,Level='".$lname."',Venue='".$vname."', Date='".$dname."',pdf='".$fileDestination."'    where id='".$id."'";
 mysqli_query($conn, $update) or die(mysqli_error());
-$status = "Record Updated Successfully. </br></br>
-<a href='individualreport.php'>View Updated Record</a>";
-echo '<p style="color:#FF0000;">'.$status.'</p>';
+echo '<script language="javascript">';
+echo 'alert("Report Updated");';
+echo 'window.location.href="individualreport.php";';
+echo '</script>';
 
 
 

@@ -77,9 +77,10 @@ $gscore=$_REQUEST['gscore'];
 $submittedby = $_SESSION["username"];
 $update="update competitive_exam set Faculty_name='".$name."', PET_appeared='".$pname."' ,PET_date='".$pdate."'  ,PET_score='".$pscore."'  ,GATE_appeared='".$gname."' ,GATE_date='".$gdate."'  ,GATE_score='".$gscore."' ,pdf='".$fileDestination."'  where id='".$id."'";
 mysqli_query($conn, $update) or die(mysqli_error());
-$status = "Record Updated Successfully. </br></br>
-<a href='individualreport.php'>View Updated Record</a>";
-echo '<p style="color:#FF0000;">'.$status.'</p>';
+echo '<script language="javascript">';
+echo 'alert("Report Updated");';
+echo 'window.location.href="individualreport.php";';
+echo '</script>';
 
 
 

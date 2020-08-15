@@ -76,10 +76,10 @@ $dname=$_REQUEST['dname'];
 $submittedby = $_SESSION["username"];
 $update="update faculty_long_live set Faculty_name='".$name."', Reason_long_live='".$rname."',From_date='".$fname."', To_date='".$tname."',Date_of_joining_after_long_live='".$dname."' ,pdf='".$fileDestination."'    where id='".$id."'";
 mysqli_query($conn, $update) or die(mysqli_error());
-$status = "Record Updated Successfully. </br></br>
-<a href='individualreport.php'>View Updated Record</a>";
-echo '<p style="color:#FF0000;">'.$status.'</p>';
-
+echo '<script language="javascript">';
+echo 'alert("Report Updated");';
+echo 'window.location.href="individualreport.php";';
+echo '</script>';
 
 
 }

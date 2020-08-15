@@ -89,9 +89,10 @@ $adate=$_REQUEST['adate'];
 
 $update="update awards set Faculty_name='".$name."', Title_of_innovation='".$tname."' , Name_of_awardee='".$anname."' , University='".$uname."' ,Award_name='".$aname."'  , Awarding_agency='".$aaname."' , Category='".$cname."' , Date='".$adate."' ,College_name='".$cname."'  ,Event_name='".$ename."' ,Position='".$pname."',Level='".$lname."',pdf='".$fileDestination."'  where id='".$id."'";
 mysqli_query($conn, $update) or die(mysqli_error());
-$status = "Record Updated Successfully. </br></br>
-<a href='individualreport.php'>View Updated Record</a>";
-echo '<p style="color:#FF0000;">'.$status.'</p>';
+echo '<script language="javascript">';
+	echo 'alert("Report updated");';
+	echo 'window.location.href="individualreport.php";';
+	echo '</script>';
 
 
 

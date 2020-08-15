@@ -82,9 +82,10 @@ $gname =$_REQUEST['gname'];
 $submittedby = $_SESSION["username"];
 $update="update qualification set Faculty_name='".$name."', Admitted_for_program='".$aname."' ,Specialization='".$sname."'  ,Year_of_admission='".$yname."'  ,University='".$uname."' ,Registration_number='".$rname."'  ,College_name='".$cname."',Status='".$sname."'  ,Research_topic='".$rsname."'  ,Guide_name='".$gname."' ,pdf='".$fileDestination."'   where id='".$id."'";
 mysqli_query($conn, $update) or die(mysqli_error());
-$status = "Record Updated Successfully. </br></br>
-<a href='individualreport.php'>View Updated Record</a>";
-echo '<p style="color:#FF0000;">'.$status.'</p>';
+echo '<script language="javascript">';
+echo 'alert("Report Updated");';
+echo 'window.location.href="individualreport.php";';
+echo '</script>';
 
 
 

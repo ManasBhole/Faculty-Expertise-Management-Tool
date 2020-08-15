@@ -40,6 +40,9 @@
                     autoclose: true,
                      format: 'yyyy'
                 });  
+
+				//supress alert
+				alert=function(){};
             
             });
 		</script>
@@ -47,7 +50,7 @@
 		<div class="form-row">
 		<label for="Name" id="semlabel">Select Semester :</label>
 		
-		<div class="col-2">	
+		<div class="col-md-2 " >	
 		
         <select name="sem" class="form-control" placeholder="Select Semester" required>
         
